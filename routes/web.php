@@ -3,6 +3,8 @@
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\ParameterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Kriteria;
+use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,4 +38,8 @@ Route::middleware('auth','web')->group(function () {
     Route::get('/parameter',[ParameterController::class,'index'])->name('parameter');
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
+    Route::get('/kriteriaCreate', [KriteriaController::class, 'create'])->name('kriteriaCreate');
+    Route::get('/kriteria', [KriteriaController::class, 'index'])->name('kriteria');
 });
