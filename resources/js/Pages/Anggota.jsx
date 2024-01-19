@@ -29,14 +29,15 @@ export default function Anggota(props) {
                                 <div className="col-sm-12 col-md-6">
                                     <div className="user-list-files d-flex float-right">
                                         <a className="iq-bg-primary" href="javascript:void();">
-                                            Print
+                                            Tambah Anggota
                                         </a>
-                                        <a className="iq-bg-primary" href="javascript:void();">
-                                            Excel
+                                        <a className="iq-bg-info" href="javascript:void();">
+                                          Export  Excel
                                         </a>
-                                        <a className="iq-bg-primary" href="javascript:void();">
-                                            Pdf
+                                        <a className="iq-bg-info" href="javascript:void();">
+                                        Export Pdf
                                         </a>
+                                        
                                     </div>
                                 </div>
                             </div>

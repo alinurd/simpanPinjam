@@ -69,8 +69,15 @@ export default function Sidebar() {
               </ul>
             </li>
             <li>
-              <a href="../dashboard" className="iq-waves-effect"><i className="ri-exit-4-line" /><span>Log Out</span></a>
-            </li>   
+                  <Link
+                    href="/logout"
+                    method="post"
+                    className={`btn btn-primary  text-white  ${
+                    window.location.pathname === "/parameter"? "active": "" }`}aria-current="page" > 
+                    Logout
+                  </Link> 
+                </li> 
+             
           </ul>
         </nav>
         <div className="p-3" />
