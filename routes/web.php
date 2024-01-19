@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\ParameterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +32,8 @@ Route::middleware('guest','web')->group(function () {
 
 
 Route::middleware('auth','web')->group(function () {
+    Route::get('/anggota',[AnggotaController::class,'index'])->name('anggota');
+    Route::get('/parameter',[ParameterController::class,'index'])->name('parameter');
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });

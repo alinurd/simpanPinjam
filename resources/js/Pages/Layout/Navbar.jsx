@@ -12,7 +12,7 @@ export default function Navbar(props) {
                    height="25"
                    alt=""
                />
-               <h5 className="mb-0 ms-2">{auth.name}</h5>
+               <h5 className="mb-0 ms-2">{auth.name}3211</h5>
            </div>
        </nav>
    );

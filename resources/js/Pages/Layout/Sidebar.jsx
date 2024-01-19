@@ -30,6 +30,32 @@ export default function Sidebar() {
                             Dashboard
                         </Link>
                     </li>
+                    <li className="nav-item my-2">
+                        <Link
+                            href="/anggota"
+                            className={`nav-link text-light ${
+                                window.location.pathname === "/anggota"
+                                    ? "active"
+                                    : ""
+                            }`}
+                            aria-current="page"
+                        >
+                            Anggota
+                        </Link>
+                    </li>
+                    <li className="nav-item my-2">
+                        <Link
+                            href="/parameter"
+                            className={`nav-link text-light ${
+                                window.location.pathname === "/parameter"
+                                    ? "active"
+                                    : ""
+                            }`}
+                            aria-current="page"
+                        >
+                            Parameter
+                        </Link>
+                    </li>
                 </ul>
                 <hr />
                 <div className="">
