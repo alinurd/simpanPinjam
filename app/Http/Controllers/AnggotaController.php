@@ -8,6 +8,7 @@ use Inertia\Inertia;
 class AnggotaController extends Controller
 {
     public function index(){
-        return Inertia::render('Parameter');
+        $data['title']="anggota";
+        return Inertia::render('Anggota')->with($data);
     }
 }

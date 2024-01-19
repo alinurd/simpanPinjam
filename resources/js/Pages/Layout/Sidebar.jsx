@@ -1,80 +1,83 @@
 import { Link } from "@inertiajs/react";
-
+const capitalizeAllLetters = (string) => {
+  return string.toUpperCase();
+};
 export default function Sidebar() {
-    return (
-        <>
-            <h1 className="visually-hidden">Sidebars examples</h1>
-            <div
-                className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark"
-                style={{ width: 280 }}
-            >
-                <a
-                    href="/"
-                    className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
-                >
-                    <svg className="bi me-2" width={40} height={32}></svg>
-                    <span className="fs-4">Admin Panel</span>
-                </a>
-                <hr />
-                <ul className="nav nav-pills flex-column mb-auto text-light">
-                    <li className="nav-item my-2">
-                        <Link
-                            href="/dashboard"
-                            className={`nav-link text-light ${
-                                window.location.pathname === "/dashboard"
-                                    ? "active"
-                                    : ""
-                            }`}
-                            aria-current="page"
-                        >
-                            Dashboard
-                        </Link>
-                    </li>
-                    <li className="nav-item my-2">
-                        <Link
-                            href="/anggota"
-                            className={`nav-link text-light ${
-                                window.location.pathname === "/anggota"
-                                    ? "active"
-                                    : ""
-                            }`}
-                            aria-current="page"
-                        >
-                            Anggota
-                        </Link>
-                    </li>
-                    <li className="nav-item my-2">
-                        <Link
-                            href="/parameter"
-                            className={`nav-link text-light ${
-                                window.location.pathname === "/parameter"
-                                    ? "active"
-                                    : ""
-                            }`}
-                            aria-current="page"
-                        >
-                            Parameter
-                        </Link>
-                    </li>
-                </ul>
-                <hr />
-                <div className="">
-                    <a
-                        href="#"
-                        className="d-flex align-items-center text-white text-decoration-none"
-                    >
-                        <Link
-                            href="/logout"
-                            method="post"
-                            className="btn text-light"
-                            as="button"
-                        >
-                            Logout
-                        </Link>
-                    </a>
-                </div>
+
+  return (
+    <div className="iq-sidebar">
+      <div className="iq-sidebar-logo d-flex justify-content-between">
+        <a href="../dashboard">
+          <img src="../images/logo.gif" className="img-fluid" alt />
+          <span>Vito</span>
+        </a>
+        <div className="iq-menu-bt-sidebar">
+          <div className="iq-menu-bt align-self-center">
+            <div className="wrapper-menu">
+              <div className="main-circle"><i className="ri-arrow-left-s-line" /></div>
+              <div className="hover-circle"><i className="ri-arrow-right-s-line" /></div>
             </div>
-            <div className="b-example-divider" style={{ width: 0 }}></div>
-        </>
-    );
+          </div>
+        </div>
+      </div>
+      <div id="sidebar-scrollbar">
+        <nav className="iq-sidebar-menu">
+          <ul id="iq-sidebar-toggle" className="iq-menu">
+            <li className="iq-menu-title"><i className="ri-subtract-line" /><span>Home</span></li>
+            <li>
+              <Link
+                href="/dashboard"
+                className={`iq-waves-effect  ${
+                window.location.pathname === "/dashboard"? "active": "" }`}aria-current="page" > 
+                Dashboard
+              </Link>
+             </li>  
+
+            <li className="iq-menu-title"><i className="ri-subtract-line" /><span>Apps</span></li>
+            <li>
+              <a href="#anggota" className="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i className="ri-pencil-ruler-line" /><span>Anggota</span><i className="ri-arrow-right-s-line iq-arrow-right" /></a>
+              <ul id="anggota" className="iq-submenu collapse" data-parent="#anggota">
+                <li>
+                  <Link
+                  href="/anggota"
+                  className={`iq-waves-effect  ${
+                  window.location.pathname === "/anggota"? "active": "" }`}aria-current="page" > 
+                  List
+                </Link> 
+              </li> 
+              </ul>
+            </li>
+            <li>
+              <a href="#parameter" className="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i className="ri-profile-line" /><span>Parameter</span><i className="ri-arrow-right-s-line iq-arrow-right" /></a>
+              <ul id="parameter" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                <li>
+                  <Link
+                    href="/parameter"
+                    className={`iq-waves-effect  ${
+                    window.location.pathname === "/parameter"? "active": "" }`}aria-current="page" > 
+                    Kriteria
+                  </Link> 
+                </li> 
+                <li>
+                  <Link
+                    href="/parameter"
+                    className={`iq-waves-effect  ${
+                    window.location.pathname === "/parameter"? "active": "" }`}aria-current="page" > 
+                    Sub Kriteria
+                  </Link> 
+                </li> 
+              </ul>
+            </li>
+            <li>
+              <a href="../dashboard" className="iq-waves-effect"><i className="ri-exit-4-line" /><span>Log Out</span></a>
+            </li>   
+          </ul>
+        </nav>
+        <div className="p-3" />
+      </div>
+    </div>
+
+
+
+  );
 }

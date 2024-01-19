@@ -27,60 +27,7 @@ export default function Parameter(props) {
 
   return (
     <div className="mt-5 d-flex flex-column align-items-center">
-      <h1>Welcome Parameter to Inertia React Admin Panel</h1>
-      
-      {/* Form */}
-      <form onSubmit={handleSubmit}>
-        {/* Nama (Name) Input */}
-        <div className="mb-3">
-          <label htmlFor="nama" className="form-label">
-            Nama:
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="nama"
-            name="nama"
-            value={formData.nama}
-            onChange={handleInputChange}
-          />
-        </div>
-
-        {/* Code Input */}
-        <div className="mb-3">
-          <label htmlFor="code" className="form-label">
-            Code:
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="code"
-            name="code"
-            value={formData.code}
-            onChange={handleInputChange}
-          />
-        </div>
-
-        {/* Status Input */}
-        <div className="mb-3">
-          <label htmlFor="status" className="form-label">
-            Status:
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="status"
-            name="status"
-            value={formData.status}
-            onChange={handleInputChange}
-          />
-        </div>
-
-        {/* Submit Button */}
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
+      <h1>Welcome Parameter to Inertia React Admin Panel</h1> 
     </div>
   );
 }
