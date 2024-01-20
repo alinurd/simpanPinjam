@@ -88,23 +88,17 @@ class KriteriaController extends Controller
             "Radio" => [
                 "title" => "radio",
                 "type" => "radio",
-                            "properti" => $this->getProperiInput(true, true, "", "" ),
+                "value" => 1,
+                "properti" => $this->getProperiInput(true, true, "", "" ),
                 "options" => [
                     [
-                        "title" => "radio 1",
-                        "name" => "radio1",
-                        "value" => 1,
-                    ],
+                        "title" => "Rekomendasi",
+                         "value" => 1,
+                     ],
                     [
-                        "title" => "radio 2",
-                        "name" => "radio2",
-                        "value" => 2,
-                    ],
-                    [
-                        "title" => "check 3",
-                        "name" => "check3",
-                        "value" => 2,
-                    ],
+                        "title" => "Tidak Rokomendasi",
+                         "value" =>2,
+                     ], 
                 ],
             ],
              

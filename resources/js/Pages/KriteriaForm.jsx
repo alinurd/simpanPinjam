@@ -145,27 +145,35 @@ export default function KriteriaForm(props) {
                     <div className="invalid-feedback">Please check at least one {title}.</div>
                   </div>
                 );
-              
-              case 'radio':
-                return (
-                  <div className="custom-control custom-radio mb-3" key={key}>
-                    {options.map((radio, index) => (
-                      <React.Fragment key={index}>
-                        <input
-                          type="radio"
-                          className="custom-control-input"
-                          id={`customControlValidationRadio${radio.name}`}
-                          name={`radio-${name}`}
-                          required
-                        />
-                        <label className="custom-control-label" htmlFor={`customControlValidationRadio${radio.name}`}>
-                          {radio.title}
-                        </label>
-                      </React.Fragment>
-                    ))}
-                    <div className="invalid-feedback">Please select one {title}.</div>
-                  </div>
-                );
+
+                
+                case 'radio':
+  return (
+    <div className="custom-control custom-radio mb-3">
+      {options.map((radio, index) => (
+        <div  key={index}>
+          <input
+            type="radio"
+            className={`custom-control-input  `}
+
+            id={`customControlValidationRadio${radio.value}`}
+            name={`input-${title}`} // Using the title as the identifier for the radio group
+            checked={mode=="update"? value : 1}  
+          />
+          <label
+            className="custom-control-label"
+            htmlFor={`customControlValidationRadio${radio.value}`}
+          >
+            {radio.title}
+          </label>
+        </div>
+      ))}
+      <div className="invalid-feedback">Please select one {title}.</div>
+    </div>
+  );
+
+                  
+                  
               
           default:
             return null;
