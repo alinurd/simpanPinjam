@@ -44,9 +44,9 @@ export default function KriteriaForm(props) {
             <form className="was-validated">
 
 
-      {Object.keys(input).map((key) => {
-        
-        const { title, type, value, options, properti } = input[key];
+            {input.map((inputObj, key) => {
+                            const fieldKey = Object.keys(inputObj)[0]; // Get the key (e.g., "code" or "cost")
+                            const { title, type, options, properti, value } = inputObj[fieldKey];
         // console.log(properti)
         
          switch (type) {

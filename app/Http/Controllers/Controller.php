@@ -10,16 +10,57 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    public static function getProperiInput($req, $read, $dis, $hidden)
+    public static function getCodeRand($q)
     {
+        $codePrefix = $q;
+        $randomNumber = mt_rand(1000, 9999);  
+        // $lastId = '-' . (1 + Para::latest('id')->value('id')) . '-';
+        $codeId = $codePrefix . $randomNumber;
+        return $codeId ;
+    }
+
+    public static function getProperiInput($prop)
+    {
+        // dd($prop);
         return [
-            "required" => $req,
-            "readonly" => $read,
-            "disable" => $dis,
-            "hidden" => $hidden,
+            "required" => $prop[0],
+            "readonly" => $prop[1],
+            "disable" => $prop[2],
+            "hidden" => $prop[3],
         ];
     }
+
+
+
+    public static function formInput($name, $type, $value, $prop = [])
+{
+    return [
+        $name => [
+            "title" => $name,
+            "type" => $type,
+            "value" => $value,
+            "properti" => self::getProperiInput($prop),
+        ],
+    ];
+}
+
+    public static function formInputOption($name, $type, $value, $prop=[])
+    {
+        return [
+            
+            $name => [
+                "title" => $name,
+                "type" => $type,
+                "value" => $value,
+                "properti" => self::getProperiInput(true, "", "", "")
+                            ]
+            ];
+            
+    }
+ 
     
+
+
 
 
 }
