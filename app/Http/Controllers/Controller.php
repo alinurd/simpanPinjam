@@ -34,6 +34,7 @@ class Controller extends BaseController
 
     public static function formInput($name, $type, $value, $prop = [])
 {
+    // dd($value);
     return [
         $name => [
             "title" => $name,

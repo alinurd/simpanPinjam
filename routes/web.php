@@ -41,5 +41,6 @@ Route::middleware('auth','web')->group(function () {
 
 
     Route::get('/kriteriaCreate', [KriteriaController::class, 'create'])->name('kriteriaCreate');
+    Route::post('/kriteriaCreate', [KriteriaController::class, 'store'])->name('kriteriaCreate.post');
     Route::get('/kriteria', [KriteriaController::class, 'index'])->name('kriteria');
 });

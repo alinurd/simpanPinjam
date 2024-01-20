@@ -54,7 +54,8 @@ export default function Sidebar() {
                   <Link
                     href="/kriteria"
                     className={`iq-waves-effect  ${
-                    window.location.pathname === "/kriteria"? "active": "" }`}aria-current="page" > 
+                    window.location.pathname === "/kriteria"? "active": "" }`}
+                    aria-current="page" > 
                     Kriteria
                   </Link> 
                 </li> 
