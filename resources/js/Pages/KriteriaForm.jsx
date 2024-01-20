@@ -115,8 +115,11 @@ export default function KriteriaForm(props) {
             return (
               <div className="form-group" key={key}>
                 <label htmlFor={`validation${capitalizeFirstLetter(title)}`}>{capitalizeFirstLetter(title)}</label>
-                <select className="custom-select" required>
-                  <option value>Open this select menu</option>
+                <select className="custom-select" 
+                required={properti && properti.required}
+                readOnly={properti && properti.readonly}
+                disabled={properti && properti.disable}>
+                  <option selected disabled value="">- Pilih {capitalizeFirstLetter(title)}-</option>
                   {options.map((option, index) => (
                     <option key={index} value={option.value}>
                       {option.title}

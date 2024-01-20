@@ -44,16 +44,17 @@ class Controller extends BaseController
     ];
 }
 
-    public static function formInputOption($name, $type, $value, $prop=[])
+    public static function formInputDropdown($name,  $value, $prop=[], $options=[])
     {
         return [
-            
+          
             $name => [
                 "title" => $name,
-                "type" => $type,
+                "type" => "dropdown",
                 "value" => $value,
-                "properti" => self::getProperiInput(true, "", "", "")
-                            ]
+                "options" => $options,
+                "properti" => self::getProperiInput($prop),
+                ]
             ];
             
     }
