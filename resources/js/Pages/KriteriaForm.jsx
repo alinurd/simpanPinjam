@@ -129,28 +129,32 @@ export default function KriteriaForm(props) {
 
             case 'check':
                 return (
-                  <div className="custom-control custom-checkbox mb-3" key={key}>
+                    // For inline checkboxes
+                   <>
                     {options.map((checkbox, index) => (
-                      <React.Fragment key={index}>
+                        <div className="custom-control custom-checkbox custom-control-inline" key={key}>
+                      <div key={index}>
                         <input
                           type="checkbox"
                           className="custom-control-input"
-                          id={`customControlValidationCheck${checkbox.name}`}
+                          id={`customCheck-${checkbox.name}`}
                         />
-                        <label className="custom-control-label" htmlFor={`customControlValidationCheck${checkbox.name}`}>
+                        <label className="custom-control-label" htmlFor={`customCheck-${checkbox.name}`}>
                           {checkbox.title}
                         </label>
-                      </React.Fragment>
-                    ))}
-                    <div className="invalid-feedback">Please check at least one {title}.</div>
+                      </div>
                   </div>
+                    ))}
+                    </>
                 );
+              
 
                 
                 case 'radio':
   return (
-    <div className="custom-control custom-radio mb-3">
+      <div div className="custom-control custom-radio">
       {options.map((radio, index) => (
+          <div className="custom-control custom-radio custom-control-inline  mb-3">
         <div  key={index}>
           <input
             type="radio"
@@ -167,9 +171,10 @@ export default function KriteriaForm(props) {
             {radio.title}
           </label>
         </div>
-      ))}
       <div className="invalid-feedback">Please select one {title}.</div>
     </div>
+      ))}
+      </div>
   );
 
                   
