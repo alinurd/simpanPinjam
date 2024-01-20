@@ -14,8 +14,107 @@ class KriteriaController extends Controller
     }
     public function create(){
         // dd("masuk");
+        
+        $codePrefix = "Sts-";
+        $randomNumber = mt_rand(1000, 9999);  
+        // $lastId = '-' . (1 + Para::latest('id')->value('id')) . '-';
+        $codeId = $codePrefix . $randomNumber;
+
+      
+        $options[] = [
+            "title" =>"Actif",
+            "value" => 1,
+            "properti" => $this->getProperiInput(true, true, "", "" ),
+        ];
+ 
+        $inp = [
+            "status" => [
+                "title" => "status",
+                "type" => "dropdown",
+                "value" => "",
+                "options" => $options,
+                    
+            ],
+            "code" => [
+                "title" => "code",
+                "type" => "text",
+                "value" => $codeId,
+                "properti" => $this->getProperiInput(true, "", "", "" )
+            ],
+            "cost" => [
+                "title" => "cost",
+                "type" => "number",
+                "value" => "",
+                "properti" => $this->getProperiInput(true, "", "", "" )
+            ],
+            
+            "name" => [
+                "title" => "name",
+                "type" => "text",
+                "value" => "value defult",
+                "properti" => $this->getProperiInput(true, "", "", "" )
+    
+            ], 
+            "keterangan" => [
+                "title" => "keterangan",
+                "type" => "area",
+                "value" => "",
+                            "properti" => $this->getProperiInput("", "", "", true )
+    
+            ], 
+            "Check" => [
+                "title" => "Check",
+                "type" => "check",
+                            "properti" => $this->getProperiInput(true, true, "", "" ),
+                "options" => [
+                    [
+                        "title" => "check 1",
+                        "name" => "check1",
+                        "value" => 1,
+                    ],
+                    [
+                        "title" => "check 2",
+                        "name" => "check2",
+                        "value" => 2,
+                    ],
+                    [
+                        "title" => "check 3",
+                        "name" => "check3",
+                        "value" => 2,
+                    ],
+                ],
+            ],
+            
+            "Radio" => [
+                "title" => "radio",
+                "type" => "radio",
+                            "properti" => $this->getProperiInput(true, true, "", "" ),
+                "options" => [
+                    [
+                        "title" => "radio 1",
+                        "name" => "radio1",
+                        "value" => 1,
+                    ],
+                    [
+                        "title" => "radio 2",
+                        "name" => "radio2",
+                        "value" => 2,
+                    ],
+                    [
+                        "title" => "check 3",
+                        "name" => "check3",
+                        "value" => 2,
+                    ],
+                ],
+            ],
+             
+    
+        ];
+
         $data['title']="Kriteria";
-        $data['mode']="Create";
-        return Inertia::render('KriteriaCreate')->with($data);
+        $data['mode']="create";
+        $data['input']=$inp;
+        $data['code']=$codeId;
+        return Inertia::render('KriteriaForm')->with($data);
     }
 }

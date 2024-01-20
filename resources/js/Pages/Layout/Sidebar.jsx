@@ -52,9 +52,9 @@ export default function Sidebar() {
               <ul id="parameter" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                 <li>
                   <Link
-                    href="/parameter"
+                    href="/kriteria"
                     className={`iq-waves-effect  ${
-                    window.location.pathname === "/parameter"? "active": "" }`}aria-current="page" > 
+                    window.location.pathname === "/kriteria"? "active": "" }`}aria-current="page" > 
                     Kriteria
                   </Link> 
                 </li> 
