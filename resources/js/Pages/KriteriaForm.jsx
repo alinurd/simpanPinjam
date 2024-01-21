@@ -12,19 +12,15 @@ const toLowerCase = (string) => {
     return string.toLowerCase();
 };
 
-const LoadingSpinner = () => (
-    <div className="loading">
-        {/* Customize your loading spinner here */}
-        Loading...
-    </div>
-);
-
 export default function KriteriaForm(props) {
     const { title } = props;
     const { mode } = props;
     const { input } = props;
     const { code } = props;
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+
+
     const submit = async (e) => {
         e.preventDefault();
 
@@ -48,11 +44,11 @@ export default function KriteriaForm(props) {
             const redirectTo = response.data.redirect;
 
 
-alert(response.data.message)
+            alert(response.data.message)
 
-Inertia.visit(redirectTo, {
-    only: ['body'],  // Optional, specify the sections of the page to update
-});
+            Inertia.visit(redirectTo, {
+                only: ['body'],  // Optional, specify the sections of the page to update
+            });
 
         } catch (error) {
             console.error('Error making POST request:', error);
@@ -68,7 +64,7 @@ Inertia.visit(redirectTo, {
 
         <div className="iq-card">
             <div className="iq-card-header d-flex justify-content-between">
-                
+
                 <div className="iq-header-title">
                     <h4 className="card-title"> <span className="m-3">{capitalizeFirstLetter(title)} | {capitalizeFirstLetter(mode)} </span>
                         <button type="button" class="btn mb-1 dark-icon btn-primary ">
@@ -88,20 +84,17 @@ Inertia.visit(redirectTo, {
             </div>
             <div className="iq-card-body">
                 <form className="was-validated" onSubmit={submit}>
-
-
                     {input.map((inputObj, key) => {
                         const fieldKey = Object.keys(inputObj)[0]; // Get the key (e.g., "code" or "cost")
                         const { title, type, options, properti, value } = inputObj[fieldKey];
-                        // console.log(properti)
+                        console.log(value)
 
                         switch (type) {
                             case 'hidden':
                                 return (
                                     <div className="mb-3" key={key}>
-                                        <label htmlFor={`validation${capitalizeFirstLetter(title)}`}>{capitalizeFirstLetter(title)}</label>
-                                        <input
-                                            type="text"
+                                         <input
+                                            type="hidden"
                                             className={`form-control is-invalid ${properti && properti.required ? 'required' : ''} ${properti && properti.readonly ? 'readonly' : ''} ${properti && properti.disable ? 'disable' : ''}`}
                                             id={`validation${capitalizeFirstLetter(title)}`}
                                             name={`${title.toLowerCase()}`}
@@ -179,25 +172,63 @@ Inertia.visit(redirectTo, {
                                     </div>
                                 );
 
+                            // case 'dropdown':
+                            //     return (
+                            //         <div className="form-group" key={key}>
+                            //             <label htmlFor={`validation${capitalizeFirstLetter(title)}`}>{capitalizeFirstLetter(title)}</label>
+                            //             <select
+                            //                 className="custom-select"
+                            //                 name={`${title.toLowerCase()}`}
+                            //                 value={value}
+                            //                 required={properti && properti.required}
+                            //                 readOnly={properti && properti.readonly}
+                            //                 disabled={properti && properti.disable}
+                            //             >
+                            //                 <option   value="">
+                            //                     - Pilih {capitalizeFirstLetter(title)}-
+                            //                 </option>
+                            //                 {options.map((option, index) => (
+                            //                     <option
+                            //                         key={index}
+                            //                         value={option.value}
+                            //                         // selected={option.value === value ? 'selected' : ''}
+                            //                     >
+                            //                         {option.title}
+                            //                     </option>
+                            //                 ))}
+                            //             </select>
+
+                            //             <div className="invalid-feedback">Please select a valid {title}.</div>
+                            //         </div>
+                            //     );
+
                             case 'dropdown':
                                 return (
                                     <div className="form-group" key={key}>
-                                        <label htmlFor={`validation${capitalizeFirstLetter(title)}`}>{capitalizeFirstLetter(title)}</label>
-                                        <select className="custom-select"
-                                                                                    name={`${title.toLowerCase()}`}
-
+                                        <label htmlFor={`validation${capitalizeFirstLetter(title)}`}>
+                                            {capitalizeFirstLetter(title)}
+                                        </label>
+                                        <select
+                                            className="custom-select"
+                                            name={`${title.toLowerCase()}`}
                                             required={properti && properti.required}
                                             readOnly={properti && properti.readonly}
-                                            disabled={properti && properti.disable}>
-                                            <option selected disabled value="">- Pilih {capitalizeFirstLetter(title)}-</option>
+                                            disabled={properti && properti.disable}
+                                        >
+                                            <option value="" disabled>
+                                                - Pilih {capitalizeFirstLetter(title)}-
+                                            </option>
                                             {options.map((option, index) => (
-                                                <option key={index} value={option.value}>
+                                                // <option key={index} value={option.value}>
+                                                <option key={index} value={option.value} selected={option.value == value ? 'selected' : ''}>
                                                     {option.title}
                                                 </option>
                                             ))}
                                         </select>
+
                                         <div className="invalid-feedback">Please select a valid {title}.</div>
                                     </div>
+
                                 );
 
                             case 'check':
@@ -220,8 +251,6 @@ Inertia.visit(redirectTo, {
                                         ))}
                                     </>
                                 );
-
-
 
                             case 'radio':
                                 return (

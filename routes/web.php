@@ -40,7 +40,11 @@ Route::middleware('auth','web')->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
-    Route::get('/kriteriaCreate', [KriteriaController::class, 'create'])->name('kriteriaCreate');
-    Route::post('/kriteriaCreate', [KriteriaController::class, 'store'])->name('kriteriaCreate.post');
     Route::get('/kriteria', [KriteriaController::class, 'index'])->name('kriteria');
+    Route::get('/kriteriaCreate', [KriteriaController::class, 'create'])->name('kriteriaCreate');
+    Route::get('/kriteriaEdit/{code}', [KriteriaController::class, 'edit'])->name('kriteriaEdit');
+        Route::post('/kriteriaCreate', [KriteriaController::class, 'store'])->name('kriteriaCreate.post');
+        Route::post('/kriteriaUpdate', [KriteriaController::class, 'update'])->name('kriteriaUpdate.post');
+        Route::delete('kriteriaDelete/{id}', [KriteriaController::class, 'destroy'])->name('kriteriaDelete');
+
 });

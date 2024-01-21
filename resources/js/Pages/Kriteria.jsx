@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@inertiajs/react";
-
+import { Inertia } from '@inertiajs/inertia';
 
 const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -13,6 +13,13 @@ const toLowerCase = (string) => {
 
 
 export default function Kriteria(props) {
+    const handleDelete = (e, id) => {
+        e.preventDefault();
+console.log(id)
+        if (confirm('Are you sure you want to delete this record?')) {
+            Inertia.delete("kriteriaDelete/" + id); // Add the concatenation operator (+) here
+         }
+    };
     const { title } = props;
     const { field } = props;
     // console.log(field)
@@ -64,6 +71,7 @@ export default function Kriteria(props) {
                                         <th className="text-center">#</th>
                                         <th className="text-center">Code</th>
                                         <th className="text-left">Name</th>
+                                        <th className="text-left">Bobot</th>
                                         <th className="text-center">Status</th>
                                         <th className="text-center">Action</th>
                                     </tr>
@@ -74,6 +82,7 @@ export default function Kriteria(props) {
                                             <td className="text-center" key={index}>{index + 1}</td>
                                             <td className="text-center">{item.code}</td>
                                             <td className="text-left">{item.nama}</td>
+                                            <td className="text-left">{item.bobot}</td>
                                             <td className="text-center">
                                                 <span className={`text-center badge icon-light iq-bg-${item.status == 1 ? "info" : "danger"}`}>
                                                     {item.status == 1 ? "Active" : "Non Active"}
@@ -81,9 +90,21 @@ export default function Kriteria(props) {
                                             </td>
                                             <td>
                                                 <div className=" text-center flex align-items-center list-user-action">
-                                                    <a className="iq-bg-primary" data-toggle="tooltip" data-placement="top" title data-original-title="Edit" href="#"><i className="ri-pencil-line" /></a>
-                                                    <a className="iq-bg-primary" data-toggle="tooltip" data-placement="top" title data-original-title="Delete" href="#"><i className="ri-delete-bin-line" /></a>
-                                                </div>
+                                                <a className="iq-bg-primary" data-toggle="tooltip" data-placement="top" title data-original-title="Edit" href={`/${toLowerCase(title)}Edit/${item.code}`}>
+ 
+  <i className="ri-pencil-line" />
+</a>
+<a
+    className="iq-bg-primary"
+    data-toggle="tooltip"
+    data-placement="top"
+    title="Delete"
+    href="#"
+    onClick={(e) => handleDelete(e, item.id)} // Call the handleDelete function with the record id
+>
+    <i className="ri-delete-bin-line" />
+</a>
+</div>
                                             </td>
                                         </tr>
                                     ))}

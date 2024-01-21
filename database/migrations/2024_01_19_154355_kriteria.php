@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('code');
             $table->string('nama');
-            $table->string('status');
+            $table->integer('bobot');
+            $table->tinyInteger('status');
             // Add any other columns you need
             $table->timestamps();
         });

@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Kriteria extends Model
 {
     use HasFactory;
-    protected $fillable = ['nama', 'code', 'status'];
+    protected $fillable = ['nama', 'bobot',  'code', 'status'];
 
 }

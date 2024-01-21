@@ -45,7 +45,7 @@ class Controller extends BaseController
     ];
 }
 
-    public static function formInputDropdown($name,  $value, $prop=[], $options=[])
+    public static function formInputDropdown($name, $type,  $value, $prop=[], $options=[])
     {
         return [
           
