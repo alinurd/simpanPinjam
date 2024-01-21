@@ -94,7 +94,7 @@ public function edit($code) {
     ];
 
     $formInputs = [
-        $this->formInput("id", "text", $field['id'], ["", true, false, false]),
+        $this->formInput("id", "hidden", $field['id'], ["", true, false, false]),
         $this->formInput("code", "text", $codeId, ["", true, false, false]),
         $this->formInput("nama", "text", $field['nama'], [true, false, false, false]),
         $this->formInput("bobot", "number", $field['bobot'], [true, false, false, false]),
