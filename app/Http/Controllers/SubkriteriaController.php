@@ -1,20 +1,17 @@
 <?php
-
 namespace App\Http\Controllers;
-
 
 use App\Models\Kriteria;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-
 class SubkriteriaController extends Controller
-{ 
+{
     protected $name;
 
     public function __construct()
     {
-        $this->name = "kriteria";
+        $this->name = "subkriteria";
     }
 
     public function index()
@@ -22,13 +19,13 @@ class SubkriteriaController extends Controller
         $data['title'] = $this->name;
         $data['field'] = Kriteria::get()->all();
         // $data['field'] = Kriteria::where("status", 1)->get();
-                // dd($data['field']);
-        return Inertia::render(ucfirst($this->name))->with($data);
+        // dd($data['field']);
+        return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name))->with($data);
     }
-
+    
     public function create()
     {
-        $codeId = $this->getCodeRand("CR-");
+        $codeId = $this->getCodeRand("SCR-");
         $propsts = [true, false, false, false];
         $options = [
             [
@@ -38,10 +35,21 @@ class SubkriteriaController extends Controller
             [
                 "title" => "Tidak Aktif",
                 "value" => 0,
-            ]
-        ];
+                ]
+            ];
+            $cr = Kriteria::where("status", 1)->get();
+            $optionsCr = [];
+            
+            foreach ($cr as $q) {
+                $optionsCr[] = [
+                    "title" =>  $q['code'] . " - " . $q['nama'],
+                    "value" => $q['id'],
+                ];
+            }
+            
 
         $formInputs = [
+            $this->formInputDropdown("id_kriteria", "", "", $propsts, $optionsCr),
             $this->formInput("code", "hidden", $codeId, ["", true, false, false]),
             $this->formInput("nama", "text", "", [true, false, false, false]),
             $this->formInput("bobot", "number", "", [true, false, false, false]),
@@ -54,7 +62,7 @@ class SubkriteriaController extends Controller
         $data['input'] = $formInputs;
         $data['code'] = $codeId;
 
-        return Inertia::render(ucfirst($this->name) . "Form")->with($data);
+        return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name) . "Form")->with($data);
     }
 
     public function store(Request $request)
@@ -109,7 +117,7 @@ public function edit($code) {
     $data['input'] = $formInputs;
     $data['code'] = $codeId;
 
-    return Inertia::render(ucfirst($this->name) . "Form")->with($data);
+    return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name) . "Form")->with($data);
 }
 
 public function update(Request $request)

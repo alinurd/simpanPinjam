@@ -20,7 +20,7 @@ class KriteriaController extends Controller
         $data['field'] = Kriteria::get()->all();
         // $data['field'] = Kriteria::where("status", 1)->get();
                 // dd($data['field']);
-        return Inertia::render(ucfirst($this->name))->with($data);
+        return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name))->with($data);
     }
 
     public function create()
@@ -51,7 +51,7 @@ class KriteriaController extends Controller
         $data['input'] = $formInputs;
         $data['code'] = $codeId;
 
-        return Inertia::render(ucfirst($this->name) . "Form")->with($data);
+        return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name) . "Form")->with($data);
     }
 
     public function store(Request $request)
@@ -106,7 +106,7 @@ public function edit($code) {
     $data['input'] = $formInputs;
     $data['code'] = $codeId;
 
-    return Inertia::render(ucfirst($this->name) . "Form")->with($data);
+    return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name) . "Form")->with($data);
 }
 
 public function update(Request $request)

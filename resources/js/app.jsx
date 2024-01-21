@@ -5,6 +5,7 @@ import Layout from './Pages/Layout/Layout';
 
 createInertiaApp({
   resolve: name => {
+    console.log(name)
     const pages = import.meta.glob('./Pages/**/*.jsx', { eager: true })
     let page = pages[`./Pages/${name}.jsx`]
     page.default.layout =
