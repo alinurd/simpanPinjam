@@ -38,7 +38,8 @@ class SubkriteriaController extends Controller
                 "value" => 0,
                 ]
             ];
-            $cr = Kriteria::where("status", 1)->get();
+            // $cr = Kriteria::where("status", 1)->get();
+            $cr = Kriteria::get();
             $optionsCr = [];
             
             foreach ($cr as $q) {
@@ -92,6 +93,7 @@ class SubkriteriaController extends Controller
             'status' => $status,
             'id_kriteria' => $kriteria,
         ]);
+        $this->setStatusKriteriaByBobot($kriteria);
 
         //  Subkriteria::($data);
  
@@ -119,7 +121,7 @@ public function edit($code) {
             "value" => 0,
         ]
     ];
-    $cr = Kriteria::where("status", 1)->get();
+    $cr = Kriteria::get();
     $optionsCr = [];
     
     foreach ($cr as $q) {
@@ -165,6 +167,7 @@ public function update(Request $request)
         // dd($bobot);
         
         $Kriteria = Subkriteria::find($id);
+        // dd($qx['bobot']);  
         
         if ($Kriteria) {
             $Kriteria->update([
@@ -173,9 +176,8 @@ public function update(Request $request)
                 'status' => $status,
                 'id_kriteria' => $kriteria,
             ]);
-        
-            // Update successful
-        }
+$this->setStatusKriteriaByBobot($kriteria);
+         }
 
         return response()->json([
             'action' => 'Update', 
@@ -191,6 +193,40 @@ public function destroy($id)
     $parameter->delete();
   }
 
+
+  public function setStatusKriteriaByBobot($kriteria) {
+ 
+    $qk = kriteria::where("id",$kriteria)->first();
+    $qq= $this->getByKriteria($kriteria);
+    
+    $totalBobot = 0;
+    foreach ($qq as $subkriteria) {
+        $bobot = $subkriteria->bobot;
+        $totalBobot += $bobot;
+    }
+    $xx = Kriteria::find($qk['id']);
+    if($totalBobot != $qk['bobot']){
+        if ($xx) {
+            $xx->update([ 
+                'status' =>0,
+            ]);
+    }
+    }else{
+        $xx->update([ 
+            'status' =>1,
+        ]);
+    }
+
+
+    return true; 
+}
+
+
+  public function getByKriteria($id) {
+ 
+    $field = Subkriteria::where("id_kriteria", $id)->where("status", 1)->get();
+    return $field; 
+}
 
 
 }

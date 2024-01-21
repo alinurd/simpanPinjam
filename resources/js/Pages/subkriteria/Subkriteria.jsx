@@ -15,7 +15,12 @@ const toLowerCase = (string) => {
 
 
 export default function Subkriteria(props) {
-    const initializeModal = async (id) => {
+    const calculateTotalBobot = (field, idKriteria) => {
+        return field
+          .filter(item => item.kriteria.id === idKriteria)
+          .reduce((total, item) => total + parseFloat(item.bobot), 0);
+        }
+     const initializeModal = async (id) => {
         try {
             const response = await axios.get(`/kriteriaById/${id}`);
             // console.log(response)
@@ -115,8 +120,7 @@ export default function Subkriteria(props) {
                                 <thead>
                                     <tr>
                                         <th className="text-center">#</th>
-                                        <th className="text-left">Kriteria</th>
-                                        <th className="text-center">Code</th>
+                                         <th className="text-center">Code</th>
                                         <th className="text-left">Name</th>
                                         <th className="text-left">Bobot</th>
                                         <th className="text-center">Status</th>
@@ -124,51 +128,68 @@ export default function Subkriteria(props) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {field.map((item, index) => (
-                                        <tr>
-                                            <td className="text-center" key={index}>{index + 1}</td>
-                                            <td className="text-left">
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-primary"
-                                                    onClick={() => initializeModal(item.kriteria ? item.kriteria.id : '-')}
-                                                >
-                                                    <b>{item.kriteria.code}</b>- {item.kriteria.nama}        
-                                                                                           
-                                                 </button>
+      {field.map((item, index) => (
+        <React.Fragment key={index}>
+          {/* Row for Kriteria information */}
+          {index === 0 || item.kriteria.id !== field[index - 1].kriteria.id ? (
+            <tr>
+              <td colSpan={6}>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={() => initializeModal(item.kriteria ? item.kriteria.id : '-')}
+                >
+                  <b>{item.kriteria.code}</b> - {item.kriteria.nama} @[{item.kriteria.status}]@[{item.kriteria.bobot}]
+                </button> 
+                <span> </span>
+                <button type="button"  className={`btn iq-bg-${item.kriteria.status == 1 ? "primary" : "danger"}`} title={`${calculateTotalBobot(field, item.kriteria.id) != item.kriteria.bobot ? "Jumlah bobot melebihi batas" : "kriteria siap untuk di gunakan"}`}  data-placement="top" data-toggle="tooltip">
+                {item.kriteria.status == 1 ? "Active" : "Non Active"}
+                            </button>
+              </td>
+            </tr>
+          ) : null}
 
-                                            </td>
-                                            <td className="text-center">{item.code}</td>
-                                            <td className="text-left">{item.nama}</td>
-                                            <td className="text-left">{item.bobot}</td>
-                                            <td className="text-center">
-                                                <span className={`text-center badge icon-light iq-bg-${item.status == 1 ? "info" : "danger"}`}>
-                                                    {item.status == 1 ? "Active" : "Non Active"}
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <div className=" text-center flex align-items-center list-user-action">
-                                                    <a className="iq-bg-primary" data-toggle="tooltip" data-placement="top" title data-original-title="Edit" href={`/${toLowerCase(title)}Edit/${item.code}`}>
+          {/* Row for individual item information */}
+          <tr>
+            <td className="text-center">{index + 1}</td>
+            <td className="text-center">{item.code}</td>
+            <td className="text-left">{item.nama}</td>
+            <td className="text-left">{item.bobot}</td>
+            <td className="text-center">
+              <span className={`text-center badge icon-light iq-bg-${item.status == 1 ? "info" : "danger"}`}>
+                {item.status == 1 ? "Active" : "Non Active"}
+              </span>
+            </td>
+            <td>
+              <div className="text-center flex align-items-center list-user-action">
+                <a className="iq-bg-primary" data-toggle="tooltip" data-placement="top" title data-original-title="Edit" href={`/${toLowerCase(title)}Edit/${item.code}`}>
+                  <i className="ri-pencil-line" />
+                </a>
+                <a
+                  className="iq-bg-primary"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Delete"
+                  href="#"
+                  onClick={(e) => handleDelete(e, item.id)} // Call the handleDelete function with the record id
+                >
+                  <i className="ri-delete-bin-line" />
+                </a>
+              </div>
+            </td>
+          </tr>
+          {index === field.length - 1 || item.kriteria.id !== field[index + 1].kriteria.id ? (
+        <tr>
+          <td colSpan={3} className="text-right">Total:</td>
+          <td colSpan={3}><strong>{calculateTotalBobot(field, item.kriteria.id)}</strong> - {item.kriteria.bobot}</td>
+        </tr>
+      ) : null}
+     
+        </React.Fragment>
+      ))}
+    </tbody>
 
-                                                        <i className="ri-pencil-line" />
-                                                    </a>
-                                                    <a
-                                                        className="iq-bg-primary"
-                                                        data-toggle="tooltip"
-                                                        data-placement="top"
-                                                        title="Delete"
-                                                        href="#"
-                                                        onClick={(e) => handleDelete(e, item.id)} // Call the handleDelete function with the record id
-                                                    >
-                                                        <i className="ri-delete-bin-line" />
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    ))}
 
-
-                                </tbody>
                             </table>
                         </div>
                         <div className="row justify-content-between mt-3">
