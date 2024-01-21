@@ -71,18 +71,8 @@ export default function Penilaian(props) {
 
         try {
             const response = await axios.get(`/anggotaById/${id}`);
-            console.log(response)
-            var data = {
-                id: 1,
-                code: 'SCR-9776',
-                bobot: '60',
-                name: 'Dummy Kriteria',
-                create: '20-01-2000',
-                // Add other fields as needed
-            };
 
-            // If data is successfully fetched, update the modal content
-            if (data) {
+             if (response) {
                 updateModalContent(response.data.data, type);
                 if (type != 1) {
 
@@ -90,22 +80,18 @@ export default function Penilaian(props) {
                 }
             }
         } catch (error) {
-            // Handle errors
-            console.error(error);
+             console.error(error);
         }
     };
 
-    // Function to update modal content
-    const updateModalContent = (data, type) => {
-        // Access the modal element and update its content based on the fetched data
-        if (type == 1) {
+     const updateModalContent = (data, type) => {
+         if (type == 1) {
             const x = document.getElementById('pilih-anggota');
             x.querySelector('#code').textContent = data.code;
             x.querySelector('#nama').textContent = data.nama;
             x.querySelector('#ajuan').textContent = data.ajuan;
             setIsSubmitting(false);
             setIsUser(true);
-
         }
 
         const modalElement = document.getElementById('exampleModalCenter');
@@ -164,7 +150,6 @@ export default function Penilaian(props) {
                                                 ''
                                             )}
 
-
                                             <h4 className="card-title text-center"><span id="nama"></span>[ <b id="code"></b> ]</h4>
                                             <p className="text-center"><small className="text-muted">Rp. <b id="ajuan">10220</b></small></p>
                                             <button
@@ -177,6 +162,7 @@ export default function Penilaian(props) {
                                             </button>
                                             <button
                                                 type="button"
+                                                id="userId"
                                                 className="btn dark-icon btn-info btn-block"
                                                 onClick={() => initializeModal(1)}
                                             //   onClick={() => initializeModal(item.kriteria ? item.kriteria.id : '-')}
