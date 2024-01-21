@@ -35,8 +35,7 @@ Route::middleware('guest','web')->group(function () {
 
 
 Route::middleware('auth','web')->group(function () {
-    Route::get('/anggota',[AnggotaController::class,'index'])->name('anggota');
-    Route::get('/parameter',[ParameterController::class,'index'])->name('parameter');
+     Route::get('/parameter',[ParameterController::class,'index'])->name('parameter');
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
@@ -57,5 +56,13 @@ Route::middleware('auth','web')->group(function () {
         Route::post('/subkriteriaCreate', [SubKriteriaController::class, 'store'])->name('subkriteriaCreate.post');
         Route::post('/subkriteriaUpdate', [SubKriteriaController::class, 'update'])->name('subkriteriaUpdate.post');
         Route::delete('subkriteriaDelete/{id}', [SubKriteriaController::class, 'destroy'])->name('subkriteriaDelete');
+
+        // anggota Route
+    Route::get('/anggota', [AnggotaController::class, 'index'])->name('anggota');
+    Route::get('/anggotaCreate', [AnggotaController::class, 'create'])->name('anggotaCreate');
+    Route::get('/anggotaEdit/{code}', [AnggotaController::class, 'edit'])->name('anggotaEdit');
+        Route::post('/anggotaCreate', [AnggotaController::class, 'store'])->name('anggotaCreate.post');
+        Route::post('/anggotaUpdate', [AnggotaController::class, 'update'])->name('anggotaUpdate.post');
+        Route::delete('anggotaDelete/{id}', [AnggotaController::class, 'destroy'])->name('anggotaDelete');
 
 });
