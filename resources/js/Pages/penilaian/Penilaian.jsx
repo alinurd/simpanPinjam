@@ -19,8 +19,8 @@ export default function Penilaian(props) {
     const { mode } = props;
     const { input } = props;
     const { codeId } = props;
-console.log(codeId)
-// console.log(mode)
+    console.log(codeId)
+    // console.log(mode)
     const [isSubmitting, setIsSubmitting] = useState(false);
     const submit = async (e) => {
         e.preventDefault();
@@ -180,68 +180,68 @@ console.log(codeId)
                             <div className="tab-pane fade show active" id="pills-home-fill" role="tabpanel" aria-labelledby="pills-home-tab-fill">
 
                                 {/* Penilaian 1 */}
-                             {/* Penilaian 1 */}
-<div className="penilaian1" id="penilaian1">
-  <div className="row">
-    <div className="col-sm-12">
-      <form className="was-validated" onSubmit={submit}>
-        <div className="card iq-mb-3">
-          <small className="text-muted">Penilaian Alokasi Point</small>
-          <div className="card-body">
-            <table className="table table-striped">
-              {kriteria.map((item) => {
-                return (
-                  <React.Fragment key={item.id}>
-                    <tr>
-                      <th colSpan={2}>{item.nama} [{item.bobot}]</th>
-                    </tr>
-                    {subKriteria.map((itemSub, subIndex) => {
-                      if (itemSub.id_kriteria == item.id) {
-                        return (
-                          <tr key={`${item.id}-${subIndex}`}>
-                             <input type="hidden" name="kriteria[]" value={item.id} />
-                            <input type="hidden" name="subkriteria[]" value={itemSub.id} />
-                            <input type="hidden" name="id_anggota" value="1" />
-                            <input type="hidden" name="type" value="1" />
-                            <input type="hidden" name="codeId" value={codeId} />
-                            <td>{itemSub.nama} <br />[{itemSub.bobot}]</td>
-                            <td>
-                              <input
-                                type="number"
-                                className="form-control"
-                                id={`point_${itemSub.id}`}
-                                name="penilaian[]"
-                                placeholder="Berikan Penilaian"
-                                required
-                              />
-                            </td>
-                          </tr>
-                        );
-                      } else {
-                        return null;
-                      }
-                    })}
-                  </React.Fragment>
-                );
-              })}
-            </table>
-          </div>
-          <label htmlFor="keterangan">Keterangan</label>
-          <textarea name="keterangan" id="keterangan" cols="30" rows="2"></textarea>
-        </div>
-        <button className="btn dark-icon btn-primary btn-block" type="submit">
-          {isSubmitting ? (
-            <div className="loading">
-              <img src="/assets/css/ajax-loader.gif" alt="Loading..." />
-            </div>
-          ) : (
-            'Simpan & Lanjut'
-          )}
-        </button>
-      </form>
-    </div>
-  </div>
-</div>
+                                {/* Penilaian 1 */}
+                                <div className="penilaian1" id="penilaian1">
+                                    <div className="row">
+                                        <div className="col-sm-12">
+                                            <form className="was-validated" onSubmit={submit}>
+                                                <div className="card iq-mb-3">
+                                                    <small className="text-muted">Penilaian Alokasi Point</small>
+                                                    <div className="card-body">
+                                                        <table className="table table-striped">
+                                                            {kriteria.map((item) => {
+                                                                return (
+                                                                    <React.Fragment key={item.id}>
+                                                                        <tr>
+                                                                            <th colSpan={2}>{item.nama} [{item.bobot}]</th>
+                                                                        </tr>
+                                                                        {subKriteria.map((itemSub, subIndex) => {
+                                                                            if (itemSub.id_kriteria == item.id) {
+                                                                                return (
+                                                                                    <tr key={`${item.id}-${subIndex}`}>
+                                                                                        <input type="hidden" name="kriteria[]" value={item.id} />
+                                                                                        <input type="hidden" name="subkriteria[]" value={itemSub.id} />
+                                                                                        <input type="hidden" name="id_anggota" value="1" />
+                                                                                        <input type="hidden" name="type" value="1" />
+                                                                                        <input type="hidden" name="codeId" value={codeId} />
+                                                                                        <td>{itemSub.nama} <br />[{itemSub.bobot}]</td>
+                                                                                        <td>
+                                                                                            <input
+                                                                                                type="number"
+                                                                                                className="form-control"
+                                                                                                id={`point_${itemSub.id}`}
+                                                                                                name="penilaian[]"
+                                                                                                placeholder="Berikan Penilaian"
+                                                                                                required
+                                                                                            />
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                );
+                                                                            } else {
+                                                                                return null;
+                                                                            }
+                                                                        })}
+                                                                    </React.Fragment>
+                                                                );
+                                                            })}
+                                                        </table>
+                                                    </div>
+                                                    <label htmlFor="keterangan">Keterangan</label>
+                                                    <textarea name="keterangan" id="keterangan" cols="30" rows="2"></textarea>
+                                                </div>
+                                                <button className="btn dark-icon btn-primary btn-block" type="submit">
+                                                    {isSubmitting ? (
+                                                        <div className="loading">
+                                                            <img src="/assets/css/ajax-loader.gif" alt="Loading..." />
+                                                        </div>
+                                                    ) : (
+                                                        'Simpan & Lanjut'
+                                                    )}
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
 
 
                             </div>
