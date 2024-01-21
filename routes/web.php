@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Kriteria;
 use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SubkriteriaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,11 +41,20 @@ Route::middleware('auth','web')->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
+    // kriteria Route
     Route::get('/kriteria', [KriteriaController::class, 'index'])->name('kriteria');
     Route::get('/kriteriaCreate', [KriteriaController::class, 'create'])->name('kriteriaCreate');
     Route::get('/kriteriaEdit/{code}', [KriteriaController::class, 'edit'])->name('kriteriaEdit');
         Route::post('/kriteriaCreate', [KriteriaController::class, 'store'])->name('kriteriaCreate.post');
         Route::post('/kriteriaUpdate', [KriteriaController::class, 'update'])->name('kriteriaUpdate.post');
         Route::delete('kriteriaDelete/{id}', [KriteriaController::class, 'destroy'])->name('kriteriaDelete');
+
+        // subkriteria Route
+    Route::get('/subkriteria', [SubkriteriaController::class, 'index'])->name('subkriteria');
+    Route::get('/subkriteriaCreate', [SubKriteriaController::class, 'create'])->name('subkriteriaCreate');
+    Route::get('/subkriteriaEdit/{code}', [SubKriteriaController::class, 'edit'])->name('subkriteriaEdit');
+        Route::post('/subkriteriaCreate', [SubKriteriaController::class, 'store'])->name('subkriteriaCreate.post');
+        Route::post('/subkriteriaUpdate', [SubKriteriaController::class, 'update'])->name('subkriteriaUpdate.post');
+        Route::delete('subkriteriaDelete/{id}', [SubKriteriaController::class, 'destroy'])->name('subkriteriaDelete');
 
 });
