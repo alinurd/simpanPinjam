@@ -45,6 +45,7 @@ Route::middleware('auth','web')->group(function () {
     Route::get('/kriteria', [KriteriaController::class, 'index'])->name('kriteria');
     Route::get('/kriteriaCreate', [KriteriaController::class, 'create'])->name('kriteriaCreate');
     Route::get('/kriteriaEdit/{code}', [KriteriaController::class, 'edit'])->name('kriteriaEdit');
+    Route::get('/kriteriaById/{id}', [KriteriaController::class, 'getKriteriaById'])->name('kriteriaById');
         Route::post('/kriteriaCreate', [KriteriaController::class, 'store'])->name('kriteriaCreate.post');
         Route::post('/kriteriaUpdate', [KriteriaController::class, 'update'])->name('kriteriaUpdate.post');
         Route::delete('kriteriaDelete/{id}', [KriteriaController::class, 'destroy'])->name('kriteriaDelete');

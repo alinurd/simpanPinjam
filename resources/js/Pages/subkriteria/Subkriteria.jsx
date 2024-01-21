@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "@inertiajs/react";
 import { Inertia } from '@inertiajs/inertia';
+import axios from 'axios';  // Import the axios library
+
 
 const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -13,12 +15,56 @@ const toLowerCase = (string) => {
 
 
 export default function Subkriteria(props) {
+    const initializeModal = async (id) => {
+        try {
+            const response = await axios.get(`/kriteriaById/${id}`);
+            // console.log(response)
+                        var data = {
+                id: 1,
+                code: 'SCR-9776',
+                bobot: '60',
+                name: 'Dummy Kriteria',
+                create: '20-01-2000',
+                // Add other fields as needed
+            };
+    
+            // If data is successfully fetched, update the modal content
+            if (data) {
+                 updateModalContent(response.data.data); 
+                $('#exampleModalCenter').modal('show');
+            }
+        } catch (error) {
+            // Handle errors
+            console.error(error);
+        }
+    };
+     
+    
+    
+    // Function to update modal content
+    const updateModalContent = (data) => {
+        // Access the modal element and update its content based on the fetched data
+
+        const modalElement = document.getElementById('exampleModalCenter');
+    
+        if (modalElement) {
+            // console.log(data.data.id)
+            // Update modal content here, for example:
+             modalElement.querySelector('#exampleModalCenterTitle').textContent = data.code;
+            modalElement.querySelector('#exampleModalCenterName').textContent = data.nama;
+            modalElement.querySelector('#exampleModalCenterCode').textContent = data.code;
+            modalElement.querySelector('#exampleModalCenterBobot').textContent = data.bobot;
+              // Assuming you have elements in the modal to display the fetched data
+        }
+    };
+    
+
     const handleDelete = (e, id) => {
         e.preventDefault();
-console.log(id)
+        console.log(id)
         if (confirm('Are you sure you want to delete this record?')) {
-            Inertia.delete("kriteriaDelete/" + id); // Add the concatenation operator (+) here
-         }
+            Inertia.delete("subkriteriaDelete/" + id); // Add the concatenation operator (+) here
+        }
     };
     const { title } = props;
     const { field } = props;
@@ -69,6 +115,7 @@ console.log(id)
                                 <thead>
                                     <tr>
                                         <th className="text-center">#</th>
+                                        <th className="text-left">Kriteria</th>
                                         <th className="text-center">Code</th>
                                         <th className="text-left">Name</th>
                                         <th className="text-left">Bobot</th>
@@ -80,6 +127,17 @@ console.log(id)
                                     {field.map((item, index) => (
                                         <tr>
                                             <td className="text-center" key={index}>{index + 1}</td>
+                                            <td className="text-left">
+                                                <button
+                                                    type="button"
+                                                    className="btn btn-primary"
+                                                    onClick={() => initializeModal(item.kriteria ? item.kriteria.id : '-')}
+                                                >
+                                                    <b>{item.kriteria.code}</b>- {item.kriteria.nama}        
+                                                                                           
+                                                 </button>
+
+                                            </td>
                                             <td className="text-center">{item.code}</td>
                                             <td className="text-left">{item.nama}</td>
                                             <td className="text-left">{item.bobot}</td>
@@ -90,21 +148,21 @@ console.log(id)
                                             </td>
                                             <td>
                                                 <div className=" text-center flex align-items-center list-user-action">
-                                                <a className="iq-bg-primary" data-toggle="tooltip" data-placement="top" title data-original-title="Edit" href={`/${toLowerCase(title)}Edit/${item.code}`}>
- 
-  <i className="ri-pencil-line" />
-</a>
-<a
-    className="iq-bg-primary"
-    data-toggle="tooltip"
-    data-placement="top"
-    title="Delete"
-    href="#"
-    onClick={(e) => handleDelete(e, item.id)} // Call the handleDelete function with the record id
->
-    <i className="ri-delete-bin-line" />
-</a>
-</div>
+                                                    <a className="iq-bg-primary" data-toggle="tooltip" data-placement="top" title data-original-title="Edit" href={`/${toLowerCase(title)}Edit/${item.code}`}>
+
+                                                        <i className="ri-pencil-line" />
+                                                    </a>
+                                                    <a
+                                                        className="iq-bg-primary"
+                                                        data-toggle="tooltip"
+                                                        data-placement="top"
+                                                        title="Delete"
+                                                        href="#"
+                                                        onClick={(e) => handleDelete(e, item.id)} // Call the handleDelete function with the record id
+                                                    >
+                                                        <i className="ri-delete-bin-line" />
+                                                    </a>
+                                                </div>
                                             </td>
                                         </tr>
                                     ))}
@@ -136,8 +194,48 @@ console.log(id)
                     </div>
                 </div>
             </div>
+
+            <div className="modal fade" id="exampleModalCenter" role="dialog" aria-labelledby="exampleModalCenter" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title text-bold" id="exampleModalCenterTitle"></h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div className="modal-body">                            
+                            <table className="table">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Name</th>
+                                        <th>Bobot</th>
+                                     </tr>
+                                </thead>
+                                <tbody>
+                                    {/* Add your dynamic data here */}
+                                    <tr>
+                                        <th><b className="modal-title" id="exampleModalCenterCode"></b></th>
+                                        <th><b className="modal-title pre-line" id="exampleModalCenterName"></b></th>
+                                        <th><b className="modal-title" id="exampleModalCenterBobot"></b></th> 
+                                    </tr> 
+                                </tbody>
+                            </table>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
+
 
 
     );
 }
+ 

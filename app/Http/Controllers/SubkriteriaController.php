@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kriteria;
+use App\Models\Subkriteria;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -17,7 +18,7 @@ class SubkriteriaController extends Controller
     public function index()
     {
         $data['title'] = $this->name;
-        $data['field'] = Kriteria::get()->all();
+        $data['field'] = Subkriteria::with('kriteria')->get();
         // $data['field'] = Kriteria::where("status", 1)->get();
         // dd($data['field']);
         return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name))->with($data);
@@ -49,7 +50,7 @@ class SubkriteriaController extends Controller
             
 
         $formInputs = [
-            $this->formInputDropdown("id_kriteria", "", "", $propsts, $optionsCr),
+            $this->formInputDropdown("kriteria", "", "", $propsts, $optionsCr),
             $this->formInput("code", "hidden", $codeId, ["", true, false, false]),
             $this->formInput("nama", "text", "", [true, false, false, false]),
             $this->formInput("bobot", "number", "", [true, false, false, false]),
@@ -70,14 +71,29 @@ class SubkriteriaController extends Controller
          // Validate the request data if needed
         //  dd($request);
          $request->validate([
+            'kriteria' => 'required|numeric',
             'code' => 'required|string',
             'nama' => 'required|string',
             'bobot' => 'required|numeric', // Assuming 'status' is a numeric field, adjust as needed
             'status' => 'required|numeric', // Assuming 'status' is a numeric field, adjust as needed
          ]);
-          $data = $request->only(['code','nama','bobot', 'status']); // Adjust field names accordingly
-    
-         Kriteria::insert($data);
+ 
+ 
+         $code = $request->input('code');
+         $nama = $request->input('nama');
+         $bobot = $request->input('bobot');
+         $status = $request->input('status');
+         $kriteria = $request->input('kriteria');
+
+         Subkriteria::insert([
+            'code' => $code,
+            'nama' => $nama,
+            'bobot' => $bobot,
+            'status' => $status,
+            'id_kriteria' => $kriteria,
+        ]);
+
+        //  Subkriteria::($data);
  
         return response()->json([
             'action' => 'Create', 
@@ -90,7 +106,7 @@ class SubkriteriaController extends Controller
 public function edit($code) {
     $codeId = $code;
 
-            $field = Kriteria::where("code", $code)->first();
+            $field = Subkriteria::where("code", $code)->first();
 // dd($field);
     $propsts = [true, false, false, false];
     $options = [
@@ -103,10 +119,19 @@ public function edit($code) {
             "value" => 0,
         ]
     ];
-
+    $cr = Kriteria::where("status", 1)->get();
+    $optionsCr = [];
+    
+    foreach ($cr as $q) {
+        $optionsCr[] = [
+            "title" =>  $q['code'] . " - " . $q['nama'],
+            "value" => $q['id'],
+        ];
+    }
     $formInputs = [
         $this->formInput("id", "hidden", $field['id'], ["", true, false, false]),
         $this->formInput("code", "text", $codeId, ["", true, false, false]),
+        $this->formInputDropdown("kriteria","", $field['id_kriteria'], $propsts, $optionsCr),
         $this->formInput("nama", "text", $field['nama'], [true, false, false, false]),
         $this->formInput("bobot", "number", $field['bobot'], [true, false, false, false]),
         $this->formInputDropdown("status", "", $field['status'], $propsts, $options),
@@ -128,6 +153,7 @@ public function update(Request $request)
             'code' => 'required|string',
             'bobot' => 'required|numeric',
             'nama' => 'required|string',
+            'kriteria' => 'required|numeric', // Assuming 'status' is a numeric field, adjust as needed
             'status' => 'required|numeric', // Assuming 'status' is a numeric field, adjust as needed
         ]);
         
@@ -135,15 +161,17 @@ public function update(Request $request)
         $nama = $request->input('nama');
         $bobot = $request->input('bobot');
         $status = $request->input('status');
+        $kriteria = $request->input('kriteria');
         // dd($bobot);
         
-        $Kriteria = Kriteria::find($id);
+        $Kriteria = Subkriteria::find($id);
         
         if ($Kriteria) {
             $Kriteria->update([
                 'nama' => $nama,
                 'bobot' => $bobot,
                 'status' => $status,
+                'id_kriteria' => $kriteria,
             ]);
         
             // Update successful
@@ -158,19 +186,10 @@ public function update(Request $request)
 
 public function destroy($id)
 { 
-    $parameter = Kriteria::findOrFail($id);
+    $parameter = Subkriteria::findOrFail($id);
 
     $parameter->delete();
-
-    // Redirect or provide a response as needed
-    // return response()->json([
-    //     'action' => 'Delete', 
-    // 'message' => 'Data Deleted successfully', 
-    // 'success' =>true, 
-    // 'redirect' =>'../'. $this->name,], 201);
-
-    // All Inertia requests must receive a valid Inertia response, however a plain JSON response was received.{"action":"Delete","message":"Data Deleted successfully","success":true,"redirect":"../kriteria"}
-}
+  }
 
 
 

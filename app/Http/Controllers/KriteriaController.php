@@ -23,6 +23,7 @@ class KriteriaController extends Controller
         return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name))->with($data);
     }
 
+
     public function create()
     {
         $codeId = $this->getCodeRand("CR-");
@@ -80,8 +81,7 @@ public function edit($code) {
     $codeId = $code;
 
             $field = Kriteria::where("code", $code)->first();
-// dd($field);
-    $propsts = [true, false, false, false];
+     $propsts = [true, false, false, false];
     $options = [
         [
             "title" => "Aktif",
@@ -110,9 +110,9 @@ public function edit($code) {
 }
 
 public function update(Request $request)
-    {
-         // Validate the request data if needed
-         $request->validate([
+{
+    // Validate the request data if needed
+    $request->validate([
              'id' => 'required',
             'code' => 'required|string',
             'bobot' => 'required|numeric',
@@ -148,9 +148,9 @@ public function update(Request $request)
 public function destroy($id)
 { 
     $parameter = Kriteria::findOrFail($id);
-
+    
     $parameter->delete();
-
+    
     // Redirect or provide a response as needed
     // return response()->json([
     //     'action' => 'Delete', 
@@ -162,5 +162,14 @@ public function destroy($id)
 }
 
 
+public function getKriteriaById($id) {
+ 
+            $field = Kriteria::where("id", $id)->first();
+            return response()->json([
+                'action' => 'getById', 
+            'message' => 'Get Data Kriteria successfully', 
+            'success' =>true, 
+            'data' =>$field, ], 201); 
+}
 
 }
