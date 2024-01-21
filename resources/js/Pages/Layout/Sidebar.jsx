@@ -47,6 +47,22 @@ export default function Sidebar() {
               </li> 
               </ul>
             </li>
+
+            <li className="iq-menu-title"><i className="ri-subtract-line" /><span>Penilaian</span></li>
+            <li>
+              <a href="#penilaian" className="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i className="ri-pencil-ruler-line" /><span>penilaian</span><i className="ri-arrow-right-s-line iq-arrow-right" /></a>
+              <ul id="penilaian" className="iq-submenu collapse" data-parent="#penilaian">
+                <li>
+                  <Link
+                  href="/penilaian"
+                  className={`iq-waves-effect  ${
+                  window.location.pathname === "/penilaian"? "active": "" }`}aria-current="page" > 
+                  List
+                </Link> 
+              </li> 
+              </ul>
+            </li>
+
             <li>
               <a href="#parameter" className="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i className="ri-profile-line" /><span>Parameter</span><i className="ri-arrow-right-s-line iq-arrow-right" /></a>
               <ul id="parameter" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">

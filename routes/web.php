@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Kriteria;
 use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PenilaianController;
 use App\Http\Controllers\SubkriteriaController;
 use Illuminate\Support\Facades\Route;
 
@@ -65,5 +66,13 @@ Route::middleware('auth','web')->group(function () {
         Route::post('/anggotaCreate', [AnggotaController::class, 'store'])->name('anggotaCreate.post');
         Route::post('/anggotaUpdate', [AnggotaController::class, 'update'])->name('anggotaUpdate.post');
         Route::delete('anggotaDelete/{id}', [AnggotaController::class, 'destroy'])->name('anggotaDelete');
+
+        // penilaian Route
+    Route::get('/penilaian', [PenilaianController::class, 'index'])->name('penilaian');
+    Route::get('/penilaianCreate', [PenilaianController::class, 'create'])->name('penilaianCreate');
+    Route::get('/penilaianEdit/{code}', [PenilaianController::class, 'edit'])->name('penilaianEdit');
+        Route::post('/penilaianCreate', [PenilaianController::class, 'store'])->name('penilaianCreate.post');
+        Route::post('/penilaianUpdate', [PenilaianController::class, 'update'])->name('penilaianUpdate.post');
+        Route::delete('penilaianDelete/{id}', [PenilaianController::class, 'destroy'])->name('penilaianDelete');
 
 });
