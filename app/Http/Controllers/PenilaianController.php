@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Anggota;
+use App\Models\Kriteria;
+use App\Models\Penilaian;
 use App\Models\Subkriteria;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -18,11 +20,53 @@ class PenilaianController extends Controller
 
     public function index()
     {
-        $data['title'] = $this->name;
-        $data['field'] = Subkriteria::with('kriteria')->get();
         $data['field'] = Anggota::where("status", 1)->get();
+        $data['kriteria'] = Kriteria::where("status", 1)->where("type", 1)->get();
+        $data['subKriteria'] = SubKriteria::where("status", 1)->get();
         // dd($data['field']);
+        $codeId = $this->getCodeRand("PNL-");
+
+        $data['mode'] = "create";
+        $data['codeId'] = $codeId;
+        $data['title'] = $this->name;
+        // $data['title'] = $this->name;
+        // $data['input'] = $formInputs;
+
+
+
         return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name))->with($data);
         
     }
+
+    public function store(Request $request)
+    {
+         // Validate the request data if needed
+        //  dd($request);
+         $request->validate([
+             'codeId' => 'required|string',
+             'keterangan' => 'required|string',
+            // 'id_anggota' => 'required|numberic',
+          ]);
+ 
+ // Assuming $request->kriteria, $request->subkriteria, and $request->penilaian are arrays
+for ($i = 0; $i < count($request->kriteria); $i++) {
+    Penilaian::insert([
+        'status' => 8, // Assuming 'code' is not an array
+        'type' => $request->type, // Assuming 'code' is not an array
+        'code' => $request->codeId, // Assuming 'code' is not an array
+        'id_anggota' => $request->id_anggota, // Assuming 'id_anggota' is not an array
+        'id_kriteria' => $request->kriteria[$i],
+        'id_subkriteria' => $request->subkriteria[$i],
+        'penilaian' => $request->penilaian[$i],
+        'keterangan' => $request->keterangan, // Is this intended?
+    ]);
+}
+ 
+        return response()->json([
+            'action' => 'Create', 
+        'message' => 'Data stored successfully', 
+        'success' =>true, 
+        'redirect' => $this->name,], 201); 
+}
+
 }

@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('penilaians', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('code')->unique();
+            $table->integer('type');
+            $table->string('id_anggota');
+            $table->integer('id_kriteria');
+            $table->integer('id_subkriteria');
+            $table->string('penilaian');
+            $table->text('keterangan');
+            $table->string('status');
+             $table->timestamps();
         });
     }
 
