@@ -234,9 +234,9 @@ public function destroy($id)
 }
 
 
-public function getKriteriaById($id) {
+public function getAnggotaById ($id) {
  
-            $field = Anggota::where("id", $id)->first();
+            $field = Anggota::where("id", $id)->with('desa')->first();
             return response()->json([
                 'action' => 'getById', 
             'message' => 'Get Data Kriteria successfully', 

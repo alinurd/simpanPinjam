@@ -14,5 +14,9 @@ class Anggota extends Model
     {
         return $this->belongsTo(Status::class, 'status');
     }
+    public function desa()
+    {
+        return $this->belongsTo(Desa::class, 'desa');
+    }
 }
  

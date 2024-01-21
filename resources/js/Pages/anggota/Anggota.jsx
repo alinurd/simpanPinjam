@@ -13,6 +13,42 @@ const toLowerCase = (string) => {
 
 
 export default function Anggota(props) {
+    const initializeModal = async (id) => {
+        try {
+            const response = await axios.get(`/anggotaById/${id}`);
+            console.log(response.data.data)
+
+    
+            // If data is successfully fetched, update the modal content
+            if (response) {
+                 updateModalContent(response.data.data); 
+                $('#exampleModalCenter').modal('show');
+            }
+        } catch (error) {
+            // Handle errors
+            console.error(error);
+        }
+    };
+     
+    // Function to update modal content
+    const updateModalContent = (data) => {
+        // Access the modal element and update its content based on the fetched data
+
+        const modalElement = document.getElementById('exampleModalCenter');
+    
+        if (modalElement) {
+            console.log(data.code)
+            // Update modal content here, for example:
+             modalElement.querySelector('#exampleModalCenterTitle').textContent = data.code;
+             modalElement.querySelector('#exampleModalCenterNama').textContent = data.nama;
+            modalElement.querySelector('#exampleModalCenterDesa').textContent = data.desa.nama;
+            modalElement.querySelector('#exampleModalCenterRw').textContent = data.rw;
+            modalElement.querySelector('#exampleModalCenterRt').textContent = data.rt;
+            modalElement.querySelector('#exampleModalCenterKp').textContent = data.kp;
+              // Assuming you have elements in the modal to display the fetched data
+        }
+    };
+
     const handleDelete = (e, id) => {
         e.preventDefault();
 console.log(id)
@@ -71,6 +107,8 @@ console.log(id)
                                         <th className="text-center">#</th>
                                          <th className="text-left">Name</th>
                                         <th className="text-left">Email</th>
+                                        <th className="text-left">Phone</th>
+                                        <th className="text-left">Alamat</th>
                                         <th className="text-center">Status</th>
                                         <th className="text-center">Action</th>
                                     </tr>
@@ -81,6 +119,16 @@ console.log(id)
                                             <td className="text-center" key={index}>{index + 1}</td>
                                             <td className="text-left">{item.nama}</td>
                                             <td className="text-left">{item.email}</td>
+                                            <td className="text-left">{item.phone}</td>
+                                            <td className="text-left">
+                                            <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={() => initializeModal(item ? item.id : '-')}
+                >
+                  Lihat Alamat detail
+                </button> 
+                                            </td>
                                              <td className="text-center">
                                              <button type="button" className={`btn mb-1 dark-icon btn-${item.status.bg}`}>
                                              {item.status.nama}
@@ -137,6 +185,46 @@ console.log(id)
                     </div>
                 </div>
             </div>
+
+            <div className="modal fade" id="exampleModalCenter" role="dialog" aria-labelledby="exampleModalCenter" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title text-bold" id="">
+                                <b> <span id="exampleModalCenterTitle"></span></b> - <span id="exampleModalCenterNama"></span>
+                            </h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div className="modal-body">                            
+                            <table className="table">
+                                <thead>
+                                    <tr>
+                                        <th>Desa</th>
+                                        <th>Rw</th>
+                                        <th>Rt</th>
+                                        <th>Kampung</th>
+                                     </tr>
+                                </thead>
+                                <tbody>
+                                    {/* Add your dynamic data here */}
+                                    <tr>
+                                         <th><b className="modal-title pre-line" id="exampleModalCenterDesa"></b></th>
+                                        <th><b className="modal-title" id="exampleModalCenterRt"></b></th> 
+                                        <th><b className="modal-title" id="exampleModalCenterRw"></b></th> 
+                                        <th><b className="modal-title" id="exampleModalCenterKp"></b></th> 
+                                    </tr> 
+                                </tbody>
+                            </table>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
 
