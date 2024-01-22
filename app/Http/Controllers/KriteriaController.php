@@ -82,8 +82,7 @@ class KriteriaController extends Controller
             'bobot' => 'required|numeric', // Assuming 'status' is a numeric field, adjust as needed
             'status' => 'required|numeric', // Assuming 'status' is a numeric field, adjust as needed
          ]);
-          $data = $request->only(['code','nama','bobot', 'status']); // Adjust field names accordingly
-          $code = $request->input('code');
+           $code = $request->input('code');
           $nama = $request->input('nama');
           $bobot = $request->input('bobot');
           $jenis = $request->input('jenis'); 

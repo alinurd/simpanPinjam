@@ -17,7 +17,8 @@ const toLowerCase = (string) => {
 export default function Subkriteria(props) {
     const calculateTotalBobot = (field, idKriteria) => {
         return field
-          .filter(item => item.kriteria.id === idKriteria)
+        // console.log(item)
+          .filter(item => item.kriteria.id === idKriteria && item.kriteria.status==1)
           .reduce((total, item) => total + parseFloat(item.bobot), 0);
         }
      const initializeModal = async (id) => {
@@ -139,7 +140,7 @@ export default function Subkriteria(props) {
                   className="btn btn-primary"
                   onClick={() => initializeModal(item.kriteria ? item.kriteria.id : '-')}
                 >
-                  <b>{item.kriteria.code}</b> - {item.kriteria.nama} @[{item.kriteria.status}]@[{item.kriteria.bobot}]
+                  <b>{item.kriteria.code}</b> - {item.kriteria.nama} @[{item.kriteria.type==1?"Alokasi Point":"Peninjauan"}]@[{item.kriteria.bobot}]
                 </button> 
                 <span> </span>
                 <button type="button"  className={`btn iq-bg-${item.kriteria.status == 1 ? "primary" : "danger"}`} title={`${calculateTotalBobot(field, item.kriteria.id) != item.kriteria.bobot ? "Jumlah bobot melebihi batas" : "kriteria siap untuk di gunakan"}`}  data-placement="top" data-toggle="tooltip">

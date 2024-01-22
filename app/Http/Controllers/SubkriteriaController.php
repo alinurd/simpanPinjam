@@ -46,6 +46,7 @@ class SubkriteriaController extends Controller
                 $optionsCr[] = [
                     "title" =>  $q['code'] . " - " . $q['nama'],
                     "value" => $q['id'],
+                    "jenis" => $q['type'],
                 ];
             }
             
@@ -70,7 +71,15 @@ class SubkriteriaController extends Controller
     public function store(Request $request)
     {
          // Validate the request data if needed
-        //  dd($request);
+         $kr = Kriteria::where("id", $request->input('kriteria'))->first();
+        //  dd($kr);
+
+         if($kr && $kr['type']!=1){
+             $request->merge(['bobot' => 0]);
+            }else{
+                $request->merge(['bobot' =>$request->input('bobot') ]);
+            }
+
          $request->validate([
             'kriteria' => 'required|numeric',
             'code' => 'required|string',
@@ -85,6 +94,7 @@ class SubkriteriaController extends Controller
          $bobot = $request->input('bobot');
          $status = $request->input('status');
          $kriteria = $request->input('kriteria');
+          $jenis = $request->input('jenis'); 
 
          Subkriteria::insert([
             'code' => $code,
@@ -150,6 +160,7 @@ public function edit($code) {
 public function update(Request $request)
     {
          // Validate the request data if needed
+         
          $request->validate([
              'id' => 'required',
             'code' => 'required|string',

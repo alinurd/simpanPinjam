@@ -19,7 +19,23 @@ export default function SubkriteriaForm(props) {
     const { code } = props;
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-
+    const initializeOption = async (id, jenis) => {
+        console.log(jenis)
+        if(jenis==="optionskriteria"){
+            var inputElement = document.getElementById('validationBobot');
+            // console.log(id)
+            if (id !=1) {
+              inputElement.readOnly = true;
+             inputElement.required = false;
+             inputElement.placeholder = 0;
+         }else{
+             inputElement.readOnly = false;
+             inputElement.required = true;
+             inputElement.value = "";
+          }
+        }
+        
+     };
 
     const submit = async (e) => {
         e.preventDefault();
@@ -220,7 +236,10 @@ export default function SubkriteriaForm(props) {
                                             </option>
                                             {options.map((option, index) => (
                                                 // <option key={index} value={option.value}>
-                                                <option key={index} value={option.value} selected={option.value == value ? 'selected' : ''}>
+                                                <option 
+                                                onClick={() => initializeOption(option.jenis, `options${title.toLowerCase()}` )}
+                                                
+                                                key={index} value={option.value} selected={option.value == value ? 'selected' : ''}>
                                                     {option.title}
                                                 </option>
                                             ))}
