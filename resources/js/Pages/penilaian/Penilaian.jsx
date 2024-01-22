@@ -232,7 +232,7 @@ export default function Penilaian(props) {
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <form className="was-validated" onSubmit={submit}>
-                                            <input type="text" name="id_anggota" id="id_anggota" />
+                                            <input type="hidden" name="id_anggota" id="id_anggota" />
                                             <div className="card iq-mb-3">
                                                 <small className="text-muted">Penilaian Alokasi Point</small>
                                                 <div className="card-body">
@@ -295,8 +295,8 @@ export default function Penilaian(props) {
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <form className="was-validated" onSubmit={submit}>
-                                        <input type="text" name="id_anggota1" id="id_anggota1" />
-                                        {sts2Aktif ? (
+                                        <input type="hidden" name="id_anggota" id="id_anggota1" />
+                                        {sts1Show ? (
                                              <div className="card iq-mb-3">
                                                 <small className="text-muted">Laporan Hasil Peninjauan Lokasi</small>
                                                 <div className="card-body">
@@ -314,7 +314,7 @@ export default function Penilaian(props) {
                                                                                     <input type="hidden" name="kriteria[]" value={item.id} />
                                                                                     <input type="hidden" name="subkriteria[]" value={itemSub.id} />
                                                                                      <input type="hidden" name="type" value="2" />
-                                                                                     <input type="hidden" name="status" value="8" />
+                                                                                     <input type="hidden" name="sts" value="8" />
                                                                                     <input type="hidden" name="codeId" value={codeId} />
                                                                                     <td>{itemSub.nama} <br />[{itemSub.bobot}]</td>
                                                                                     <td>
@@ -364,7 +364,7 @@ export default function Penilaian(props) {
                             <div className={`tab-pane fade ${sts3Show ? 'show' : ''} ${sts3Aktif ? 'active' : ''}`} id="pills-home-fill3" role="tabpanel" aria-labelledby="pills-home-tab-fill3">                                <div className="penilaian1" id="penilaian1">
                                 <div className="row">
                                     <div className="col-sm-12">
-                                    {sts3Aktif ? (
+                                    {sts3Show ? (
 
                                         <div className="card iq-mb-3">
                                             <div className="card-body">

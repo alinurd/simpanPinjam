@@ -47,7 +47,8 @@ class PenilaianController extends Controller
          $request->validate([
              'codeId' => 'required|string',
              'keterangan' => 'required|string',
-            // 'id_anggota' => 'required|numberic',
+            'id_anggota' => 'required|numeric',
+            // 'sts' => 'required',
           ]);
  
  // Assuming $request->kriteria, $request->subkriteria, and $request->penilaian are arrays
@@ -62,17 +63,17 @@ for ($i = 0; $i < count($request->kriteria); $i++) {
         'penilaian' => $request->penilaian[$i],
         'keterangan' => $request->keterangan, // Is this intended?
     ]);
-}
-if($rePenilaian){
-    $agt = Anggota::find($request->id_anggota);
-    if ($agt) {
-        $agt->update([
-            'status' => $request->sts, //type progres penilaian
-        ]);
+  
     
         // Update successful
     }
+    $agt = Anggota::find($request->id_anggota);
+    if ($agt) {
+        $agt->update([
+            'progress' => $request->sts, //type progres penilaian
+        ]);
 }
+ 
  
         return response()->json([
             'action' => 'Create', 
