@@ -79,7 +79,36 @@ for ($i = 0; $i < count($request->kriteria); $i++) {
             'action' => 'Create', 
         'message' => 'Data stored successfully', 
         'success' =>true, 
-        'redirect' => $this->name,], 201); 
+        'redirect' =>'/penilaianEdit/'.$request->codeId], 201); 
 }
+
+public function edit($code) {
+             $pn = Penilaian::where("code", $code)->first();
+            $anggota = Anggota::where("id", $pn['id_anggota'])->first();
+            $p="x";
+            // if($anggota['progress']==8){
+            //     $p="xx";
+            // }
+            // dd($anggota);
+            $data['point'] = Penilaian::where("code", $code)->where("type", 1)->get();
+            $data['tinjau'] = Penilaian::where("code", $code)->where("type", 2)->get();
+            $data['field'] = Anggota::where("status", 1)->get();
+            $data['kriteria'] = Kriteria::where("status", 1)->where("type", 1)->get();
+            $data['subKriteria'] = SubKriteria::where("status", 1)->get();
+            $data['kriteriax'] = Kriteria::where("status", 1)->where("type", 2)->get();
+            $data['subKriteriax'] = SubKriteria::where("status", 1)->get();
+            $data['mode'] = "create";
+            $data['anggota'] = $anggota;
+            $data['codeId'] = $code;
+            $data['title'] = $this->name; 
+            // dd($this->name);
+            return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name).$p)->with($data);
+
+
+
+}
+
+
+
 
 }

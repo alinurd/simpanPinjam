@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "@inertiajs/react";
 import { Inertia } from '@inertiajs/inertia';
 import axios from 'axios';  // Import the axios library
@@ -19,9 +19,13 @@ export default function Penilaian(props) {
     // const { mode } = props;
     // const { input } = props;
     // const {  } = props;
-    const { field, kriteria, subKriteria, codeId, mode, title, input, kriteriax, subKriteriax, } = props;
+    const { field, kriteria, subKriteria, codeId, mode, title, anggota, kriteriax, subKriteriax, } = props;
 
+    useEffect(() => {
+        // Trigger initializeModal with the first item in the field array
+        updateModalContent(anggota, 1);
 
+    })
     // console.log(codeId)
     // console.log(mode)
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -77,25 +81,7 @@ export default function Penilaian(props) {
             .filter(item => item.kriteria.id === idKriteria)
             .reduce((total, item) => total + parseFloat(item.bobot), 0);
     }
-    const initializeModal = async (id, type) => {
-        setIsSubmitting(true);
-        setIsUser(false);
-        try {
-            const response = await axios.get(`/anggotaById/${id}`);
 
-            if (response) {
-                updateModalContent(response.data.data, type);
-                // if (type != 1) {
-                console.log(response.data.data.status)
-                // $('#exampleModalCenter').modal('show');
-                // }
-            }
-        } catch (error) {
-            console.error(error);
-
-        }
-
-    };
     const initializeModalKlasifikasi = async (id, type) => {
         $('#ModalKlasifikasi').modal('show');
     };
@@ -134,7 +120,7 @@ export default function Penilaian(props) {
             x.value = id;
             x2.value = id;
         }
-        if (sts ==1 ) {
+        if (sts == 1) {
             setSts1Show(true);
             setSts1Aktif(true);
 
@@ -152,7 +138,7 @@ export default function Penilaian(props) {
 
             setSts3Show(false);
             setSts3Aktif(false);
-        } else if (sts >7 ) {
+        } else if (sts > 7) {
             setSts1Show(true);
             setSts1Aktif(false);
 
@@ -177,14 +163,23 @@ export default function Penilaian(props) {
                     <div className="iq-card-body">
                         <div className="form-group">
                             <label>Calon Creditur:</label>
-                            <select className="form-control" id="selecUser">
-                                <option disabled>-Select Anggota-</option>
-                                {field.map((item, index) => (
-                                    <option
-                                        onClick={() => initializeModal(item.id, 1)}
-                                    >{item.nama} [{item.code}]</option>
-                                ))}
 
+                            <select
+                                className="form-control"
+                                id="selecUser"
+                                value={anggota.id}
+                                disabled
+                            >
+                                <option disabled>-Select Anggota-</option>
+                                {field.map((item) => (
+                                    <option
+                                        key={item.id}
+                                        value={item.id}
+                                        selected={item.id === anggota.id}
+                                    >
+                                        {item.nama} [{item.code}]
+                                    </option>
+                                ))}
                             </select>
                         </div>
                         <div className="pilih-anggota" id="pilih-anggota">
@@ -249,7 +244,7 @@ export default function Penilaian(props) {
                                                                                 <tr key={`${item.id}-${subIndex}`}>
                                                                                     <input type="hidden" name="kriteria[]" value={item.id} />
                                                                                     <input type="hidden" name="subkriteria[]" value={itemSub.id} />
-                                                                                     <input type="hidden" name="type" value="1" />
+                                                                                    <input type="hidden" name="type" value="1" />
                                                                                     <input type="hidden" name="sts" value="7" />
                                                                                     <input type="hidden" name="codeId" value={codeId} />
                                                                                     <td>{itemSub.nama} <br />[{itemSub.bobot}]</td>
@@ -295,62 +290,62 @@ export default function Penilaian(props) {
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <form className="was-validated" onSubmit={submit}>
-                                        <input type="hidden" name="id_anggota" id="id_anggota1" />
-                                        {sts1Show ? (
-                                             <div className="card iq-mb-3">
-                                                <small className="text-muted">Laporan Hasil Peninjauan Lokasi</small>
-                                                <div className="card-body">
-                                                    <table className="table table-striped">
-                                                        {kriteriax.map((item) => {
-                                                            return (
-                                                                <React.Fragment key={item.id}>
-                                                                    <tr>
-                                                                        <th colSpan={2}>{item.nama} [{item.bobot}]</th>
-                                                                    </tr>
-                                                                    {subKriteriax.map((itemSub, subIndex) => {
-                                                                        if (itemSub.id_kriteria == item.id) {
-                                                                            return (
-                                                                                <tr key={`${item.id}-${subIndex}`}>
-                                                                                    <input type="hidden" name="kriteria[]" value={item.id} />
-                                                                                    <input type="hidden" name="subkriteria[]" value={itemSub.id} />
-                                                                                     <input type="hidden" name="type" value="2" />
-                                                                                     <input type="hidden" name="sts" value="8" />
-                                                                                    <input type="hidden" name="codeId" value={codeId} />
-                                                                                    <td>{itemSub.nama} <br />[{itemSub.bobot}]</td>
-                                                                                    <td>
-                                                                                        <input
-                                                                                            type="text"
-                                                                                            className="form-control"
-                                                                                            id={`point_${itemSub.id}`}
-                                                                                            name="penilaian[]"
-                                                                                            placeholder="Berikan Penilaian"
-                                                                                            required
-                                                                                        />
-                                                                                    </td>
-                                                                                </tr>
-                                                                            );
-                                                                        } else {
-                                                                            return null;
-                                                                        }
-                                                                    })}
-                                                                </React.Fragment>
-                                                            );
-                                                        })}
-                                                    </table>
-                                                </div>
-                                                <label htmlFor="keterangan">Keterangan</label>
-                                                <textarea name="keterangan" id="keterangan" cols="30" rows="2"></textarea>
-                                            <button className="btn dark-icon btn-primary btn-block" type="submit">
-                                                {isSubmitting ? (
-                                                    <div className="loading">
-                                                        <img src="/assets/css/ajax-loader.gif" alt="Loading..." />
+                                            <input type="hidden" name="id_anggota" id="id_anggota1" />
+                                            {sts1Show ? (
+                                                <div className="card iq-mb-3">
+                                                    <small className="text-muted">Laporan Hasil Peninjauan Lokasi</small>
+                                                    <div className="card-body">
+                                                        <table className="table table-striped">
+                                                            {kriteriax.map((item) => {
+                                                                return (
+                                                                    <React.Fragment key={item.id}>
+                                                                        <tr>
+                                                                            <th colSpan={2}>{item.nama} [{item.bobot}]</th>
+                                                                        </tr>
+                                                                        {subKriteriax.map((itemSub, subIndex) => {
+                                                                            if (itemSub.id_kriteria == item.id) {
+                                                                                return (
+                                                                                    <tr key={`${item.id}-${subIndex}`}>
+                                                                                        <input type="hidden" name="kriteria[]" value={item.id} />
+                                                                                        <input type="hidden" name="subkriteria[]" value={itemSub.id} />
+                                                                                        <input type="hidden" name="type" value="2" />
+                                                                                        <input type="hidden" name="sts" value="8" />
+                                                                                        <input type="hidden" name="codeId" value={codeId} />
+                                                                                        <td>{itemSub.nama} <br />[{itemSub.bobot}]</td>
+                                                                                        <td>
+                                                                                            <input
+                                                                                                type="text"
+                                                                                                className="form-control"
+                                                                                                id={`point_${itemSub.id}`}
+                                                                                                name="penilaian[]"
+                                                                                                placeholder="Berikan Penilaian"
+                                                                                                required
+                                                                                            />
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                );
+                                                                            } else {
+                                                                                return null;
+                                                                            }
+                                                                        })}
+                                                                    </React.Fragment>
+                                                                );
+                                                            })}
+                                                        </table>
                                                     </div>
-                                                ) : (
-                                                    'Simpan & Lanjut'
-                                                )}
-                                            </button>
-                                            </div>
-                                            ): (
+                                                    <label htmlFor="keterangan">Keterangan</label>
+                                                    <textarea name="keterangan" id="keterangan" cols="30" rows="2"></textarea>
+                                                    <button className="btn dark-icon btn-primary btn-block" type="submit">
+                                                        {isSubmitting ? (
+                                                            <div className="loading">
+                                                                <img src="/assets/css/ajax-loader.gif" alt="Loading..." />
+                                                            </div>
+                                                        ) : (
+                                                            'Simpan & Lanjut'
+                                                        )}
+                                                    </button>
+                                                </div>
+                                            ) : (
                                                 <div>
                                                     <p>sts 2 is false</p>
                                                     {/* You can add more debugging output if needed */}
@@ -364,20 +359,20 @@ export default function Penilaian(props) {
                             <div className={`tab-pane fade ${sts3Show ? 'show' : ''} ${sts3Aktif ? 'active' : ''}`} id="pills-home-fill3" role="tabpanel" aria-labelledby="pills-home-tab-fill3">                                <div className="penilaian1" id="penilaian1">
                                 <div className="row">
                                     <div className="col-sm-12">
-                                    {sts3Show ? (
+                                        {sts3Show ? (
 
-                                        <div className="card iq-mb-3">
-                                            <div className="card-body">
-                                                <small className="text-muted"><span>budi santoso1 </span>[ <b id="code">AGT-0087</b> ]</small>
-                                                <a href="#" className="btn dark-icon btn-primary btn-block">Go somewhere</a>
-                                            </div>
-                                        </div>
-                                              ): (
-                                                <div>
-                                                    <p>sts 3 is false</p>
-                                                    {/* You can add more debugging output if needed */}
+                                            <div className="card iq-mb-3">
+                                                <div className="card-body">
+                                                    <small className="text-muted"><span>budi santoso1 </span>[ <b id="code">AGT-0087</b> ]</small>
+                                                    <a href="#" className="btn dark-icon btn-primary btn-block">Go somewhere</a>
                                                 </div>
-                                            )}
+                                            </div>
+                                        ) : (
+                                            <div>
+                                                <p>sts 3 is false</p>
+                                                {/* You can add more debugging output if needed */}
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
