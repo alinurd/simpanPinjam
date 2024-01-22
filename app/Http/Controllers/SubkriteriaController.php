@@ -198,10 +198,14 @@ $this->setStatusKriteriaByBobot($kriteria);
 }
 
 public function destroy($id)
-{ 
+{
+    
     $parameter = Subkriteria::findOrFail($id);
-
+    // dd($);
+    
     $parameter->delete();
+
+    $this->setStatusKriteriaByBobot($parameter['id_kriteria']);
   }
 
 
@@ -209,7 +213,6 @@ public function destroy($id)
  
     $qk = kriteria::where("id",$kriteria)->first();
     $qq= $this->getByKriteria($kriteria);
-    
     $totalBobot = 0;
     foreach ($qq as $subkriteria) {
         $bobot = $subkriteria->bobot;

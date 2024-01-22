@@ -68,24 +68,29 @@ export default function Penilaian(props) {
     const initializeModal = async (id, type) => {
         setIsSubmitting(true);
         setIsUser(false);
-
         try {
             const response = await axios.get(`/anggotaById/${id}`);
 
-             if (response) {
+            if (response) {
                 updateModalContent(response.data.data, type);
-                if (type != 1) {
+                // if (type != 1) {
 
-                    $('#exampleModalCenter').modal('show');
-                }
+                $('#exampleModalCenter').modal('show');
+                // }
             }
         } catch (error) {
-             console.error(error);
+            console.error(error);
+
         }
+
+    };
+    const initializeModalKlasifikasi = async (id, type) => {
+        $('#ModalKlasifikasi').modal('show');
+
     };
 
-     const updateModalContent = (data, type) => {
-         if (type == 1) {
+    const updateModalContent = (data, type) => {
+        if (type == 1) {
             const x = document.getElementById('pilih-anggota');
             x.querySelector('#code').textContent = data.code;
             x.querySelector('#nama').textContent = data.nama;
@@ -106,9 +111,13 @@ export default function Penilaian(props) {
             modalElement.querySelector('#phone').textContent = data.phone;
             modalElement.querySelector('#email').textContent = data.email;
             modalElement.querySelector('#kp').textContent = data.kp;
+            setIsSubmitting(false);
+            // initializeModal(data)
             // Assuming you have elements in the modal to display the fetched data
         }
     };
+
+
 
     const { field, kriteria, subKriteria } = props;
     // console.log(field)
@@ -154,17 +163,9 @@ export default function Penilaian(props) {
                                             <p className="text-center"><small className="text-muted">Rp. <b id="ajuan">10220</b></small></p>
                                             <button
                                                 type="button"
-                                                className="btn dark-icon btn-info btn-block"
-                                                onClick={() => initializeModal(1)}
-                                            //   onClick={() => initializeModal(item.kriteria ? item.kriteria.id : '-')}
-                                            >
-                                                Lihat Detail Anggota
-                                            </button>
-                                            <button
-                                                type="button"
                                                 id="userId"
                                                 className="btn dark-icon btn-info btn-block"
-                                                onClick={() => initializeModal(1)}
+                                                onClick={() => initializeModalKlasifikasi(0)}
                                             //   onClick={() => initializeModal(item.kriteria ? item.kriteria.id : '-')}
                                             >
                                                 Klasifikasi Crore
@@ -188,117 +189,117 @@ export default function Penilaian(props) {
                             </li>
                         </ul>
 
-                        {isUser? (
-                           <div className="tab-content" id="pills-tabContent-1">
-                           <div className="tab-pane fade show active" id="pills-home-fill" role="tabpanel" aria-labelledby="pills-home-tab-fill">
+                        {isUser ? (
+                            <div className="tab-content" id="pills-tabContent-1">
+                                <div className="tab-pane fade show active" id="pills-home-fill" role="tabpanel" aria-labelledby="pills-home-tab-fill">
 
-                               {/* Penilaian 1 */}
-                               {/* Penilaian 1 */}
-                               <div className="penilaian1" id="penilaian1">
-                                   <div className="row">
-                                       <div className="col-sm-12">
-                                           <form className="was-validated" onSubmit={submit}>
-                                               <div className="card iq-mb-3">
-                                                   <small className="text-muted">Penilaian Alokasi Point</small>
-                                                   <div className="card-body">
-                                                       <table className="table table-striped">
-                                                           {kriteria.map((item) => {
-                                                               return (
-                                                                   <React.Fragment key={item.id}>
-                                                                       <tr>
-                                                                           <th colSpan={2}>{item.nama} [{item.bobot}]</th>
-                                                                       </tr>
-                                                                       {subKriteria.map((itemSub, subIndex) => {
-                                                                           if (itemSub.id_kriteria == item.id) {
-                                                                               return (
-                                                                                   <tr key={`${item.id}-${subIndex}`}>
-                                                                                       <input type="hidden" name="kriteria[]" value={item.id} />
-                                                                                       <input type="hidden" name="subkriteria[]" value={itemSub.id} />
-                                                                                       <input type="hidden" name="id_anggota" value="1" />
-                                                                                       <input type="hidden" name="type" value="1" />
-                                                                                       <input type="hidden" name="codeId" value={codeId} />
-                                                                                       <td>{itemSub.nama} <br />[{itemSub.bobot}]</td>
-                                                                                       <td>
-                                                                                           <input
-                                                                                               type="number"
-                                                                                               className="form-control"
-                                                                                               id={`point_${itemSub.id}`}
-                                                                                               name="penilaian[]"
-                                                                                               placeholder="Berikan Penilaian"
-                                                                                               required
-                                                                                           />
-                                                                                       </td>
-                                                                                   </tr>
-                                                                               );
-                                                                           } else {
-                                                                               return null;
-                                                                           }
-                                                                       })}
-                                                                   </React.Fragment>
-                                                               );
-                                                           })}
-                                                       </table>
-                                                   </div>
-                                                   <label htmlFor="keterangan">Keterangan</label>
-                                                   <textarea name="keterangan" id="keterangan" cols="30" rows="2"></textarea>
-                                               </div>
-                                               <button className="btn dark-icon btn-primary btn-block" type="submit">
-                                                   {isSubmitting ? (
-                                                       <div className="loading">
-                                                           <img src="/assets/css/ajax-loader.gif" alt="Loading..." />
-                                                       </div>
-                                                   ) : (
-                                                       'Simpan & Lanjut'
-                                                   )}
-                                               </button>
-                                           </form>
-                                       </div>
-                                   </div>
-                               </div>
+                                    {/* Penilaian 1 */}
+                                    {/* Penilaian 1 */}
+                                    <div className="penilaian1" id="penilaian1">
+                                        <div className="row">
+                                            <div className="col-sm-12">
+                                                <form className="was-validated" onSubmit={submit}>
+                                                    <div className="card iq-mb-3">
+                                                        <small className="text-muted">Penilaian Alokasi Point</small>
+                                                        <div className="card-body">
+                                                            <table className="table table-striped">
+                                                                {kriteria.map((item) => {
+                                                                    return (
+                                                                        <React.Fragment key={item.id}>
+                                                                            <tr>
+                                                                                <th colSpan={2}>{item.nama} [{item.bobot}]</th>
+                                                                            </tr>
+                                                                            {subKriteria.map((itemSub, subIndex) => {
+                                                                                if (itemSub.id_kriteria == item.id) {
+                                                                                    return (
+                                                                                        <tr key={`${item.id}-${subIndex}`}>
+                                                                                            <input type="hidden" name="kriteria[]" value={item.id} />
+                                                                                            <input type="hidden" name="subkriteria[]" value={itemSub.id} />
+                                                                                            <input type="hidden" name="id_anggota" value="1" />
+                                                                                            <input type="hidden" name="type" value="1" />
+                                                                                            <input type="hidden" name="codeId" value={codeId} />
+                                                                                            <td>{itemSub.nama} <br />[{itemSub.bobot}]</td>
+                                                                                            <td>
+                                                                                                <input
+                                                                                                    type="number"
+                                                                                                    className="form-control"
+                                                                                                    id={`point_${itemSub.id}`}
+                                                                                                    name="penilaian[]"
+                                                                                                    placeholder="Berikan Penilaian"
+                                                                                                    required
+                                                                                                />
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    );
+                                                                                } else {
+                                                                                    return null;
+                                                                                }
+                                                                            })}
+                                                                        </React.Fragment>
+                                                                    );
+                                                                })}
+                                                            </table>
+                                                        </div>
+                                                        <label htmlFor="keterangan">Keterangan</label>
+                                                        <textarea name="keterangan" id="keterangan" cols="30" rows="2"></textarea>
+                                                    </div>
+                                                    <button className="btn dark-icon btn-primary btn-block" type="submit">
+                                                        {isSubmitting ? (
+                                                            <div className="loading">
+                                                                <img src="/assets/css/ajax-loader.gif" alt="Loading..." />
+                                                            </div>
+                                                        ) : (
+                                                            'Simpan & Lanjut'
+                                                        )}
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                           </div>
-                           <div className="tab-pane fade" id="pills-profile-fill" role="tabpanel" aria-labelledby="pills-profile-tab-fill">
+                                </div>
+                                <div className="tab-pane fade" id="pills-profile-fill" role="tabpanel" aria-labelledby="pills-profile-tab-fill">
 
-                               {/* Penilaian 1 */}
-                               <div className="penilaian1" id="penilaian1">
-                                   <div className="row">
-                                       <div className="col-sm-12">
-                                           <div className="card iq-mb-3">
-                                               <small className="text-muted">Laporan Hasil Peninjauan Lokasi</small>
-                                               <div className="card-body">
-
-
-                                               </div>
-                                           </div>
-                                           <a href="#" className="btn dark-icon btn-primary btn-block">Go somewhere</a>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                           <div className="tab-pane fade" id="pills-contact-fill" role="tabpanel" aria-labelledby="pills-contact-tab-fill">
-                                <div className="penilaian1" id="penilaian1">
-                                   <div className="row">
-                                       <div className="col-sm-12">
-                                           <div className="card iq-mb-3">
-                                               <div className="card-body">
-                                                   <small className="text-muted"><span>budi santoso1 </span>[ <b id="code">AGT-0087</b> ]</small>
+                                    {/* Penilaian 1 */}
+                                    <div className="penilaian1" id="penilaian1">
+                                        <div className="row">
+                                            <div className="col-sm-12">
+                                                <div className="card iq-mb-3">
+                                                    <small className="text-muted">Laporan Hasil Peninjauan Lokasi</small>
+                                                    <div className="card-body">
 
 
-                                                   <a href="#" className="btn dark-icon btn-primary btn-block">Go somewhere</a>
-                                               </div>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
+                                                    </div>
+                                                </div>
+                                                <a href="#" className="btn dark-icon btn-primary btn-block">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="tab-pane fade" id="pills-contact-fill" role="tabpanel" aria-labelledby="pills-contact-tab-fill">
+                                    <div className="penilaian1" id="penilaian1">
+                                        <div className="row">
+                                            <div className="col-sm-12">
+                                                <div className="card iq-mb-3">
+                                                    <div className="card-body">
+                                                        <small className="text-muted"><span>budi santoso1 </span>[ <b id="code">AGT-0087</b> ]</small>
 
 
-                           </div>
-                       </div>
-                                            ) : (
-                                                'pilih Anggota dulu'
-                                            )}
+                                                        <a href="#" className="btn dark-icon btn-primary btn-block">Go somewhere</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                       
+
+                                </div>
+                            </div>
+                        ) : (
+                            'pilih Anggota dulu'
+                        )}
+
+
 
 
 
@@ -341,6 +342,48 @@ export default function Penilaian(props) {
                                 <span id="desa" className="card-link">: <b>Kiarasari</b></span>
                                 <br />
                             </div>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="modal fade" id="ModalKlasifikasi" role="dialog" aria-labelledby="ModalKlasifikasi" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title text-bold" >KLASIFIKASI SCORE</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                            <h1>KLASIFIKASI SCORE</h1>
+                            {/* <div className="mt-3 mb-5">
+                                <footer className="blockquote-footer">
+                                    <small className="text-muted">
+                                        Media Komunikasi
+                                    </small>
+                                </footer>
+                                <span id="#" className="card-link">Phone</span>
+                                <span id="phone" className="card-link">: <b>086764764</b></span><br />
+                                <span id="#" className="card-link">Email</span>
+                                <span id="email" className="card-link">: <b>email.com</b></span>
+                                <br />
+                                <footer className="blockquote-footer">
+                                    <small className="text-muted">
+                                        Alamat
+                                    </small>
+                                </footer>
+                                <span id="#" className="card-link">Kampung</span>
+                                <span id="kp" className="card-link">: <b>Pasir Pari </b></span><br />
+                                <span id="#" className="card-link">Rt/Rw</span>
+                                <span id="#" className="card-link">: <b id="rt"></b>/<b id="rw"></b></span> <br />
+                                <span id="#" className="card-link">Desa</span>
+                                <span id="desa" className="card-link">: <b>Kiarasari</b></span>
+                                <br />
+                            </div> */}
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
