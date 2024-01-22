@@ -19,7 +19,21 @@ export default function KriteriaForm(props) {
     const { code } = props;
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-
+    const initializeOption = async (id, jenis) => {
+       if(jenis=="optionsjenis"){
+        var inputElement = document.getElementById('validationBobot');
+        if (id != 1) {
+             inputElement.disabled = true;
+            inputElement.required = false;
+            inputElement.value = 0;
+        }else{
+            inputElement.disabled = false;
+            inputElement.required = true;
+            inputElement.value = "";
+         }
+       }
+       
+    };
 
     const submit = async (e) => {
         e.preventDefault();
@@ -210,6 +224,7 @@ export default function KriteriaForm(props) {
                                         </label>
                                         <select
                                             className="custom-select"
+                                            id={`options${title.toLowerCase()}`}
                                             name={`${title.toLowerCase()}`}
                                             required={properti && properti.required}
                                             readOnly={properti && properti.readonly}
@@ -220,7 +235,10 @@ export default function KriteriaForm(props) {
                                             </option>
                                             {options.map((option, index) => (
                                                 // <option key={index} value={option.value}>
-                                                <option key={index} value={option.value} selected={option.value == value ? 'selected' : ''}>
+                                                <option 
+                                                onClick={() => initializeOption(option.value, `options${title.toLowerCase()}` )}
+                                                
+                                                key={index} value={option.value} selected={option.value == value ? 'selected' : ''}>
                                                     {option.title}
                                                 </option>
                                             ))}

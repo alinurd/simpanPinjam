@@ -28,6 +28,7 @@ class KriteriaController extends Controller
     {
         $codeId = $this->getCodeRand("CR-");
         $propsts = [true, false, false, false];
+        $propstj = [true, false, false, false];
         $options = [
             [
                 "title" => "Aktif",
@@ -38,9 +39,21 @@ class KriteriaController extends Controller
                 "value" => 0,
             ]
         ];
+         $optionj = [
+            [
+                "title" => "Point",
+                "value" => 1,
+            ],
+            [
+                "title" => "Peninjauan",
+                "value" => 2,
+            ]
+           
+        ];
 
         $formInputs = [
             $this->formInput("code", "hidden", $codeId, ["", true, false, false]),
+            $this->formInputDropdown("jenis", "", "", $propstj, $optionj),
             $this->formInput("nama", "text", "", [true, false, false, false]),
             $this->formInput("bobot", "number", "", [true, false, false, false]),
             $this->formInputDropdown("status", "", "", $propsts, $options),
@@ -59,16 +72,30 @@ class KriteriaController extends Controller
     {
          // Validate the request data if needed
         //  dd($request);
+        if($request->input('jenis')!=1){
+            $request->merge(['bobot' => 0]);
+            }
          $request->validate([
-            'code' => 'required|string',
+            // 'bobot' => 'required|numeric',
+            'jenis' => 'required|numeric',
             'nama' => 'required|string',
             'bobot' => 'required|numeric', // Assuming 'status' is a numeric field, adjust as needed
             'status' => 'required|numeric', // Assuming 'status' is a numeric field, adjust as needed
          ]);
           $data = $request->only(['code','nama','bobot', 'status']); // Adjust field names accordingly
-    
-         Kriteria::insert($data);
- 
+          $code = $request->input('code');
+          $nama = $request->input('nama');
+          $bobot = $request->input('bobot');
+          $jenis = $request->input('jenis'); 
+          $sts = $request->input('status'); 
+           Kriteria::insert([
+            'code' => $code.$jenis,
+            'nama' => $nama,
+            'bobot' => $bobot,
+            'type' => $jenis, 
+            'status' => $sts,
+         ]);
+  
         return response()->json([
             'action' => 'Create', 
         'message' => 'Data stored successfully', 
@@ -92,10 +119,22 @@ public function edit($code) {
             "value" => 0,
         ]
     ];
+    $optionj = [
+        [
+            "title" => "Point",
+            "value" => 1,
+        ],
+        [
+            "title" => "Peninjauan",
+            "value" => 2,
+        ]
+       
+    ];
 
     $formInputs = [
         $this->formInput("id", "hidden", $field['id'], ["", true, false, false]),
         $this->formInput("code", "text", $codeId, ["", true, false, false]),
+        $this->formInputDropdown("jenis", "", $field['type'], $propsts, $optionj),
         $this->formInput("nama", "text", $field['nama'], [true, false, false, false]),
         $this->formInput("bobot", "number", $field['bobot'], [true, false, false, false]),
         $this->formInputDropdown("status", "", $field['status'], $propsts, $options),
@@ -112,9 +151,13 @@ public function edit($code) {
 public function update(Request $request)
 {
     // Validate the request data if needed
+    if($request->input('jenis')!=1){
+        $request->merge(['bobot' => 0]);
+        }
     $request->validate([
              'id' => 'required',
             'code' => 'required|string',
+            'jenis' => 'required|numeric',
             'bobot' => 'required|numeric',
             'nama' => 'required|string',
             'status' => 'required|numeric', // Assuming 'status' is a numeric field, adjust as needed
@@ -123,6 +166,7 @@ public function update(Request $request)
         $id = $request->input('id');
         $nama = $request->input('nama');
         $bobot = $request->input('bobot');
+        $jenis = $request->input('jenis');
         $status = $request->input('status');
         // dd($bobot);
         
@@ -132,6 +176,7 @@ public function update(Request $request)
             $Kriteria->update([
                 'nama' => $nama,
                 'bobot' => $bobot,
+                'type' => $jenis,
                 'status' => $status,
             ]);
         

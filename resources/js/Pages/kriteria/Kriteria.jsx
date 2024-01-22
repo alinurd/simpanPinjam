@@ -72,6 +72,7 @@ console.log(id)
                                         <th className="text-center">Code</th>
                                         <th className="text-left">Name</th>
                                         <th className="text-left">Bobot</th>
+                                        <th className="text-center">Jenis</th>
                                         <th className="text-center">Status</th>
                                         <th className="text-center">Action</th>
                                     </tr>
@@ -83,6 +84,7 @@ console.log(id)
                                             <td className="text-center">{item.code}</td>
                                             <td className="text-left">{item.nama}</td>
                                             <td className="text-left">{item.bobot}</td>
+                                            <td className="text-center">{item.type == 1 ? "Alokasi Point" : "Peninjauan"}</td>
                                             <td className="text-center">
                                                 <span className={`text-center badge icon-light iq-bg-${item.status == 1 ? "info" : "danger"}`}>
                                                     {item.status == 1 ? "Active" : "Non Active"}
