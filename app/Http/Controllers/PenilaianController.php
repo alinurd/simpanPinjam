@@ -23,6 +23,8 @@ class PenilaianController extends Controller
         $data['field'] = Anggota::where("status", 1)->get();
         $data['kriteria'] = Kriteria::where("status", 1)->where("type", 1)->get();
         $data['subKriteria'] = SubKriteria::where("status", 1)->get();
+        $data['kriteriax'] = Kriteria::where("status", 1)->where("type", 2)->get();
+        $data['subKriteriax'] = SubKriteria::where("status", 1)->get();
         // dd($data['field']);
         $codeId = $this->getCodeRand("PNL-");
 
@@ -50,8 +52,8 @@ class PenilaianController extends Controller
  
  // Assuming $request->kriteria, $request->subkriteria, and $request->penilaian are arrays
 for ($i = 0; $i < count($request->kriteria); $i++) {
-    Penilaian::insert([
-        'status' => 8, // Assuming 'code' is not an array
+   $rePenilaian= Penilaian::insert([
+        'status' =>$request->sts, // Assuming 'code' is not an array
         'type' => $request->type, // Assuming 'code' is not an array
         'code' => $request->codeId, // Assuming 'code' is not an array
         'id_anggota' => $request->id_anggota, // Assuming 'id_anggota' is not an array
@@ -60,6 +62,16 @@ for ($i = 0; $i < count($request->kriteria); $i++) {
         'penilaian' => $request->penilaian[$i],
         'keterangan' => $request->keterangan, // Is this intended?
     ]);
+}
+if($rePenilaian){
+    $agt = Anggota::find($request->id_anggota);
+    if ($agt) {
+        $agt->update([
+            'status' => $request->sts, //type progres penilaian
+        ]);
+    
+        // Update successful
+    }
 }
  
         return response()->json([
