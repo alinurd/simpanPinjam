@@ -19,8 +19,9 @@ export default function Penilaian(props) {
     // const { mode } = props;
     // const { input } = props;
     // const {  } = props;
-    const { field, kriteria, subKriteria, codeId, mode, title, anggota, kriteriax, subKriteriax, point, tinjau } = props;
-
+    const { field, kriteria, subKriteria, codeId, mode, title, anggota, kriteriax, subKriteriax, point, tinjau, pointTotal, bobotTotal } = props;
+// console.info(pointTotal)
+// console.info(bobotTotal)
     useEffect(() => {
         // Trigger initializeModal with the first item in the field array
         updateModalContent(anggota, 1);
@@ -38,6 +39,7 @@ export default function Penilaian(props) {
     const [sts2Aktif, setSts2Aktif] = useState(false);
 
     const [sts3Show, setSts3Show] = useState(false);
+    const [stsAhir, setstsAhir] = useState(false);
     const [sts3Aktif, setSts3Aktif] = useState(false);
     // setIsUser(true)
     const submit = async (e) => {
@@ -106,9 +108,9 @@ export default function Penilaian(props) {
     };
 
     const isAn = (id, data, sts) => {
-         var x = document.getElementById('id_anggota');
+        var x = document.getElementById('id_anggota');
         var x2 = document.getElementById('id_anggota1');
-console.log(sts)
+        console.log(sts)
         if (x) {
             x.value = id;
             x2.value = id;
@@ -121,10 +123,11 @@ console.log(sts)
             setSts2Aktif(false);
 
             setSts3Show(false);
+            setstsAhir(false);
             setSts3Aktif(false);
 
         } else if (sts == 7) {
-            point.map((item2, subIndex) => {  
+            point.map((item2, subIndex) => {
                 // kriteria.map
                 var Hasil = calculateGrade(item2.id_subkriteria, item2.penilaian);
                 // console.log(Hasil)
@@ -152,6 +155,7 @@ console.log(sts)
             setSts3Aktif(false);
         } else if (sts > 7) {
 
+           
             setSts1Show(true);
             setSts1Aktif(false);
 
@@ -160,7 +164,8 @@ console.log(sts)
 
             setSts3Show(true);
             setSts3Aktif(true);
-
+            setstsAhir(true);
+            hasilAhir(sts)
             tinjau.map((item, subIndex) => {
                 var inputElement = document.getElementById(`point_${item.id_subkriteria}`);
                 var ket1 = document.getElementById(`keterangan1`);
@@ -172,7 +177,7 @@ console.log(sts)
                 }
             });
 
-             point.map((item2, subIndex) => {  
+            point.map((item2, subIndex) => {
                 // kriteria.map
                 var Hasil = calculateGrade(item2.id_subkriteria, item2.penilaian);
                 // console.log(Hasil)
@@ -191,17 +196,68 @@ console.log(sts)
                 }
             });
 
+             
+ 
         }
 
-    } 
+    }
+   
     
+    const hasilAhir = (sts) => {
+        let point = 0;
+        let bobot = 0;
+    
+        if (pointTotal.length > 0) {
+            point = pointTotal[0].tPoint;
+        }
+    
+        if (bobotTotal.length > 0) {
+            bobot = bobotTotal[0].tBobot;
+        }
+    
+        const persentase = Math.round((point / bobot) * 100);
+    
+        const clasGrade = ['80 >=', '70 >=', '60 >=', '50 >=', '50 <'];
+        const clasketerangan = ['Sangat Bagus', 'Bagus', 'Cukup', 'Tidak Bagus', 'Buruk'];
+        const stsPinjamans = [
+            '100% dari Jumlah Aplikasi Pinjaman',
+            '90% dari Jumlah Aplikasi Pinjaman',
+            '80% dari Jumlah Aplikasi Pinjaman',
+            'Pinjaman Tidak Tersedia',
+            'Pinjaman Tidak Tersedia',
+        ];
+        const thresholds = [
+           80,
+           70,
+           60,
+           50,
+            0
+        ];
+        for (let i = 0; i < thresholds.length; i++) {
+            if (persentase >= thresholds[i]) {
+                // Update HTML elements based on IDs
+                document.getElementById('gAhir').textContent = clasGrade[i];
+                document.getElementById('stsPinjaman').textContent = stsPinjamans[i];
+                document.getElementById('ketAhir').textContent = clasketerangan[i];
+                document.getElementById('ttlPoint').textContent = point;
+                document.getElementById('ttlBobot').textContent = bobot;
+                document.getElementById('resPoint').textContent = persentase + '%';
+                break; // No need to continue the loop once updated
+            }
+        }
+    };
+    
+    
+    
+    
+
     // console.log(id_kriteria);
 
     const calculateGrade = (id, grdePenilaian) => {
         const bobot = subKriteria.find(kriteriaItem => kriteriaItem.id == id)?.bobot || 0;
         const clasGrade = ['A', 'B', 'C', 'D', 'E'];
         const clasketerangan = ['Sangat Bagus', 'Bagus', 'Cukup', 'Tidak Bagus', 'Buruk'];
-    
+
         const thresholds = [
             bobot * 0.9,   // A => 90% - 100%
             bobot * 0.6,   // B => 60% - 89%
@@ -209,7 +265,7 @@ console.log(sts)
             bobot * 0.05,  // D => 5% - 44%
             0              // E => 0% - 4%
         ];
-    
+
         for (let i = 0; i < thresholds.length; i++) {
             if (grdePenilaian >= thresholds[i]) {
                 // Kembalikan objek yang berisi klasifikasi dan keterangan
@@ -219,14 +275,14 @@ console.log(sts)
                 };
             }
         }
-    
+
         // Jika grdePenilaian di bawah ambang batas terendah, kembalikan 'E'
         return {
             klasifikasi: clasGrade[clasGrade.length - 1],
             keterangan: clasketerangan[clasGrade.length - 1]
         };
     };
-    
+
     return (
         <div className="row">
             <div className="col-lg-12">
@@ -332,7 +388,7 @@ console.log(sts)
                                                                                             name="penilaian[]"
                                                                                             placeholder="Berikan Penilaian"
                                                                                             required
-                                                                                        /> 
+                                                                                        />
                                                                                         <b className="mb-0" id="garde">Grade: &nbsp;
                                                                                             <div className="badge badge-info">
                                                                                                 <span id={`grade_${itemSub.id}`}></span>
@@ -340,7 +396,7 @@ console.log(sts)
                                                                                             </div>
 
                                                                                         </b>&nbsp;|&nbsp; <b className="mb-0">Klasifikasi: &nbsp;
-                                                                                            <span className="badge badge-primary" id={`klasifikasi_${itemSub.id}`}> 
+                                                                                            <span className="badge badge-primary" id={`klasifikasi_${itemSub.id}`}>
                                                                                             </span>
                                                                                         </b>
                                                                                     </td>
@@ -442,31 +498,66 @@ console.log(sts)
                                 </div>
                             </div>
                             </div>
-                            <div className={`tab-pane fade ${sts3Show ? 'show' : ''} ${sts3Aktif ? 'active' : ''}`} id="pills-home-fill3" role="tabpanel" aria-labelledby="pills-home-tab-fill3">                                <div className="penilaian1" id="penilaian1">
-                                <div className="row">
-                                    <div className="col-sm-12">
-                                        {sts3Show ? (
+                            <div className={`tab-pane fade ${sts3Show ? 'show' : ''} ${sts3Aktif ? 'active' : ''}`} id="pills-home-fill3" role="tabpanel" aria-labelledby="pills-home-tab-fill3">
+                                <div className="penilaian1" id="penilaian1">
+                                    <div className="row">
+                                        <div className="col-sm-12">
+                                            {sts3Show ? (
+                                               <center>
+                                                 <div className="card iq-mb-3">
+                                                    <div className="card-body">
+                                                    <b className="mb-0" id="garde">Perolehan Point &nbsp;
+                                                            <div className="badge badge-primary">
+                                                           ( <i id="ttlPoint"> </i>*<i id="ttlBobot"> </i> ) /100%&nbsp;
+                                                                <span className="badge badge-light" id="resPoint">60%</span>
+                                                             </div>
+                                                         </b>
+                                                        <br />
+                                                        <br />
+                                                        <b className="mb-0" id="garde">Grade: &nbsp;
+                                                            <div className="badge badge-info">
+                                                                <i id="gAhir"></i>&nbsp;
+                                                                <span className="badge badge-dark" id="ketAhir"></span>
 
-                                            <div className="card iq-mb-3">
-                                                <div className="card-body">
-                                                    <small className="text-muted"><span>budi santoso1 </span>[ <b id="code">AGT-0087</b> ]</small>
-                                                    <a href="#" className="btn dark-icon btn-primary btn-block">Go somewhere</a>
+                                                                <span id="sAhir"></span>
+                                                            </div>
+                                                        </b> <br /><b className="mb-0">Sts Pinjaman: &nbsp;
+                                                            <span className="badge badge-secondary" id="stsPinjaman"></span>
+                                                        </b>
+                                                        <br />
+                                                        <div className="custom-control custom-checkbox custom-checkbox-color-check custom-control-block">
+                                                            {/* {stsAhir ? (
+                                                                <div>
+                                                                    <input type="checkbox" className="custom-control-input bg-success"  defaultChecked />
+                                                                    <label className="custom-control-label" ><i>Rekomendasi</i></label>
+                                                                </div>
+                                                            ) : (
+                                                                <div>
+                                                                    <input type="checkbox" className="custom-control-input bg-danger"  defaultChecked />
+                                                                    <label className="custom-control-label" ><i>Tidak Rekomendasi</i></label>
+                                                                </div>
+                                                            )} */}
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ) : (
-                                            <div>
-                                                <p>sts 3 is false</p>
-                                                {/* You can add more debugging output if needed */}
-                                            </div>
-                                        )}
+                                               </center>
+
+                                            ) : (
+                                                <div>
+                                                    <p>sts 3 is false</p>
+                                                    {/* You can add more debugging output if needed */}
+                                                </div>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
+
     );
 }

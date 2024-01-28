@@ -90,6 +90,18 @@ public function edit($code) {
             //     $p="xx";
             // }
             // dd($anggota);
+            $data['pointTotal'] = Penilaian::selectRaw('SUM(penilaian) as tPoint')
+            ->where('code', $code)
+            ->where('type', 1)
+            ->get();
+            $data['bobotTotal'] = Kriteria::selectRaw('SUM(bobot) as tBobot')
+            ->where('status', 1)
+            ->where('type', 1)
+            ->get();
+            // dd($data['bobotTotal'][0]['ttl']);
+            // dd($data['pointTotal'][0]['ttl']);
+            // dd($data['']);
+
             $data['point'] = Penilaian::where("code", $code)->where("type", 1)->get();
             $data['tinjau'] = Penilaian::where("code", $code)->where("type", 2)->get();
             $data['field'] = Anggota::where("status", 1)->get();
