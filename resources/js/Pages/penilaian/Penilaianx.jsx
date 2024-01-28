@@ -235,16 +235,45 @@ export default function Penilaian(props) {
         ];
         for (let i = 0; i < thresholds.length; i++) {
             if (persentase >= thresholds[i]) {
-                // Update HTML elements based on IDs
-                document.getElementById('gAhir').textContent = clasGrade[i];
-                document.getElementById('stsPinjaman').textContent = stsPinjamans[i];
-                document.getElementById('ketAhir').textContent = clasketerangan[i];
-                document.getElementById('ttlPoint').textContent = point;
-                document.getElementById('ttlBobot').textContent = bobot;
-                document.getElementById('resPoint').textContent = persentase + '%';
+                // Update HTML elements based on class names
+                let gAhirElements = document.getElementsByClassName('gAhir');
+                for (let j = 0; j < gAhirElements.length; j++) {
+                    gAhirElements[j].textContent = clasGrade[i];
+                }
+        
+                let stsPinjamanElements = document.getElementsByClassName('stsPinjaman');
+                for (let j = 0; j < stsPinjamanElements.length; j++) {
+                    stsPinjamanElements[j].textContent = stsPinjamans[i];
+                }
+        
+                let ketAhirElements = document.getElementsByClassName('ketAhir');
+                for (let j = 0; j < ketAhirElements.length; j++) {
+                    ketAhirElements[j].textContent = clasketerangan[i];
+                }
+        
+                let ttlPointElements = document.getElementsByClassName('ttlPoint');
+                for (let j = 0; j < ttlPointElements.length; j++) {
+                    ttlPointElements[j].textContent = point;
+                }
+        
+                let ttlBobotElements = document.getElementsByClassName('ttlBobot');
+                for (let j = 0; j < ttlBobotElements.length; j++) {
+                    ttlBobotElements[j].textContent = bobot;
+                }
+        
+                let resPointElements = document.getElementsByClassName('resPoint');
+                for (let j = 0; j < resPointElements.length; j++) {
+                    resPointElements[j].textContent = persentase + '%';
+                }
+                if (stsPinjamans[i] === "Pinjaman Tidak Tersedia") {
+                    setstsAhir(false);
+                } else {
+                    setstsAhir(true);
+                }
                 break; // No need to continue the loop once updated
             }
         }
+        
     };
     
     
@@ -329,7 +358,7 @@ export default function Penilaian(props) {
                                                 ''
                                             )}
                                             <h4 className="card-title text-center"><span id="nama"></span>[ <b id="code"></b> ]</h4>
-                                            <p className="text-center"><small className="text-muted">Rp. <b id="ajuan">10220</b></small></p>
+                                            <p className="text-center"> Ajuan: <small className="text-muted">Rp. <b id="ajuan"> </b></small> </p>
                                             <button
                                                 type="button"
                                                 id="userId"
@@ -506,37 +535,37 @@ export default function Penilaian(props) {
                                                <center>
                                                  <div className="card iq-mb-3">
                                                     <div className="card-body">
-                                                    <b className="mb-0" id="garde">Perolehan Point &nbsp;
+                                                    <b className="mb-0" id="garde">Akumulasi Point: &nbsp;
                                                             <div className="badge badge-primary">
-                                                           ( <i id="ttlPoint"> </i>*<i id="ttlBobot"> </i> ) /100%&nbsp;
-                                                                <span className="badge badge-light" id="resPoint">60%</span>
+                                                           ( <i className="ttlPoint"> </i>*<i className="ttlBobot"> </i> ) /100%&nbsp;
+                                                                <span className="badge badge-light resPoint"></span>
                                                              </div>
                                                          </b>
                                                         <br />
                                                         <br />
-                                                        <b className="mb-0" id="garde">Grade: &nbsp;
+                                                        <b className="mb-0" id="garde"> Point: &nbsp;
                                                             <div className="badge badge-info">
-                                                                <i id="gAhir"></i>&nbsp;
+                                                                <i className="gAhir"></i>&nbsp;
                                                                 <span className="badge badge-dark" id="ketAhir"></span>
 
                                                                 <span id="sAhir"></span>
                                                             </div>
                                                         </b> <br /><b className="mb-0">Sts Pinjaman: &nbsp;
-                                                            <span className="badge badge-secondary" id="stsPinjaman"></span>
+                                                            <span className="badge badge-secondary stsPinjaman"></span>
                                                         </b>
                                                         <br />
                                                         <div className="custom-control custom-checkbox custom-checkbox-color-check custom-control-block">
-                                                            {/* {stsAhir ? (
+                                                            {stsAhir ? (
                                                                 <div>
                                                                     <input type="checkbox" className="custom-control-input bg-success"  defaultChecked />
-                                                                    <label className="custom-control-label" ><i>Rekomendasi</i></label>
+                                                                    <label className="custom-control-label text-success" ><i>Rekomendasi</i></label>
                                                                 </div>
                                                             ) : (
                                                                 <div>
                                                                     <input type="checkbox" className="custom-control-input bg-danger"  defaultChecked />
-                                                                    <label className="custom-control-label" ><i>Tidak Rekomendasi</i></label>
+                                                                    <label className="custom-control-label text-danger" ><i>Tidak Rekomendasi</i></label>
                                                                 </div>
-                                                            )} */}
+                                                            )}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -544,7 +573,7 @@ export default function Penilaian(props) {
 
                                             ) : (
                                                 <div>
-                                                    <p>sts 3 is false</p>
+                                                    {/* <p>sts 3 is false</p> */}
                                                     {/* You can add more debugging output if needed */}
                                                 </div>
                                             )}
