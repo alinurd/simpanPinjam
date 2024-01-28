@@ -131,7 +131,10 @@ export default function Penilaian(props) {
             setSts3Show(false);
             setstsAhir(false);
             setSts3Aktif(false);
-
+            var svx = document.querySelector('.svx');
+            if (svx) { 
+                svx.hidden = false;
+            }
         } else if (sts == 7) {
             var sv = document.querySelector(`.sv`);
             if (sv) { 
@@ -167,11 +170,11 @@ export default function Penilaian(props) {
           
             var svx = document.querySelector('.svx');
             if (svx) { 
-                svx.hidden = true;
+                svx.hidden = false;
             }
             var sv = document.querySelector('.sv');
             if (sv) { 
-                sv.hidden = true;
+                sv.hidden = false;
             }
             setSts1Show(true);
             setSts1Aktif(false);
@@ -525,7 +528,15 @@ export default function Penilaian(props) {
                                                     </div>
                                                     <label htmlFor="keterangan">Keterangan</label>
                                                     <textarea name="keterangan" id="keterangan1" cols="30" rows="2"></textarea>
-                                                    <button className="btn dark-icon btn-primary btn-block svx" type="submit">
+                                                   
+                                                </div>
+                                            ) : (
+                                                <div>
+                                                    <p>sts 2 is false</p>
+                                                    {/* You can add more debugging output if needed */}
+                                                </div>
+                                            )}
+                                             <button className="btn dark-icon btn-primary btn-block svx" type="submit">
                                                         {isSubmitting ? (
                                                             <div className="loading">
                                                                 <img src="/assets/css/ajax-loader.gif" alt="Loading..." />
@@ -534,13 +545,6 @@ export default function Penilaian(props) {
                                                             'Simpan & Lanjut'
                                                         )}
                                                     </button>
-                                                </div>
-                                            ) : (
-                                                <div>
-                                                    <p>sts 2 is false</p>
-                                                    {/* You can add more debugging output if needed */}
-                                                </div>
-                                            )}
                                         </form>
                                     </div>
                                 </div>
