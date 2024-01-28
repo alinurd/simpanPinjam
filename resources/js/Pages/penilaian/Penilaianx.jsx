@@ -108,9 +108,15 @@ export default function Penilaian(props) {
     };
 
     const isAn = (id, data, sts) => {
+      
+        
+         
+      
+
+
         var x = document.getElementById('id_anggota');
         var x2 = document.getElementById('id_anggota1');
-        console.log(sts)
+        // console.log(sts)
         if (x) {
             x.value = id;
             x2.value = id;
@@ -127,6 +133,10 @@ export default function Penilaian(props) {
             setSts3Aktif(false);
 
         } else if (sts == 7) {
+            var sv = document.querySelector(`.sv`);
+            if (sv) { 
+                sv.hidden = true;
+            }
             point.map((item2, subIndex) => {
                 // kriteria.map
                 var Hasil = calculateGrade(item2.id_subkriteria, item2.penilaian);
@@ -154,8 +164,15 @@ export default function Penilaian(props) {
             setSts3Show(false);
             setSts3Aktif(false);
         } else if (sts > 7) {
-
-           
+          
+            var svx = document.querySelector('.svx');
+            if (svx) { 
+                svx.hidden = true;
+            }
+            var sv = document.querySelector('.sv');
+            if (sv) { 
+                sv.hidden = true;
+            }
             setSts1Show(true);
             setSts1Aktif(false);
 
@@ -195,6 +212,8 @@ export default function Penilaian(props) {
                     ket.readOnly = true;
                 }
             });
+        
+            
 
              
  
@@ -443,7 +462,7 @@ export default function Penilaian(props) {
                                                 <label htmlFor="keterangan">Keterangan</label>
                                                 <textarea name="keterangan" id="keterangan" cols="30" rows="2"></textarea>
                                             </div>
-                                            <button className="btn dark-icon btn-primary btn-block" type="submit">
+                                            <button className="btn dark-icon btn-primary btn-block sv"  type="submit">
                                                 {isSubmitting ? (
                                                     <div className="loading">
                                                         <img src="/assets/css/ajax-loader.gif" alt="Loading..." />
@@ -506,7 +525,7 @@ export default function Penilaian(props) {
                                                     </div>
                                                     <label htmlFor="keterangan">Keterangan</label>
                                                     <textarea name="keterangan" id="keterangan1" cols="30" rows="2"></textarea>
-                                                    <button className="btn dark-icon btn-primary btn-block" type="submit">
+                                                    <button className="btn dark-icon btn-primary btn-block svx" type="submit">
                                                         {isSubmitting ? (
                                                             <div className="loading">
                                                                 <img src="/assets/css/ajax-loader.gif" alt="Loading..." />
