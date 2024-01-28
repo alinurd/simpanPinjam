@@ -20,7 +20,7 @@ class PenilaianController extends Controller
 
     public function index()
     {
-        $data['field'] = Anggota::where("status", 1)->get();
+        $data['field'] = Anggota::where("status", 1)->where("progress", "<", 7)->get();
         $data['kriteria'] = Kriteria::where("status", 1)->where("type", 1)->get();
         $data['subKriteria'] = SubKriteria::where("status", 1)->get();
         $data['kriteriax'] = Kriteria::where("status", 1)->where("type", 2)->get();
