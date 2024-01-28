@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Anggota extends Model
 {
     use HasFactory;
-    protected $fillable = ['nama', 'code',  'email', 'desa', 'phone', 'rw', 'rt', 'keterangan','keterangan', 'kp', 'status', 'progress'];
+    protected $fillable = ['nama', 'code',  'email', 'desa', 'phone', 'rw', 'rt', 'keterangan','keterangan', 'kp', 'status', 'progress', 'ajuan'];
 
     public function status()
     {

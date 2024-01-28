@@ -51,6 +51,7 @@ class AnggotaController extends Controller
             $this->formInput("nama", "text", "", [true, false, false, false]),
             $this->formInput("email", "text", "", [true, false, false, false]),
             $this->formInput("phone", "number", "", [true, false, false, false]),
+            $this->formInput("ajuan", "number", "", [true, false, false, false]),
             $this->formInputDropdown("desa", "", "", $propsts, $optionsdesa),
             $this->formInput("rw", "number", "", [true, false, false, false]),
             $this->formInput("rt", "number", "", [true, false, false, false]),
@@ -91,6 +92,7 @@ class AnggotaController extends Controller
          $rw = $request->input('rw');
          $keterangan = $request->input('keterangan');
          $kp = $request->input('kampung');
+         $ajuan = $request->input('ajuan');
          $sts = 1;
 
          Anggota::insert([
@@ -102,6 +104,7 @@ class AnggotaController extends Controller
             'rt' => $rt,
             'rw' => $rw,
             'kp' => $kp,
+            'ajuan' => $ajuan,
             'keterangan' => $keterangan,
             'status' => $sts,
          ]);
@@ -150,6 +153,7 @@ public function edit($code) {
             $this->formInput("nama", "text", $field['nama'], [true, false, false, false]),
             $this->formInput("email", "text", $field['email'], [true, false, false, false]),
             $this->formInput("phone", "number", $field['phone'], [true, false, false, false]),
+            $this->formInput("ajuan", "number", $field['ajuan'], [true, false, false, false]),
             $this->formInputDropdown("desa", $field['desa'], $field['desa'], $propstsd, $optionsdesa),
             $this->formInput("rw", "number", $field['rw'], [true, false, false, false]),
             $this->formInput("rt", "number", $field['rt'], [true, false, false, false]),
@@ -171,9 +175,9 @@ public function update(Request $request)
     // Validate the request data if needed
     $request->validate([
              'id' => 'required',
-              'nama' => 'required|string',
+             'nama' => 'required|string',
              'email' => 'required|string', 
-             'phone' => 'required|numeric', 
+             'phone' => 'required', 
              'desa' => 'required|numeric', 
              'rt' => 'required|numeric', 
              'rw' => 'required|numeric', 

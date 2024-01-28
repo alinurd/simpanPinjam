@@ -19,7 +19,7 @@ export default function Penilaian(props) {
     // const { mode } = props;
     // const { input } = props;
     // const {  } = props;
-    const { field, kriteria, subKriteria, codeId, mode, title, anggota, kriteriax, subKriteriax,point, tinjau } = props;
+    const { field, kriteria, subKriteria, codeId, mode, title, anggota, kriteriax, subKriteriax, point, tinjau } = props;
 
     useEffect(() => {
         // Trigger initializeModal with the first item in the field array
@@ -75,11 +75,6 @@ export default function Penilaian(props) {
 
         }
     };
-    const calculateTotalBobot = (field, idKriteria) => {
-        return field
-            .filter(item => item.kriteria.id === idKriteria)
-            .reduce((total, item) => total + parseFloat(item.bobot), 0);
-    }
 
     const initializeModalKlasifikasi = async (id, type) => {
         $('#ModalKlasifikasi').modal('show');
@@ -109,11 +104,11 @@ export default function Penilaian(props) {
             setIsSubmitting(false);
         }
     };
+
     const isAn = (id, data, sts) => {
-        console.log(sts);
-        var x = document.getElementById('id_anggota');
+         var x = document.getElementById('id_anggota');
         var x2 = document.getElementById('id_anggota1');
-  
+
         if (x) {
             x.value = id;
             x2.value = id;
@@ -127,18 +122,16 @@ export default function Penilaian(props) {
 
             setSts3Show(false);
             setSts3Aktif(false);
-           
-    
-           
+
         } else if (sts == 7) {
-            point.map((item2, subIndex) => {
-                var inputElement = document.getElementById(`point_${item2.id_subkriteria}`);
+            point.map((item2, subIndex) => {                
                 var ket = document.getElementById(`keterangan`);
+                var inputElement = document.getElementById(`point_${item2.id_subkriteria}`);
                 if (inputElement) {
                     inputElement.value = item2.penilaian;
                     inputElement.readOnly = true;
                     ket.value = item2.penilaian;
-                    ket.readOnly = true;
+                     ket.readOnly = true;
                 }
             });
             setSts1Show(true);
@@ -150,7 +143,7 @@ export default function Penilaian(props) {
             setSts3Show(false);
             setSts3Aktif(false);
         } else if (sts > 7) {
-             
+
             setSts1Show(true);
             setSts1Aktif(false);
 
@@ -170,8 +163,16 @@ export default function Penilaian(props) {
                     ket1.readOnly = true;
                 }
             });
-        
-            point.map((item2, subIndex) => {
+
+             point.map((item2, subIndex) => {  
+                // kriteria.map
+                var Hasil = calculateGrade(item2.id_subkriteria, item2.penilaian);
+                // console.log(Hasil)
+                // Mengasumsikan Anda memiliki elemen dengan ID seperti 'grade_item2.id_subkriteria', 'gscore_item2.id_subkriteria', 'klasifikasi_item2.id_subkriteria'
+                document.getElementById(`grade_${item2.id_subkriteria}`).textContent = Hasil.klasifikasi;
+                // document.getElementById(`gscore_${item2.id_subkriteria}`).textContent = Hasil;
+                document.getElementById(`klasifikasi_${item2.id_subkriteria}`).textContent = Hasil.keterangan;
+
                 var inputElement = document.getElementById(`point_${item2.id_subkriteria}`);
                 var ket = document.getElementById(`keterangan`);
                 if (inputElement) {
@@ -184,8 +185,40 @@ export default function Penilaian(props) {
 
         }
 
-    }
+    } 
+    
+    // console.log(id_kriteria);
 
+    const calculateGrade = (id, grdePenilaian) => {
+        const bobot = subKriteria.find(kriteriaItem => kriteriaItem.id == id)?.bobot || 0;
+        const clasGrade = ['A', 'B', 'C', 'D', 'E'];
+        const clasketerangan = ['Sangat Bagus', 'Bagus', 'Cukup', 'Tidak Bagus', 'Buruk'];
+    
+        const thresholds = [
+            bobot * 0.9,   // A => 90% - 100%
+            bobot * 0.6,   // B => 60% - 89%
+            bobot * 0.45,  // C => 45% - 59%
+            bobot * 0.05,  // D => 5% - 44%
+            0              // E => 0% - 4%
+        ];
+    
+        for (let i = 0; i < thresholds.length; i++) {
+            if (grdePenilaian >= thresholds[i]) {
+                // Kembalikan objek yang berisi klasifikasi dan keterangan
+                return {
+                    klasifikasi: clasGrade[i],
+                    keterangan: clasketerangan[i]
+                };
+            }
+        }
+    
+        // Jika grdePenilaian di bawah ambang batas terendah, kembalikan 'E'
+        return {
+            klasifikasi: clasGrade[clasGrade.length - 1],
+            keterangan: clasketerangan[clasGrade.length - 1]
+        };
+    };
+    
     return (
         <div className="row">
             <div className="col-lg-12">
@@ -291,7 +324,17 @@ export default function Penilaian(props) {
                                                                                             name="penilaian[]"
                                                                                             placeholder="Berikan Penilaian"
                                                                                             required
-                                                                                        />
+                                                                                        /> 
+                                                                                        <b className="mb-0">Grade: &nbsp;
+                                                                                            <div className="badge badge-info">
+                                                                                                <span id={`grade_${itemSub.id}`}></span>
+                                                                                                {/* <span className="badge badge-light ml-2" id={`gscore_${itemSub.id}`}></span> */}
+                                                                                            </div>
+
+                                                                                        </b>&nbsp;|&nbsp; <b className="mb-0">Klasifikasi: &nbsp;
+                                                                                            <span className="badge badge-primary" id={`klasifikasi_${itemSub.id}`}>sedang
+                                                                                            </span>
+                                                                                        </b>
                                                                                     </td>
                                                                                 </tr>
                                                                             );
