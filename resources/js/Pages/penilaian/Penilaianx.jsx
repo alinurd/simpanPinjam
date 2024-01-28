@@ -108,7 +108,7 @@ export default function Penilaian(props) {
     const isAn = (id, data, sts) => {
          var x = document.getElementById('id_anggota');
         var x2 = document.getElementById('id_anggota1');
-
+console.log(sts)
         if (x) {
             x.value = id;
             x2.value = id;
@@ -124,14 +124,22 @@ export default function Penilaian(props) {
             setSts3Aktif(false);
 
         } else if (sts == 7) {
-            point.map((item2, subIndex) => {                
-                var ket = document.getElementById(`keterangan`);
+            point.map((item2, subIndex) => {  
+                // kriteria.map
+                var Hasil = calculateGrade(item2.id_subkriteria, item2.penilaian);
+                // console.log(Hasil)
+                // Mengasumsikan Anda memiliki elemen dengan ID seperti 'grade_item2.id_subkriteria', 'gscore_item2.id_subkriteria', 'klasifikasi_item2.id_subkriteria'
+                document.getElementById(`grade_${item2.id_subkriteria}`).textContent = Hasil.klasifikasi;
+                // document.getElementById(`gscore_${item2.id_subkriteria}`).textContent = Hasil;
+                document.getElementById(`klasifikasi_${item2.id_subkriteria}`).textContent = Hasil.keterangan;
+
                 var inputElement = document.getElementById(`point_${item2.id_subkriteria}`);
+                var ket = document.getElementById(`keterangan`);
                 if (inputElement) {
                     inputElement.value = item2.penilaian;
                     inputElement.readOnly = true;
                     ket.value = item2.penilaian;
-                     ket.readOnly = true;
+                    ket.readOnly = true;
                 }
             });
             setSts1Show(true);
@@ -325,14 +333,14 @@ export default function Penilaian(props) {
                                                                                             placeholder="Berikan Penilaian"
                                                                                             required
                                                                                         /> 
-                                                                                        <b className="mb-0">Grade: &nbsp;
+                                                                                        <b className="mb-0" id="garde">Grade: &nbsp;
                                                                                             <div className="badge badge-info">
                                                                                                 <span id={`grade_${itemSub.id}`}></span>
                                                                                                 {/* <span className="badge badge-light ml-2" id={`gscore_${itemSub.id}`}></span> */}
                                                                                             </div>
 
                                                                                         </b>&nbsp;|&nbsp; <b className="mb-0">Klasifikasi: &nbsp;
-                                                                                            <span className="badge badge-primary" id={`klasifikasi_${itemSub.id}`}>sedang
+                                                                                            <span className="badge badge-primary" id={`klasifikasi_${itemSub.id}`}> 
                                                                                             </span>
                                                                                         </b>
                                                                                     </td>
