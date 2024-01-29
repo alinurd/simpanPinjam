@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Anggota;
+use App\Models\Aprove;
 use App\Models\Desa;
 use App\Models\Kriteria;
 use App\Models\Penilaian;
 use App\Models\Status;
 use App\Models\Subkriteria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class AnggotaController extends Controller
@@ -29,7 +31,7 @@ class AnggotaController extends Controller
     public function review()
     {
         $data['title'] = $this->name;
-        $anggotaCollection = Anggota::where("status", ">", 1)->with('status')->get();
+        $anggotaCollection = Anggota::whereIn("status", [2, 3])->with('status')->get();
 
         foreach ($anggotaCollection as $anggota) {
             $anggotaId = $anggota->id;
@@ -162,36 +164,38 @@ class AnggotaController extends Controller
 }
     public function storeReview(Request $request)
     {
+        
          // Validate the request data if needed
-         dd($request);
-
+        //  dd($request);
+         $codeId = $this->getCodeRand("RvW-","anggota");
          $code = $request->input('code');
-         $nama = $request->input('nama');
-         $phone = $request->input('phone'); 
- 
-         Approve::insert([
-            'code' => $code,
-            'nama' => $nama,
-            'email' => $email,
-            'phone' => $phone,
-            'desa' => $desa,
-            'rt' => $rt,
-            'rw' => $rw,
-            'kp' => $kp,
-            'ajuan' => $ajuan,
-            'keterangan' => $keterangan,
-            'status' => $sts,
-         ]);
+         $sts = $request->input('submitId');
+         $ket = $request->input('keterangan'); 
+         $user = Auth::id();
+         $p = Penilaian::where("code", $code)->first();
+        $usr = Anggota::find($p->id_anggota);
 
-     
-  
+         Aprove::insert([
+             'user' => $user,
+            'code' => $codeId,
+            'code_penilaian' => $code,
+            'status' => $sts,
+            'keterangan' => $ket
+         ]);
+         if ($usr) {
+             $usr->update([
+                 'status' => $sts,
+                 'progress' => 4,
+             ]);
+         
+             // Update successful
+         }
         return response()->json([
         'action' => 'Create', 
         'message' => 'Data stored successfully', 
         'success' =>true, 
-        'redirect' => $this->name,], 201); 
+        'redirect' => $this->name."Review"], 201); 
 }
-
 
 public function edit($code) {
     $codeId = $code;

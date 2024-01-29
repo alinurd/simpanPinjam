@@ -311,14 +311,14 @@ console.log(mode)
 
     const handleApprove = () => {
         // Set the value of the hidden input field to 1
-        document.getElementById('submitId').value = '1';
+        document.getElementById('submitId').value = '5';
         // You can add any additional logic here if needed
         // For example, you can trigger form submission here
     };
     
     const handleReject = () => {
         // Set the value of the hidden input field to 0
-        document.getElementById('submitId').value = '0';
+        document.getElementById('submitId').value = '6';
         // You can add any additional logic here if needed
         // For example, you can trigger form submission here
     };
