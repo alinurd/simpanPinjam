@@ -31,7 +31,7 @@ class AnggotaController extends Controller
     public function review()
     {
         $data['title'] = $this->name;
-        $anggotaCollection = Anggota::whereIn("status", [2, 3])->with('status')->get();
+        $anggotaCollection = Anggota::whereIn("status", [2, 3])->orWhere("progress", 3)->with('status')->get();
 
         foreach ($anggotaCollection as $anggota) {
             $anggotaId = $anggota->id;
