@@ -164,31 +164,12 @@ class AnggotaController extends Controller
     {
          // Validate the request data if needed
          dd($request);
-         $request->validate([
-            'code' => 'required|string',
-            'nama' => 'required|string',
-            'email' => 'required|string', 
-            'phone' => 'required|numeric', 
-            'desa' => 'required|numeric', 
-            'rt' => 'required|numeric', 
-            'rw' => 'required|numeric', 
-            'keterangan' => 'required|string', 
-            'kampung' => 'required|string', 
-          ]);
 
          $code = $request->input('code');
          $nama = $request->input('nama');
-         $phone = $request->input('phone');
-         $email = $request->input('email');
-         $desa = $request->input('desa');
-         $rt = $request->input('rt');
-         $rw = $request->input('rw');
-         $keterangan = $request->input('keterangan');
-         $kp = $request->input('kampung');
-         $ajuan = $request->input('ajuan');
-         $sts = 1;
-
-         Anggota::insert([
+         $phone = $request->input('phone'); 
+ 
+         Approve::insert([
             'code' => $code,
             'nama' => $nama,
             'email' => $email,
