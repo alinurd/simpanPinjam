@@ -53,6 +53,10 @@ class PenilaianController extends Controller
  
  // Assuming $request->kriteria, $request->subkriteria, and $request->penilaian are arrays
 for ($i = 0; $i < count($request->kriteria); $i++) {
+
+//     $pn = Penilaian::where("code", $request->codeId)->first();
+// dd($pn->type);
+
    $rePenilaian= Penilaian::insert([
         'status' =>$request->sts, // Assuming 'code' is not an array
         'type' => $request->type, // Assuming 'code' is not an array
@@ -71,6 +75,7 @@ for ($i = 0; $i < count($request->kriteria); $i++) {
     if ($agt) {
         $agt->update([
             'progress' => $request->sts, //type progres penilaian
+            'status' => 2, //type progres penilaian
         ]);
 }
  

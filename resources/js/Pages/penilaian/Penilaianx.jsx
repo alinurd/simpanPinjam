@@ -170,11 +170,11 @@ export default function Penilaian(props) {
           
             var svx = document.querySelector('.svx');
             if (svx) { 
-                svx.hidden = false;
+                svx.hidden = true;
             }
             var sv = document.querySelector('.sv');
             if (sv) { 
-                sv.hidden = false;
+                sv.hidden = true;
             }
             setSts1Show(true);
             setSts1Aktif(false);
@@ -532,7 +532,7 @@ export default function Penilaian(props) {
                                                 </div>
                                             ) : (
                                                 <div>
-                                                    <p>sts 2 is false</p>
+                                                    {/* <p>sts 2 is false</p> */}
                                                     {/* You can add more debugging output if needed */}
                                                 </div>
                                             )}
@@ -592,6 +592,12 @@ export default function Penilaian(props) {
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <Link
+                href="/penilaian"
+                className={`iq-waves-effect  ${
+                window.location.pathname === "/penilaian"? "active": "" }`}aria-current="page" > 
+                Selesai
+              </Link>
                                                </center>
 
                                             ) : (
