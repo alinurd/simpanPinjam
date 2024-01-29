@@ -36,9 +36,6 @@ export default function AnggotaReview(props) {
         try {
             const response = await axios.get(`/pointByAnggota/${id}`);
             // console.log(response.data.data)
-
-
-            // If data is successfully fetched, update the modal content
             if (response) {
                 updateModalContentPoint(response.data.data);
                 $('#exampleModalCenterPoint').modal('show');
@@ -57,19 +54,25 @@ export default function AnggotaReview(props) {
 
         if (modalElement) {
 
-           var Ha= hasilAhir()
-             modalElement.querySelector('#exampleModalCenterPointTitle').textContent = data.field.nama;
+            var Ha = hasilAhir(data.pointTotal, data.bobotTotal)
+            modalElement.querySelector('#exampleModalCenterPointTitle').textContent = data.field.nama;
             //  modalElement.querySelector('#exampleModalCenterPointNama').textContent = Ha.field.nama;
             // console.log(data.code)
-        // console.log(data)
+
+            let stsPinjamanElements = document.getElementsByClassName('keteranganPoint');
+            for (let j = 0; j < stsPinjamanElements.length; j++) {
+                stsPinjamanElements[j].textContent = data.point[0].keterangan;
+            }
+
+            let stsPinjamanElements1 = document.getElementsByClassName('keteranganPoint1');
+            for (let j = 0; j < stsPinjamanElements1.length; j++) {
+                stsPinjamanElements1[j].textContent = data.point[0].keterangan;
+            }
             data.tinjau.map((item, subIndex) => {
                 var inputElement = document.getElementById(`point_${item.id_subkriteria}`);
-                var ket1 = document.getElementById(`keterangan1`);
                 if (inputElement) {
                     inputElement.value = item.penilaian;
                     inputElement.readOnly = true;
-                    ket1.value = item.penilaian;
-                    ket1.readOnly = true;
                 }
             });
             data.point.map((item2, subIndex) => {
@@ -121,7 +124,7 @@ export default function AnggotaReview(props) {
     };
 
 
-    const hasilAhir = () => {
+    const hasilAhir = (pointTotal, bobotTotal) => {
         let point = 0;
         let bobot = 0;
 
@@ -314,10 +317,8 @@ export default function AnggotaReview(props) {
                                             <td className="text-center">
                                                 <button type="button" className={`btn mb-1 dark-icon btn-${item.status.bg}`}>
                                                     {item.status.nama}
-                                                    <span class="badge badge-light ml-2">Skor</span>
+                                                    <span class="badge badge-light ml-2 stsPinjaman">Skor</span>
                                                 </button>
-
-
                                             </td>
                                             <td>
                                                 <div className=" text-center flex align-items-center list-user-action">
@@ -419,73 +420,152 @@ export default function AnggotaReview(props) {
             </div>
 
             <div className="modal fade" id="exampleModalCenterPoint" role="dialog" aria-labelledby="exampleModalCenterPoint" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
-                    <div className="modal-content">
-                        <div className="modal-header">
+                <div className="modal-dialog modal-dialog-centered modal-lg " role="document">
+                    <div className="modal-content ">
+                        <div className="modal-header ">
+                            <center>
                             <h5 className="modal-title text-bold" id="">
-                                <b> <span id="exampleModalCenterPointTitle"></span></b> - <span className="stsPinjaman"></span>
+                                <b> <span id="exampleModalCenterPointTitle"></span></b> -
+
+                                <b className="mb-0" id="garde">&nbsp;
+                                    <div className="badge badge-primary">
+                                        <i className="ketAhir"></i>&nbsp;
+                                        <span className="badge badge-light resPoint"></span>
+                                    </div>
+                                </b><br />
+                                <i><span className="badge badge-secondary stsPinjaman"></span></i>
+                                {/* ( <i className="ttlPoint"> </i>*<i className="ttlBobot"> </i> ) /100%&nbsp; */}
+                                <br />
+
                             </h5>
+                            </center>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
                         <div className="modal-body">
-                        <table className="table table-striped">
-                                                        {kriteria.map((item) => {
-                                                            return (
-                                                                <React.Fragment key={item.id}>
-                                                                    <tr>
-                                                                        <th colSpan={2}>{item.nama} [{item.bobot}]</th>
-                                                                    </tr>
-                                                                    {subKriteria.map((itemSub, subIndex) => {
-                                                                        if (itemSub.id_kriteria == item.id) {
-                                                                            return (
-                                                                                <tr key={`${item.id}-${subIndex}`}>
-                                                                                    <input type="hidden" name="kriteria[]" value={item.id} />
-                                                                                    <input type="hidden" name="subkriteria[]" value={itemSub.id} />
-                                                                                    <input type="hidden" name="type" value="1" />
-                                                                                    <input type="hidden" name="sts" value="7" />
-                                                                                    <input type="hidden" name="codeId" value={codeId} />
-                                                                                    <td>{itemSub.nama} <br />[{itemSub.bobot}]</td>
-                                                                                    <td>
-                                                                                        <input
-                                                                                            type="number"
-                                                                                            className="form-control"
-                                                                                            id={`point_${itemSub.id}`}
-                                                                                            name="penilaian[]"
-                                                                                            placeholder="Berikan Penilaian"
-                                                                                            required
-                                                                                        />
-                                                                                        <b className="mb-0" id="garde">Grade: &nbsp;
-                                                                                            <div className="badge badge-info">
-                                                                                                <span id={`grade_${itemSub.id}`}></span>
-                                                                                                {/* <span className="badge badge-light ml-2" id={`gscore_${itemSub.id}`}></span> */}
-                                                                                            </div>
 
-                                                                                        </b>&nbsp;|&nbsp; <b className="mb-0">Klasifikasi: &nbsp;
-                                                                                            <span className="badge badge-primary" id={`klasifikasi_${itemSub.id}`}>
-                                                                                            </span>
-                                                                                        </b>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            );
-                                                                        } else {
-                                                                            return null;
-                                                                        }
-                                                                    })}
-                                                                </React.Fragment>
+                            <ul className="nav nav-pills mb-3 nav-fill" id="pills-tab-1" role="tablist">
+                                <li className={`  active nav-item`}>
+                                    <a className={`nav-link active`} id="pills-home-tab-fill1" data-toggle="pill" href="#pills-home-fill1" role="tab" aria-controls="pills-home1"  >Penilaian Point</a>
+                                </li>
+                                <li className={`  nav-item`}>
+                                    <a className={`nav-link  `} id="pills-home-tab-fill2" data-toggle="pill" href="#pills-home-fill2" role="tab" aria-controls="pills-home2"  >Peninjauan Lokasi</a>
+                                </li>
+                            </ul>
+
+                            <div className="tab-content" id="pills-tabContent-1">
+                                <div className={`tab-pane fade active `} id="pills-home-fill1" role="tabpanel" aria-labelledby="pills-home-tab-fill1">                                <div className="penilaian1" id="penilaian1">
+
+                                    <table className="table table-striped">
+                                        {kriteria.map((item) => {
+                                            return (
+                                                <React.Fragment key={item.id}>
+                                                    <tr>
+                                                        <th colSpan={2}>{item.nama} [{item.bobot}]</th>
+                                                    </tr>
+                                                    {subKriteria.map((itemSub, subIndex) => {
+                                                        if (itemSub.id_kriteria == item.id) {
+                                                            return (
+                                                                <tr key={`${item.id}-${subIndex}`}>
+                                                                    <input type="hidden" name="kriteria[]" value={item.id} />
+                                                                    <input type="hidden" name="subkriteria[]" value={itemSub.id} />
+                                                                    <input type="hidden" name="type" value="1" />
+                                                                    <input type="hidden" name="sts" value="7" />
+                                                                    <input type="hidden" name="codeId" value={codeId} />
+                                                                    <td>{itemSub.nama} <br />[{itemSub.bobot}]</td>
+                                                                    <td>
+                                                                        <input
+                                                                            type="number"
+                                                                            className="form-control"
+                                                                            id={`point_${itemSub.id}`}
+                                                                            name="penilaian[]"
+                                                                            placeholder="Berikan Penilaian"
+                                                                            required
+                                                                        />
+                                                                        <b className="mb-0" id="garde">Grade: &nbsp;
+                                                                            <div className="badge badge-info">
+                                                                                <span id={`grade_${itemSub.id}`}></span>
+                                                                                {/* <span className="badge badge-light ml-2" id={`gscore_${itemSub.id}`}></span> */}
+                                                                            </div>
+
+                                                                        </b>&nbsp;|&nbsp; <b className="mb-0">Klasifikasi: &nbsp;
+                                                                            <span className="badge badge-primary" id={`klasifikasi_${itemSub.id}`}>
+                                                                            </span>
+                                                                        </b>
+                                                                    </td>
+                                                                </tr>
                                                             );
-                                                        })}
-                                                    </table>
+
+                                                        } else {
+                                                            return null;
+                                                        }
+
+                                                    })}
+                                                </React.Fragment>
+                                            );
+                                        })}
+                                        <tr>
+                                            <td colSpan={2}><i>keterangan:</i><br /><span className="keteranganPoint"></span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                </div>
+                                    <div className="tab-pane fade active" id="pills-home-fill2" role="tabpanel" aria-labelledby="pills-home-tab-fill2">
+                                        <div className="penilaian1" id="penilaian1">
+                                            <table className="table table-striped">
+                                                {kriteriax.map((item) => {
+                                                    return (
+                                                        <React.Fragment key={item.id}>
+                                                            <tr>
+                                                                <th colSpan={2}>{item.nama} [{item.bobot}]</th>
+                                                            </tr>
+                                                            {subKriteriax.map((itemSub, subIndex) => {
+                                                                if (itemSub.id_kriteria == item.id) {
+                                                                    return (
+                                                                        <tr key={`${item.id}-${subIndex}`}>
+                                                                            <input type="hidden" name="kriteria[]" value={item.id} />
+                                                                            <input type="hidden" name="subkriteria[]" value={itemSub.id} />
+                                                                            <input type="hidden" name="type" value="2" />
+                                                                            <input type="hidden" name="sts" value="8" />
+                                                                            <input type="hidden" name="codeId" value={codeId} />
+                                                                            <td>{itemSub.nama} <br />[{itemSub.bobot}]</td>
+                                                                            <td>
+                                                                                <input
+                                                                                    type="text"
+                                                                                    className="form-control"
+                                                                                    id={`point_${itemSub.id}`}
+                                                                                    name="penilaian[]"
+                                                                                    placeholder="Berikan Penilaian"
+                                                                                    required
+                                                                                />
+                                                                            </td>
+                                                                        </tr>
+                                                                    );
+                                                                } else {
+                                                                    return null;
+                                                                }
+                                                            })}
+                                                        </React.Fragment>
+                                                    );
+                                                })}
+                                                <tr>
+                                                    <td colSpan={2}><i>keterangan:</i><br /><span className="keteranganPoint1"></span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
+
                     </div>
                 </div>
             </div>
-
-        </div>
+      
 
 
     );
