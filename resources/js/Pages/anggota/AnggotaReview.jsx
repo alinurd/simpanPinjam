@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "@inertiajs/react";
 import { Inertia } from '@inertiajs/inertia';
 
-const capitalizeFirstLetter = (string) => {
+import axios from 'axios';  // Import the axios library
+ const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
@@ -15,16 +16,18 @@ const toLowerCase = (string) => {
 export default function AnggotaReview(props) {
 
     const { field, kriteria, subKriteria, codeId, mode, title, anggota, kriteriax, subKriteriax, point, tinjau, pointTotal, bobotTotal } = props;
+    // const [isSubmitting, setIsSubmitting] = useState(false);
+
     const submit = async (e) => {
         e.preventDefault();
 
         try {
             // Show loading spinner
-            setIsSubmitting(true);
+            // setIsSubmitting(true);
 
             // Serialize form data or customize the data as needed
             const formData = new FormData(e.target);
-
+console.log(mode)
             // Make a POST request using axios
             const response = await axios.post(`/${toLowerCase(title)}${capitalizeFirstLetter(mode)}`, formData);
 
@@ -32,7 +35,7 @@ export default function AnggotaReview(props) {
             e.target.reset();
 
             // Hide loading spinner after successful submission
-            setIsSubmitting(false);
+            // setIsSubmitting(false);
 
             // Access the redirect path from the response data
             const redirectTo = response.data.redirect;
@@ -47,7 +50,7 @@ export default function AnggotaReview(props) {
         } catch (error) {
             console.error('Error making POST request:', error);
             console.log('Error details:', error.response); // Log the error details
-            setIsSubmitting(false);
+            // setIsSubmitting(false);
 
         }
     };
@@ -72,8 +75,6 @@ export default function AnggotaReview(props) {
             const response = await axios.get(`/pointByAnggota/${id}`);
             console.log(response.data.data)
 
-
-            // If data is successfully fetched, update the modal content
             if (response) {
                 updateModalContentApr(response.data.data);
                 $('#exampleModalCenterApprove').modal('show');
@@ -168,14 +169,17 @@ export default function AnggotaReview(props) {
     const updateModalContentApr = (data) => {
         const modalElement = document.getElementById('exampleModalCenterApprove');
         if (modalElement) {
-            console.log(data.code)
+            // console.log(data.point[0].code)
             // Update modal content here, for example:
             var Ha = hasilAhir(data.pointTotal, data.bobotTotal, 1)
             modalElement.querySelector('#exampleModalCenterApproveTitle').textContent = data.field.code;
             modalElement.querySelector('#exampleModalCenterApproveNama').textContent = data.field.nama;
             modalElement.querySelector('#ajuan').textContent = "Rp. " + data.field.ajuan;
+            document.getElementById('code').value = data.point[0].code;
+
             // Assuming you have elements in the modal to display the fetched data
         }
+        
     };
 
 
@@ -305,7 +309,21 @@ export default function AnggotaReview(props) {
         };
     };
 
+    const handleApprove = () => {
+        // Set the value of the hidden input field to 1
+        document.getElementById('submitId').value = '1';
+        // You can add any additional logic here if needed
+        // For example, you can trigger form submission here
+    };
+    
+    const handleReject = () => {
+        // Set the value of the hidden input field to 0
+        document.getElementById('submitId').value = '0';
+        // You can add any additional logic here if needed
+        // For example, you can trigger form submission here
+    };
 
+    
     // console.log(field)
     return (
         <div className="row">
@@ -435,36 +453,38 @@ export default function AnggotaReview(props) {
             <div className="modal fade" id="exampleModalCenterApprove" role="dialog" aria-labelledby="exampleModalCenterApprove" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div className="modal-content">
-                        <form className="was-validated" onSubmit={submit}>
-                        <div className="modal-header">
-                            <h5 className="modal-title text-bold" id="">
-                                <b> <span id="exampleModalCenterApproveTitle"></span></b> - <span id="exampleModalCenterApproveNama"></span>
-                            </h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                        <div className="modal-body">
+                    <form className="was-validated" onSubmit={submit}>
+    <div className="modal-header">
+        <h5 className="modal-title text-bold" id="">
+            <b> <span id="exampleModalCenterApproveTitle"></span></b> - <span id="exampleModalCenterApproveNama"></span>
+        </h5>
+        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div className="modal-body">
+        <center><i><span className="badge badge-secondary stsPinjaman"></span></i></center>
+        <br />Total Ajuan: <i> <span className="badge badge-dark ajuan" id="ajuan"></span></i>
+        <br /><br />
+        <center>
+            <label htmlFor="keterangan">Keterangan</label><br />
+            <textarea name="keterangan" id="keterangan" cols="40" rows="2" required></textarea>
+        </center>
+    </div>
+    <div className="modal-footer">
+        <div className="row">
+            <div className="col">
+                <button type="submit" className="btn btn-danger" onClick={() => handleReject()}>Reject</button>
+            </div>
+            <div className="col">
+                <button type="submit" className="btn btn-success" onClick={() => handleApprove()}>Approve</button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="submitId" name="submitId" value="0" />
+    <input type="hidden" id="code" name="code" value="0" />
+</form>
 
-                            <center><i><span className="badge badge-secondary stsPinjaman"></span></i></center>                        <br />Total Ajuan: <i> <span className="badge badge-dark ajuan" id="ajuan"></span></i>
-                            <br /><br />
-                            <center>
-                                <label htmlFor="keterangan">Keterangan</label><br />
-                                <textarea name="keterangan" id="keterangan" cols="40" rows="2" required></textarea>
-
-                            </center>
-                        </div>
-                        <div className="modal-footer">
-                            <div className="row">
-                                <div className="col">
-                                <div className="col">
-                                </div>
-                            </div>
-                                <button type="button" className="btn btn-danger" data-dismiss="modal">Reject</button>                  </div>
-                                <button type="button" className="btn btn-success" data-dismiss="modal">Approve</button>
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                        </form>
                     </div>
                 </div>
 

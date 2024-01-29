@@ -62,6 +62,7 @@ class AnggotaController extends Controller
             $data['kriteriax'] = Kriteria::where("status", 1)->where("type", 2)->get();
             $data['subKriteriax'] = SubKriteria::where("status", 1)->get();
              $data['field'] = $anggotaCollection;
+             $data['mode'] = 'review';
 
 
         return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name. "Review"))->with($data);
@@ -113,6 +114,56 @@ class AnggotaController extends Controller
     {
          // Validate the request data if needed
         //  dd($request);
+         $request->validate([
+            'code' => 'required|string',
+            'nama' => 'required|string',
+            'email' => 'required|string', 
+            'phone' => 'required|numeric', 
+            'desa' => 'required|numeric', 
+            'rt' => 'required|numeric', 
+            'rw' => 'required|numeric', 
+            'keterangan' => 'required|string', 
+            'kampung' => 'required|string', 
+          ]);
+
+         $code = $request->input('code');
+         $nama = $request->input('nama');
+         $phone = $request->input('phone');
+         $email = $request->input('email');
+         $desa = $request->input('desa');
+         $rt = $request->input('rt');
+         $rw = $request->input('rw');
+         $keterangan = $request->input('keterangan');
+         $kp = $request->input('kampung');
+         $ajuan = $request->input('ajuan');
+         $sts = 1;
+
+         Anggota::insert([
+            'code' => $code,
+            'nama' => $nama,
+            'email' => $email,
+            'phone' => $phone,
+            'desa' => $desa,
+            'rt' => $rt,
+            'rw' => $rw,
+            'kp' => $kp,
+            'ajuan' => $ajuan,
+            'keterangan' => $keterangan,
+            'status' => $sts,
+         ]);
+
+     
+  
+        return response()->json([
+        'action' => 'Create', 
+        'message' => 'Data stored successfully', 
+        'success' =>true, 
+        'redirect' => $this->name,], 201); 
+}
+    public function storeReview(Request $request)
+    {
+         // Validate the request data if needed
+         dd($request);
          $request->validate([
             'code' => 'required|string',
             'nama' => 'required|string',
