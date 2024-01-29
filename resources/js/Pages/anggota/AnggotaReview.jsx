@@ -15,7 +15,42 @@ const toLowerCase = (string) => {
 export default function AnggotaReview(props) {
 
     const { field, kriteria, subKriteria, codeId, mode, title, anggota, kriteriax, subKriteriax, point, tinjau, pointTotal, bobotTotal } = props;
+    const submit = async (e) => {
+        e.preventDefault();
 
+        try {
+            // Show loading spinner
+            setIsSubmitting(true);
+
+            // Serialize form data or customize the data as needed
+            const formData = new FormData(e.target);
+
+            // Make a POST request using axios
+            const response = await axios.post(`/${toLowerCase(title)}${capitalizeFirstLetter(mode)}`, formData);
+
+            // Optionally, reset the form after successful submission
+            e.target.reset();
+
+            // Hide loading spinner after successful submission
+            setIsSubmitting(false);
+
+            // Access the redirect path from the response data
+            const redirectTo = response.data.redirect;
+
+
+            alert(response.data.message)
+
+            Inertia.visit(redirectTo, {
+                only: ['body'],  // Optional, specify the sections of the page to update
+            });
+
+        } catch (error) {
+            console.error('Error making POST request:', error);
+            console.log('Error details:', error.response); // Log the error details
+            setIsSubmitting(false);
+
+        }
+    };
     const initializeModal = async (id) => {
         try {
             const response = await axios.get(`/anggotaById/${id}`);
@@ -26,6 +61,22 @@ export default function AnggotaReview(props) {
             if (response) {
                 updateModalContent(response.data.data);
                 $('#exampleModalCenter').modal('show');
+            }
+        } catch (error) {
+            // Handle errors
+            console.error(error);
+        }
+    };
+    const initializeModalAprv = async (id) => {
+        try {
+            const response = await axios.get(`/pointByAnggota/${id}`);
+            console.log(response.data.data)
+
+
+            // If data is successfully fetched, update the modal content
+            if (response) {
+                updateModalContentApr(response.data.data);
+                $('#exampleModalCenterApprove').modal('show');
             }
         } catch (error) {
             // Handle errors
@@ -54,7 +105,7 @@ export default function AnggotaReview(props) {
 
         if (modalElement) {
 
-            var Ha = hasilAhir(data.pointTotal, data.bobotTotal)
+            var Ha = hasilAhir(data.pointTotal, data.bobotTotal, 0)
             modalElement.querySelector('#exampleModalCenterPointTitle').textContent = data.field.nama;
             //  modalElement.querySelector('#exampleModalCenterPointNama').textContent = Ha.field.nama;
             // console.log(data.code)
@@ -114,19 +165,24 @@ export default function AnggotaReview(props) {
             // Assuming you have elements in the modal to display the fetched data
         }
     };
-
-    const handleDelete = (e, id) => {
-        e.preventDefault();
-        console.log(id)
-        if (confirm('Are you sure you want to delete this record?')) {
-            Inertia.delete("anggotaDelete/" + id); // Add the concatenation operator (+) here
+    const updateModalContentApr = (data) => {
+        const modalElement = document.getElementById('exampleModalCenterApprove');
+        if (modalElement) {
+            console.log(data.code)
+            // Update modal content here, for example:
+            var Ha = hasilAhir(data.pointTotal, data.bobotTotal, 1)
+            modalElement.querySelector('#exampleModalCenterApproveTitle').textContent = data.field.code;
+            modalElement.querySelector('#exampleModalCenterApproveNama').textContent = data.field.nama;
+            modalElement.querySelector('#ajuan').textContent = "Rp. " + data.field.ajuan;
+            // Assuming you have elements in the modal to display the fetched data
         }
     };
 
 
-    const hasilAhir = (pointTotal, bobotTotal) => {
+    const hasilAhir = (pointTotal, bobotTotal, type) => {
         let point = 0;
         let bobot = 0;
+        console.log(pointTotal)
 
         if (pointTotal.length > 0) {
             point = pointTotal[0].tPoint;
@@ -156,36 +212,52 @@ export default function AnggotaReview(props) {
         ];
         for (let i = 0; i < thresholds.length; i++) {
             if (persentase >= thresholds[i]) {
+
+
+                if (type > 0) {
+                    let stsPinjamanElements = document.getElementsByClassName('stsPinjaman');
+                    for (let j = 0; j < stsPinjamanElements.length; j++) {
+                        stsPinjamanElements[j].textContent = stsPinjamans[i];
+                    }
+                    // let gAhirElements = document.getElementsByClassName('gAhir');
+                    // for (let j = 0; j < gAhirElements.length; j++) {
+                    //     gAhirElements[j].textContent = clasGrade[i];
+                    // }
+                } else {
+                    let stsPinjamanElements = document.getElementsByClassName('stsPinjaman');
+                    for (let j = 0; j < stsPinjamanElements.length; j++) {
+                        stsPinjamanElements[j].textContent = stsPinjamans[i];
+                    }
+
+                    let ketAhirElements = document.getElementsByClassName('ketAhir');
+                    for (let j = 0; j < ketAhirElements.length; j++) {
+                        ketAhirElements[j].textContent = clasketerangan[i];
+                    }
+
+                    let resPointElements = document.getElementsByClassName('resPoint');
+                    for (let j = 0; j < resPointElements.length; j++) {
+                        resPointElements[j].textContent = persentase + '%';
+                    }
+
+                    let ttlPointElements = document.getElementsByClassName('ttlPoint');
+                    for (let j = 0; j < ttlPointElements.length; j++) {
+                        ttlPointElements[j].textContent = point;
+                    }
+
+                    let ttlBobotElements = document.getElementsByClassName('ttlBobot');
+                    for (let j = 0; j < ttlBobotElements.length; j++) {
+                        ttlBobotElements[j].textContent = bobot;
+                    }
+                    let gAhirElements = document.getElementsByClassName('gAhir');
+                    for (let j = 0; j < gAhirElements.length; j++) {
+                        gAhirElements[j].textContent = clasGrade[i];
+                    }
+                }
                 // Update HTML elements based on class names
-                let gAhirElements = document.getElementsByClassName('gAhir');
-                for (let j = 0; j < gAhirElements.length; j++) {
-                    gAhirElements[j].textContent = clasGrade[i];
-                }
 
-                let stsPinjamanElements = document.getElementsByClassName('stsPinjaman');
-                for (let j = 0; j < stsPinjamanElements.length; j++) {
-                    stsPinjamanElements[j].textContent = stsPinjamans[i];
-                }
 
-                let ketAhirElements = document.getElementsByClassName('ketAhir');
-                for (let j = 0; j < ketAhirElements.length; j++) {
-                    ketAhirElements[j].textContent = clasketerangan[i];
-                }
 
-                let ttlPointElements = document.getElementsByClassName('ttlPoint');
-                for (let j = 0; j < ttlPointElements.length; j++) {
-                    ttlPointElements[j].textContent = point;
-                }
 
-                let ttlBobotElements = document.getElementsByClassName('ttlBobot');
-                for (let j = 0; j < ttlBobotElements.length; j++) {
-                    ttlBobotElements[j].textContent = bobot;
-                }
-
-                let resPointElements = document.getElementsByClassName('resPoint');
-                for (let j = 0; j < resPointElements.length; j++) {
-                    resPointElements[j].textContent = persentase + '%';
-                }
                 // if (stsPinjamans[i] === "Pinjaman Tidak Tersedia") {
                 //     setstsAhir(false);
                 // } else {
@@ -315,36 +387,18 @@ export default function AnggotaReview(props) {
                                                 </button>
                                             </td>
                                             <td className="text-center">
-                                            <h6 class="mb-0"><span class={`badge badge-${item.status.bg}`}>{item.status.nama}</span></h6>
- 
+                                                <h6 class="mb-0"><span class={`badge badge-${item.status.bg}`}>{item.status.nama}</span></h6>
+
                                             </td>
                                             <td>
                                                 <div className=" text-center flex align-items-center list-user-action">
                                                     <button
                                                         type="button"
-                                                        onClick={() => initializeModal(item ? item.id : '-')}
+                                                        onClick={() => initializeModalAprv(item ? item.id : '-')}
                                                         className={`btn mb-1 dark-icon btn-secondary`}>
 
                                                         Approve
                                                     </button>
-
-
-
-                                                    {/* <a className="iq-bg-primary" data-toggle="tooltip" data-placement="top" title data-original-title="Edit" href={`/${toLowerCase(title)}Edit/${item.code}`}>
-                                                        <i className="ri-pencil-line" />
-                                                        <input type="checkbox" className="custom-control-input bg-success" defaultChecked />
-                                                        <label className="custom-control-label text-success" ><i>Apprpve</i></label>
-                                                    </a>
-                                                    <a
-                                                        className="iq-bg-primary"
-                                                        data-toggle="tooltip"
-                                                        data-placement="top"
-                                                        title="Delete"
-                                                        href="#"
-                                                        onClick={(e) => handleDelete(e, item.id)} // Call the handleDelete function with the record id
-                                                    >
-                                                        <i className="ri-delete-bin-line" />
-                                                    </a> */}
                                                 </div>
                                             </td>
                                         </tr>
@@ -378,7 +432,45 @@ export default function AnggotaReview(props) {
                 </div>
             </div>
 
-            <div className="modal fade" id="exampleModalCenter" role="dialog" aria-labelledby="exampleModalCenter" aria-hidden="true">
+            <div className="modal fade" id="exampleModalCenterApprove" role="dialog" aria-labelledby="exampleModalCenterApprove" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div className="modal-content">
+                        <form className="was-validated" onSubmit={submit}>
+                        <div className="modal-header">
+                            <h5 className="modal-title text-bold" id="">
+                                <b> <span id="exampleModalCenterApproveTitle"></span></b> - <span id="exampleModalCenterApproveNama"></span>
+                            </h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div className="modal-body">
+
+                            <center><i><span className="badge badge-secondary stsPinjaman"></span></i></center>                        <br />Total Ajuan: <i> <span className="badge badge-dark ajuan" id="ajuan"></span></i>
+                            <br /><br />
+                            <center>
+                                <label htmlFor="keterangan">Keterangan</label><br />
+                                <textarea name="keterangan" id="keterangan" cols="40" rows="2" required></textarea>
+
+                            </center>
+                        </div>
+                        <div className="modal-footer">
+                            <div className="row">
+                                <div className="col">
+                                <div className="col">
+                                </div>
+                            </div>
+                                <button type="button" className="btn btn-danger" data-dismiss="modal">Reject</button>                  </div>
+                                <button type="button" className="btn btn-success" data-dismiss="modal">Approve</button>
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+            </div><div className="modal fade" id="exampleModalCenter" role="dialog" aria-labelledby="exampleModalCenter" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -422,20 +514,20 @@ export default function AnggotaReview(props) {
                     <div className="modal-content ">
                         <div className="modal-header ">
                             <center>
-                            <h5 className="modal-title text-bold" id="">
-                                <b> <span id="exampleModalCenterPointTitle"></span></b> -
+                                <h5 className="modal-title text-bold" id="">
+                                    <b> <span id="exampleModalCenterPointTitle"></span></b> -
 
-                                <b className="mb-0" id="garde">&nbsp;
-                                    <div className="badge badge-primary">
-                                        <i className="ketAhir"></i>&nbsp;
-                                        <span className="badge badge-light resPoint"></span>
-                                    </div>
-                                </b><br />
-                                <i><span className="badge badge-secondary stsPinjaman"></span></i>
-                                {/* ( <i className="ttlPoint"> </i>*<i className="ttlBobot"> </i> ) /100%&nbsp; */}
-                                <br />
+                                    <b className="mb-0" id="garde">&nbsp;
+                                        <div className="badge badge-primary">
+                                            <i className="ketAhir"></i>&nbsp;
+                                            <span className="badge badge-light resPoint"></span>
+                                        </div>
+                                    </b><br />
+                                    <i><span className="badge badge-secondary stsPinjaman"></span></i>
+                                    {/* ( <i className="ttlPoint"> </i>*<i className="ttlBobot"> </i> ) /100%&nbsp; */}
+                                    <br />
 
-                            </h5>
+                                </h5>
                             </center>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
@@ -510,59 +602,59 @@ export default function AnggotaReview(props) {
                                     </table>
                                 </div>
                                 </div>
-                                    <div className="tab-pane fade active" id="pills-home-fill2" role="tabpanel" aria-labelledby="pills-home-tab-fill2">
-                                        <div className="penilaian1" id="penilaian1">
-                                            <table className="table table-striped">
-                                                {kriteriax.map((item) => {
-                                                    return (
-                                                        <React.Fragment key={item.id}>
-                                                            <tr>
-                                                                <th colSpan={2}>{item.nama} [{item.bobot}]</th>
-                                                            </tr>
-                                                            {subKriteriax.map((itemSub, subIndex) => {
-                                                                if (itemSub.id_kriteria == item.id) {
-                                                                    return (
-                                                                        <tr key={`${item.id}-${subIndex}`}>
-                                                                            <input type="hidden" name="kriteria[]" value={item.id} />
-                                                                            <input type="hidden" name="subkriteria[]" value={itemSub.id} />
-                                                                            <input type="hidden" name="type" value="2" />
-                                                                            <input type="hidden" name="sts" value="8" />
-                                                                            <input type="hidden" name="codeId" value={codeId} />
-                                                                            <td>{itemSub.nama} <br />[{itemSub.bobot}]</td>
-                                                                            <td>
-                                                                                <input
-                                                                                    type="text"
-                                                                                    className="form-control"
-                                                                                    id={`point_${itemSub.id}`}
-                                                                                    name="penilaian[]"
-                                                                                    placeholder="Berikan Penilaian"
-                                                                                    required
-                                                                                />
-                                                                            </td>
-                                                                        </tr>
-                                                                    );
-                                                                } else {
-                                                                    return null;
-                                                                }
-                                                            })}
-                                                        </React.Fragment>
-                                                    );
-                                                })}
-                                                <tr>
-                                                    <td colSpan={2}><i>keterangan:</i><br /><span className="keteranganPoint1"></span>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
+                                <div className="tab-pane fade active" id="pills-home-fill2" role="tabpanel" aria-labelledby="pills-home-tab-fill2">
+                                    <div className="penilaian1" id="penilaian1">
+                                        <table className="table table-striped">
+                                            {kriteriax.map((item) => {
+                                                return (
+                                                    <React.Fragment key={item.id}>
+                                                        <tr>
+                                                            <th colSpan={2}>{item.nama} [{item.bobot}]</th>
+                                                        </tr>
+                                                        {subKriteriax.map((itemSub, subIndex) => {
+                                                            if (itemSub.id_kriteria == item.id) {
+                                                                return (
+                                                                    <tr key={`${item.id}-${subIndex}`}>
+                                                                        <input type="hidden" name="kriteria[]" value={item.id} />
+                                                                        <input type="hidden" name="subkriteria[]" value={itemSub.id} />
+                                                                        <input type="hidden" name="type" value="2" />
+                                                                        <input type="hidden" name="sts" value="8" />
+                                                                        <input type="hidden" name="codeId" value={codeId} />
+                                                                        <td>{itemSub.nama} <br />[{itemSub.bobot}]</td>
+                                                                        <td>
+                                                                            <input
+                                                                                type="text"
+                                                                                className="form-control"
+                                                                                id={`point_${itemSub.id}`}
+                                                                                name="penilaian[]"
+                                                                                placeholder="Berikan Penilaian"
+                                                                                required
+                                                                            />
+                                                                        </td>
+                                                                    </tr>
+                                                                );
+                                                            } else {
+                                                                return null;
+                                                            }
+                                                        })}
+                                                    </React.Fragment>
+                                                );
+                                            })}
+                                            <tr>
+                                                <td colSpan={2}><i>keterangan:</i><br /><span className="keteranganPoint1"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
+
                 </div>
             </div>
-      
+        </div>
+
 
 
     );
