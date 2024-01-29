@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Anggota;
 use App\Models\Desa;
 use App\Models\Kriteria;
+use App\Models\Penilaian;
 use App\Models\Status;
+use App\Models\Subkriteria;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -23,6 +25,46 @@ class AnggotaController extends Controller
         $data['title'] = $this->name;
         $data['field'] = Anggota::with('status')->get();
         return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name))->with($data);
+    }
+    public function review()
+    {
+        $data['title'] = $this->name;
+        $anggotaCollection = Anggota::where("status", ">", 1)->get();
+
+        foreach ($anggotaCollection as $anggota) {
+            $anggotaId = $anggota->id;
+        
+            // Now you can use $anggotaId to fetch related data
+            $data['pointTotal'] = Penilaian::selectRaw('SUM(penilaian) as tPoint')
+                ->where('id_anggota', $anggotaId)
+                ->where('type', 1)
+                ->get();
+        
+            $data['point'] = Penilaian::where("id_anggota", $anggotaId)
+                ->where("type", 1)
+                ->get();
+        
+            $data['tinjau'] = Penilaian::where("id_anggota", $anggotaId)
+                ->where("type", 2)
+                ->get();
+        }
+
+        
+         
+            $data['bobotTotal'] = Kriteria::selectRaw('SUM(bobot) as tBobot')
+            ->where('status', 1)
+            ->where('type', 1)
+            ->get(); 
+
+             // $data['field'] = Anggota::where("status",">", 1)->get();
+            $data['kriteria'] = Kriteria::where("status", 1)->where("type", 1)->get();
+            $data['subKriteria'] = SubKriteria::where("status", 1)->get();
+            $data['kriteriax'] = Kriteria::where("status", 1)->where("type", 2)->get();
+            $data['subKriteriax'] = SubKriteria::where("status", 1)->get();
+             $data['field'] = $anggotaCollection;
+
+
+        return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name. "Review"))->with($data);
     }
     public function create()
     {
@@ -246,6 +288,40 @@ public function getAnggotaById ($id) {
             'message' => 'Get Data Kriteria successfully', 
             'success' =>true, 
             'data' =>$field, ], 201); 
+}
+
+public function getpointByAnggota ($id) {
+ 
+    
+    
+    $anggota = Anggota::where("id", $id)->first();
+    $pn = Penilaian::where("id_anggota", $anggota->id)->first();
+     $data['field'] = $anggota;
+            // if($anggota['progress']==8){
+            //     $p="xx";
+            // }
+            // dd($anggota);
+            $data['pointTotal'] = Penilaian::selectRaw('SUM(penilaian) as tPoint')
+            ->where('code', $pn->code)
+            ->where('type', 1)
+            ->get();
+            $data['bobotTotal'] = Kriteria::selectRaw('SUM(bobot) as tBobot')
+            ->where('status', 1)
+            ->where('type', 1)
+            ->get();
+            // dd($data['bobotTotal'][0]['ttl']);
+            // dd($data['pointTotal'][0]['ttl']);
+            // dd($data['']);
+
+            $data['point'] = Penilaian::where("code", $pn->code)->where("type", 1)->get();
+            $data['tinjau'] = Penilaian::where("code", $pn->code)->where("type", 2)->get();
+
+
+            return response()->json([
+            'action' => 'getById', 
+            'message' => 'Get Data Point successfully', 
+            'success' =>true, 
+            'data' =>$data, ], 201); 
 }
 
 }
