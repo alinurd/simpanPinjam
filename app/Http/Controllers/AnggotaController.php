@@ -29,7 +29,7 @@ class AnggotaController extends Controller
     public function review()
     {
         $data['title'] = $this->name;
-        $anggotaCollection = Anggota::where("status", ">", 1)->get();
+        $anggotaCollection = Anggota::where("status", ">", 1)->with('status')->get();
 
         foreach ($anggotaCollection as $anggota) {
             $anggotaId = $anggota->id;
@@ -294,7 +294,7 @@ public function getpointByAnggota ($id) {
  
     
     
-    $anggota = Anggota::where("id", $id)->first();
+    $anggota = Anggota::where("id", $id)->with('status')->first();
     $pn = Penilaian::where("id_anggota", $anggota->id)->first();
      $data['field'] = $anggota;
             // if($anggota['progress']==8){

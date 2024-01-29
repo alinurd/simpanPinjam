@@ -315,10 +315,8 @@ export default function AnggotaReview(props) {
                                                 </button>
                                             </td>
                                             <td className="text-center">
-                                                <button type="button" className={`btn mb-1 dark-icon btn-${item.status.bg}`}>
-                                                    {item.status.nama}
-                                                    <span class="badge badge-light ml-2 stsPinjaman">Skor</span>
-                                                </button>
+                                            <h6 class="mb-0"><span class={`badge badge-${item.status.bg}`}>{item.status.nama}</span></h6>
+ 
                                             </td>
                                             <td>
                                                 <div className=" text-center flex align-items-center list-user-action">
@@ -454,10 +452,10 @@ export default function AnggotaReview(props) {
                                 </li>
                             </ul>
 
-                            <div className="tab-content" id="pills-tabContent-1">
+                            <div className="tab-content     " id="pills-tabContent-1">
                                 <div className={`tab-pane fade active `} id="pills-home-fill1" role="tabpanel" aria-labelledby="pills-home-tab-fill1">                                <div className="penilaian1" id="penilaian1">
 
-                                    <table className="table table-striped">
+                                    <table className="table table-striped active">
                                         {kriteria.map((item) => {
                                             return (
                                                 <React.Fragment key={item.id}>
@@ -557,7 +555,6 @@ export default function AnggotaReview(props) {
                                             </table>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
