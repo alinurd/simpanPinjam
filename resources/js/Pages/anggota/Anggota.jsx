@@ -18,10 +18,10 @@ export default function Anggota(props) {
             const response = await axios.get(`/anggotaById/${id}`);
             console.log(response.data.data)
 
-    
+
             // If data is successfully fetched, update the modal content
             if (response) {
-                 updateModalContent(response.data.data); 
+                updateModalContent(response.data.data);
                 $('#exampleModalCenter').modal('show');
             }
         } catch (error) {
@@ -29,32 +29,32 @@ export default function Anggota(props) {
             console.error(error);
         }
     };
-     
+
     // Function to update modal content
     const updateModalContent = (data) => {
         // Access the modal element and update its content based on the fetched data
 
         const modalElement = document.getElementById('exampleModalCenter');
-    
+
         if (modalElement) {
             console.log(data.code)
             // Update modal content here, for example:
-             modalElement.querySelector('#exampleModalCenterTitle').textContent = data.code;
-             modalElement.querySelector('#exampleModalCenterNama').textContent = data.nama;
+            modalElement.querySelector('#exampleModalCenterTitle').textContent = data.code;
+            modalElement.querySelector('#exampleModalCenterNama').textContent = data.nama;
             modalElement.querySelector('#exampleModalCenterDesa').textContent = data.desa.nama;
             modalElement.querySelector('#exampleModalCenterRw').textContent = data.rw;
             modalElement.querySelector('#exampleModalCenterRt').textContent = data.rt;
             modalElement.querySelector('#exampleModalCenterKp').textContent = data.kp;
-              // Assuming you have elements in the modal to display the fetched data
+            // Assuming you have elements in the modal to display the fetched data
         }
     };
 
     const handleDelete = (e, id) => {
         e.preventDefault();
-console.log(id)
+        console.log(id)
         if (confirm('Are you sure you want to delete this record?')) {
             Inertia.delete("anggotaDelete/" + id); // Add the concatenation operator (+) here
-         }
+        }
     };
     const { title } = props;
     const { field } = props;
@@ -105,7 +105,7 @@ console.log(id)
                                 <thead>
                                     <tr>
                                         <th className="text-center">#</th>
-                                         <th className="text-left">Name</th>
+                                        <th className="text-left">Name</th>
                                         <th className="text-left">Email</th>
                                         <th className="text-left">Phone</th>
                                         <th className="text-left">Alamat</th>
@@ -121,39 +121,38 @@ console.log(id)
                                             <td className="text-left">{item.email}</td>
                                             <td className="text-left">{item.phone}</td>
                                             <td className="text-left">
-                                            <button
-                  type="button"
-                  className="btn btn-primary"
-                  onClick={() => initializeModal(item ? item.id : '-')}
-                >
-                  Lihat Alamat detail
-                </button> 
+                                                <button
+                                                    type="button"
+                                                    className="btn btn-primary"
+                                                    onClick={() => initializeModal(item ? item.id : '-')}
+                                                >
+                                                    Lihat Alamat detail
+                                                </button>
                                             </td>
-                                             <td className="text-center">
-                                             <button type="button" className={`btn mb-1 dark-icon btn-${item.status.bg}`}>
-                                             {item.status.nama}
-                                              <span class="badge badge-light ml-2">Skor</span>
-                           </button>
+                                            <td className="text-center">
+                                                <button type="button" className={`btn mb-1 dark-icon btn-${item.status.bg}`}>
+                                                    {item.status.nama}
+                                                </button>
 
- 
+
                                             </td>
                                             <td>
                                                 <div className=" text-center flex align-items-center list-user-action">
-                                                <a className="iq-bg-primary" data-toggle="tooltip" data-placement="top" title data-original-title="Edit" href={`/${toLowerCase(title)}Edit/${item.code}`}>
- 
-  <i className="ri-pencil-line" />
-</a>
-<a
-    className="iq-bg-primary"
-    data-toggle="tooltip"
-    data-placement="top"
-    title="Delete"
-    href="#"
-    onClick={(e) => handleDelete(e, item.id)} // Call the handleDelete function with the record id
->
-    <i className="ri-delete-bin-line" />
-</a>
-</div>
+                                                    <a className="iq-bg-primary" data-toggle="tooltip" data-placement="top" title data-original-title="Edit" href={`/${toLowerCase(title)}Edit/${item.code}`}>
+
+                                                        <i className="ri-pencil-line" />
+                                                    </a>
+                                                    <a
+                                                        className="iq-bg-primary"
+                                                        data-toggle="tooltip"
+                                                        data-placement="top"
+                                                        title="Delete"
+                                                        href="#"
+                                                        onClick={(e) => handleDelete(e, item.id)} // Call the handleDelete function with the record id
+                                                    >
+                                                        <i className="ri-delete-bin-line" />
+                                                    </a>
+                                                </div>
                                             </td>
                                         </tr>
                                     ))}
@@ -197,7 +196,7 @@ console.log(id)
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
-                        <div className="modal-body">                            
+                        <div className="modal-body">
                             <table className="table">
                                 <thead>
                                     <tr>
@@ -205,22 +204,22 @@ console.log(id)
                                         <th>Rw</th>
                                         <th>Rt</th>
                                         <th>Kampung</th>
-                                     </tr>
+                                    </tr>
                                 </thead>
                                 <tbody>
                                     {/* Add your dynamic data here */}
                                     <tr>
-                                         <th><b className="modal-title pre-line" id="exampleModalCenterDesa"></b></th>
-                                        <th><b className="modal-title" id="exampleModalCenterRt"></b></th> 
-                                        <th><b className="modal-title" id="exampleModalCenterRw"></b></th> 
-                                        <th><b className="modal-title" id="exampleModalCenterKp"></b></th> 
-                                    </tr> 
+                                        <th><b className="modal-title pre-line" id="exampleModalCenterDesa"></b></th>
+                                        <th><b className="modal-title" id="exampleModalCenterRt"></b></th>
+                                        <th><b className="modal-title" id="exampleModalCenterRw"></b></th>
+                                        <th><b className="modal-title" id="exampleModalCenterKp"></b></th>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
