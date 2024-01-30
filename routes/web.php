@@ -38,8 +38,8 @@ Route::middleware('guest','web')->group(function () {
 
 Route::middleware('auth','web')->group(function () {
     Route::get('/parameter',[ParameterController::class,'index'])->name('parameter')->middleware('check.role:admin');
-   Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard')->middleware('check.role:admin');
-   Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('check.role:admin');
+   Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
+   Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
    // kriteria Route
