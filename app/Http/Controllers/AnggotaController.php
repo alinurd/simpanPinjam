@@ -74,7 +74,7 @@ class AnggotaController extends Controller
     public function aprv()
     {
         $data['title'] = $this->name;
-        $anggotaCollection = Anggota::whereIn("status", [2, 3])->orWhere("progress", 3)->with('status')->get();
+        $anggotaCollection = Anggota::whereIn("status", [2, 3])->orWhere("progress", 3)->with('status','progress')->get();
 
         foreach ($anggotaCollection as $anggota) {
             $anggotaId = $anggota->id;

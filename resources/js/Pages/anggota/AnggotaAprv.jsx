@@ -401,6 +401,7 @@ export default function AnggotaAprv(props) {
                                         <th className="text-center">Alamat</th>
                                         <th className="text-center">Penilaian</th>
                                         <th className="text-center">Status</th>
+                                        <th className="text-center">Progress</th>
                                         <th className="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -430,6 +431,10 @@ export default function AnggotaAprv(props) {
                                             </td>
                                             <td className="text-center">
                                                 <h6 class="mb-0"><span class={`badge badge-${item.status.bg}`}>{item.status.nama}</span></h6>
+
+                                            </td>
+                                            <td className="text-center">
+                                                <h6 class="mb-0"><span class={`badge badge-${item.progress.bg}`}>{item.progress.nama}</span></h6>
 
                                             </td>
                                             <td>
