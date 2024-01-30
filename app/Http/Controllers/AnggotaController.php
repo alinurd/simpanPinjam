@@ -67,6 +67,8 @@ class AnggotaController extends Controller
             $data['subKriteriax'] = SubKriteria::where("status", 1)->get();
              $data['field'] = $anggotaCollection;
              $data['mode'] = 'review';
+             $data['auth'] =Auth::user();
+
 
 
         return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name. "Review"))->with($data);

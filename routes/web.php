@@ -60,8 +60,13 @@ Route::middleware('auth','web')->group(function () {
        Route::delete('subkriteriaDelete/{id}', [SubKriteriaController::class, 'destroy'])->name('subkriteriaDelete')->middleware('check.role:admin');
 
        // anggota Route
-   Route::get('/anggotaReview', [AnggotaController::class, 'review'])->name('anggotaReview')->middleware('check.role:pengawas');
-   Route::get('/anggotaAprv', [AnggotaController::class, 'aprv'])->name('AnggotaAprv')->middleware('check.role:pengurus');
+
+
+       Route::get('/anggotaReview', [AnggotaController::class, 'review'])
+       ->name('anggotaReview')
+       ->middleware('check.role:pengawas,admin,pengurus');  
+       
+       Route::get('/anggotaAprv', [AnggotaController::class, 'aprv'])->name('AnggotaAprv')->middleware('check.role:pengurus');
    Route::get('/anggota', [AnggotaController::class, 'index'])->name('anggota')->middleware('check.role:admin');
    Route::get('/anggotaCreate', [AnggotaController::class, 'create'])->name('anggotaCreate')->middleware('check.role:admin');
    Route::get('/anggotaEdit/{code}', [AnggotaController::class, 'edit'])->name('anggotaEdit')->middleware('check.role:admin');

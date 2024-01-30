@@ -15,9 +15,9 @@ const toLowerCase = (string) => {
 
 export default function AnggotaReview(props) {
 
-    const { field, kriteria, subKriteria, codeId, mode, title, anggota, kriteriax, subKriteriax, point, tinjau, pointTotal, bobotTotal, aprv } = props;
+    const { field, kriteria, subKriteria, codeId, mode, title, anggota, kriteriax, subKriteriax, point, tinjau, pointTotal, bobotTotal, aprv, auth } = props;
     // const [isSubmitting, setIsSubmitting] = useState(false);
-    // console.log(aprv)
+    // console.log(auth.id)
     const submit = async (e) => {
         e.preventDefault();
 
@@ -495,6 +495,7 @@ export default function AnggotaReview(props) {
                                                                 </td>
                                                                 <td>
                                                                     <div className=" text-center flex align-items-center list-user-action">
+                                                                        {(auth.id == 4?
                                                                         <button
                                                                             type="button"
                                                                             onClick={() => initializeModalAprv(item ? item.id : '-')}
@@ -502,6 +503,8 @@ export default function AnggotaReview(props) {
                                                                         >
                                                                             Catatan
                                                                         </button>
+                                                                        : '#')}
+                                                                         
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -590,6 +593,7 @@ export default function AnggotaReview(props) {
                                                                 </td>
                                                                 <td>
                                                                     <div className=" text-center flex align-items-center list-user-action">
+                                                                    {(auth.id == 4?
                                                                         <button
                                                                             type="button"
                                                                             onClick={() => initializeModalAprv(item ? item.id : '-')}
@@ -597,6 +601,8 @@ export default function AnggotaReview(props) {
                                                                         >
                                                                             Catatan
                                                                         </button>
+                                                                        : '#')}
+                                                                        
                                                                     </div>
                                                                 </td>
                                                             </tr>
