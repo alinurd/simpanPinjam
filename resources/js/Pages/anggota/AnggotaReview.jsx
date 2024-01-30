@@ -322,7 +322,52 @@ export default function AnggotaReview(props) {
         // You can add any additional logic here if needed
         // For example, you can trigger form submission here
     };
+    // Semua elemen trDetail disembunyikan secara default
+    document.querySelectorAll('[id="Detail"]').forEach(trDetailElement => {
+        trDetailElement.classList.add('d-none');
+    });
 
+    // Mendapatkan semua elemen trHead
+    const trHeadElements = document.querySelectorAll('[id^="trHead"]');
+
+    // Mengulangi setiap elemen trHead untuk menambahkan event listener
+    trHeadElements.forEach((trHeadElement, index) => {
+        // Menambahkan event listener untuk setiap elemen trHead
+        trHeadElement.addEventListener('click', () => {
+            // Mendapatkan elemen trDetail yang sesuai dengan indeks yang sama
+            const trDetailElement = document.getElementById(`trDteail${index}`);
+
+            // Memeriksa apakah trDetail sudah ditampilkan atau tidak
+            const isHidden = trDetailElement.classList.contains('d-none');
+
+            // Toggle untuk menampilkan atau menyembunyikan trDetail
+            if (isHidden) {
+                trDetailElement.classList.remove('d-none');
+            } else {
+                trDetailElement.classList.add('d-none');
+            }
+        });
+    });
+    const trHeadElementsx = document.querySelectorAll('[id^="trHeadx"]');
+
+    // Mengulangi setiap elemen trHead untuk menambahkan event listener
+    trHeadElementsx.forEach((trHeadElementx, index) => {
+        // Menambahkan event listener untuk setiap elemen trHead
+        trHeadElementx.addEventListener('click', () => {
+            // Mendapatkan elemen trDetail yang sesuai dengan indeks yang sama
+            const trDetailElementx = document.getElementById(`trDteailx${index}`);
+
+            // Memeriksa apakah trDetail sudah ditampilkan atau tidak
+            const isHidden = trDetailElementx.classList.contains('d-none');
+
+            // Toggle untuk menampilkan atau menyembunyikan trDetail
+            if (isHidden) {
+                trDetailElementx.classList.remove('d-none');
+            } else {
+                trDetailElementx.classList.add('d-none');
+            }
+        });
+    });
 
     // console.log(field)
     return (
@@ -336,12 +381,7 @@ export default function AnggotaReview(props) {
                     </div>
                     <div className="iq-card-body">
                         <div className="row">
-                            <div className="col-lg-6">
-                                <img src="images/logo.gif" className="img-fluid w-25" alt />
-                            </div>
-                            <div className="col-lg-6 align-self-center">
-                                <h4 className="mb-0 float-right">Invoice</h4>
-                            </div>
+                            
                             <div className="col-sm-12">
                                 <hr className="mt-3" />
                                 <h5 className="mb-0">Hello, Nik Jones</h5>
@@ -357,117 +397,169 @@ export default function AnggotaReview(props) {
                         </div>
                         <div className="row">
                             <div className="col-lg-12">
+                            <h5 className="badge badge-danger">Calon Crediter Yang Belum disetujui</h5>
                                 <div className="table-responsive-sm">
-                                    <table className="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Order Date</th>
-                                                <th scope="col">Order Status</th>
-                                                <th scope="col">Order ID</th>
-                                                <th scope="col">Billing Address</th>
-                                                <th scope="col">Shipping Address</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Jan 17, 2016</td>
-                                                <td>
-                                                    <span className="badge badge-danger">Unpaid</span>
-                                                </td>
-                                                <td>250028</td>
-                                                <td>
-                                                    <p className="mb-0">
-                                                        PO Box 16122 Collins Street West<br />Victoria
-                                                        8007 Australia<br />
-                                                        Phone: +123 456 7890<br />
-                                                        Email: demo@vito.com<br />
-                                                        Web: www.vito.com
-                                                    </p>
-                                                </td>
-                                                <td>
-                                                    <p className="mb-0">
-                                                        PO Box 16122 Collins Street West<br />Victoria
-                                                        8007 Australia<br />
-                                                        Phone: +123 456 7890<br />
-                                                        Email: demo@vito.com<br />
-                                                        Web: www.vito.com
-                                                    </p>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <table className="table table-striped" id="rejct">
+    <thead>
+        <tr>
+            <th className="text-center">#</th>
+            <th className="text-left">Name</th>
+            <th className="text-left">Email</th>
+            <th className="text-left">Phone</th>
+            <th className="text-center">Alamat</th>
+            <th className="text-center">Penilaian</th>
+            <th className="text-center">Status</th>
+            <th className="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {field.map((item, index) => {
+            // Cek apakah status.id sama dengan 5
+            if (item.status.id === 6) {
+                return (
+                    <>
+                        <tr id={`trHeadx${index}`}>
+                            <td className="text-center" key={index}>{index + 1}</td>
+                            <td className="text-left">{item.nama}</td>
+                            <td className="text-left">{item.email}</td>
+                            <td className="text-left">{item.phone}</td>
+                            <td className="text-center">
+                                <button
+                                    type="button"
+                                    className="btn btn-primary"
+                                    onClick={() => initializeModal(item ? item.id : '-')}
+                                >
+                                    Lihat Alamat detail
+                                </button>
+                            </td>
+                            <td className="text-center">
+                                <button
+                                    type="button"
+                                    className="btn btn-info"
+                                    onClick={() => initializelPoint(item ? item.id : '-')}
+                                >
+                                    Lihat Penilaian detail
+                                </button>
+                            </td>
+                            <td className="text-center">
+                                <h6 class="mb-0"><span class={`badge badge-${item.status.bg}`}>{item.status.nama}</span></h6>
+                            </td>
+                            <td>
+                                <div className=" text-center flex align-items-center list-user-action">
+                                    <button
+                                        type="button"
+                                        onClick={() => initializeModalAprv(item ? item.id : '-')}
+                                        className={`btn mb-1 dark-icon btn-secondary`}
+                                    >
+                                        Catatan
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr className="d-none" id={`trDteailx${index}`}>
+                            <td colSpan={2} className="text-left">
+                                <span className="badge badge-info">{item.code}</span>
+                                <br />by:User APrv
+                            </td>
+                            <td className="text-left">diajukan <br />{item.phone}</td>
+                            <td className="text-left">diAprv <br />{item.phone}</td>
+                            <td colSpan={3} className="text-left">
+                                <p>keterangan:</p>
+                            </td>
+                        </tr>
+                    </>
+                );
+            } else {
+                return null; // Jika status tidak sama dengan 5, lewati item ini
+            }
+        })}
+    </tbody>
+</table>
+
                                 </div>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-sm-12">
-                                <h5>Order Summary</h5>
+                            <h5 className="badge badge-success">Crediter Yang disetujui</h5>
                                 <div className="table-responsive-sm">
-                                    <table className="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th className="text-center" scope="col">#</th>
-                                                <th scope="col">Item</th>
-                                                <th className="text-center" scope="col">Quantity</th>
-                                                <th className="text-center" scope="col">Price</th>
-                                                <th className="text-center" scope="col">Totals</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th className="text-center" scope="row">1</th>
-                                                <td>
-                                                    <h6 className="mb-0">Web Design</h6>
-                                                    <p className="mb-0">
-                                                        Lorem Ipsum is simply dummy text of the
-                                                        printing and typesetting industry.
-                                                    </p>
-                                                </td>
-                                                <td className="text-center">5</td>
-                                                <td className="text-center">$120.00</td>
-                                                <td className="text-center"><b>$2,880.00</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th className="text-center" scope="row">2</th>
-                                                <td>
-                                                    <h6 className="mb-0">Web Design</h6>
-                                                    <p className="mb-0">
-                                                        Lorem Ipsum is simply dummy text of the
-                                                        printing and typesetting industry.
-                                                    </p>
-                                                </td>
-                                                <td className="text-center">5</td>
-                                                <td className="text-center">$120.00</td>
-                                                <td className="text-center"><b>$2,880.00</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th className="text-center" scope="row">3</th>
-                                                <td>
-                                                    <h6 className="mb-0">Web Design</h6>
-                                                    <p className="mb-0">
-                                                        Lorem Ipsum is simply dummy text of the
-                                                        printing and typesetting industry.
-                                                    </p>
-                                                </td>
-                                                <td className="text-center">5</td>
-                                                <td className="text-center">$120.00</td>
-                                                <td className="text-center"><b>$2,880.00</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th className="text-center" scope="row">4</th>
-                                                <td>
-                                                    <h6 className="mb-0">Web Design</h6>
-                                                    <p className="mb-0">
-                                                        Lorem Ipsum is simply dummy text of the
-                                                        printing and typesetting industry.
-                                                    </p>
-                                                </td>
-                                                <td className="text-center">5</td>
-                                                <td className="text-center">$120.00</td>
-                                                <td className="text-center"><b>$2,880.00</b></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <table className="table table-striped" id="apr">
+    <thead>
+        <tr>
+            <th className="text-center">#</th>
+            <th className="text-left">Name</th>
+            <th className="text-left">Email</th>
+            <th className="text-left">Phone</th>
+            <th className="text-center">Alamat</th>
+            <th className="text-center">Penilaian</th>
+            <th className="text-center">Status</th>
+            <th className="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {field.map((item, index) => {
+            // Cek apakah status.id sama dengan 5
+            if (item.status.id === 5) {
+                return (
+                    <>
+                        <tr id={`trHead${index}`}>
+                            <td className="text-center" key={index}>{index + 1}</td>
+                            <td className="text-left">{item.nama}</td>
+                            <td className="text-left">{item.email}</td>
+                            <td className="text-left">{item.phone}</td>
+                            <td className="text-center">
+                                <button
+                                    type="button"
+                                    className="btn btn-primary"
+                                    onClick={() => initializeModal(item ? item.id : '-')}
+                                >
+                                    Lihat Alamat detail
+                                </button>
+                            </td>
+                            <td className="text-center">
+                                <button
+                                    type="button"
+                                    className="btn btn-info"
+                                    onClick={() => initializelPoint(item ? item.id : '-')}
+                                >
+                                    Lihat Penilaian detail
+                                </button>
+                            </td>
+                            <td className="text-center">
+                                <h6 class="mb-0"><span class={`badge badge-${item.status.bg}`}>{item.status.nama}</span></h6>
+                            </td>
+                            <td>
+                                <div className=" text-center flex align-items-center list-user-action">
+                                    <button
+                                        type="button"
+                                        onClick={() => initializeModalAprv(item ? item.id : '-')}
+                                        className={`btn mb-1 dark-icon btn-secondary`}
+                                    >
+                                        Catatan
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr className="d-none" id={`trDteail${index}`}>
+                            <td colSpan={2} className="text-left">
+                                <span className="badge badge-info">{item.code}</span>
+                                <br />by:User APrv
+                            </td>
+                            <td className="text-left">diajukan <br />{item.phone}</td>
+                            <td className="text-left">diAprv <br />{item.phone}</td>
+                            <td colSpan={3} className="text-left">
+                                <p>keterangan:</p>
+                            </td>
+                        </tr>
+                    </>
+                );
+            } else {
+                return null; // Jika status tidak sama dengan 5, lewati item ini
+            }
+        })}
+    </tbody>
+</table>
+
                                 </div>
                                 <h5 className="mt-5">Order Details</h5>
                                 <div className="table-responsive-sm">
@@ -744,8 +836,6 @@ export default function AnggotaReview(props) {
                 </div>
             </div>
         </div>
-
-
 
     );
 }
