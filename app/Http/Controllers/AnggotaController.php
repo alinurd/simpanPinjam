@@ -246,16 +246,31 @@ class AnggotaController extends Controller
     {
         
          // Validate the request data if needed
-        //  dd($request);
          $codeId = $this->getCodeRand("RvW-","anggota");
          $code = $request->input('code');
          $sts = $request->input('submitId');
          $ket = $request->input('keterangan'); 
-         $ajuan = $request->input('ajuan');
+         $ajx = $request->input('ajuan');
+        //  dd($ajx);
          $user = Auth::user();
          $p = Penilaian::where("code", $code)->first();
          $usr = Anggota::find($p->id_anggota);
-        //  dd($user->jabatan);
+         if($ajx){
+            $ajuan=$ajx;
+        }else{
+             $ajuan=$usr->status;
+         }
+         if($user->jabatan == "ketua"){
+            $aj=$ajuan;
+        }else{
+             $aj=$usr->$ajuan;
+         }
+         if($user->jabatan == "ketua"){
+            $stss=$sts;
+         }else{
+             $stss=$usr->status;
+         } 
+        //  dd($stss ." | ". $aj);
 
          Aprove::insert([
              'user' => $user->id,
@@ -267,9 +282,9 @@ class AnggotaController extends Controller
             'keterangan' => $ket
          ]);
          if ($usr) {
-            $status = $usr->jabatan == "ketua" ? $sts : $usr->status;
             $usr->update([
-                'status' => $status,
+                'ajuan' => $aj,
+                'status' => $stss,
                 'progress' => 4,
             ]);
             // Update successful
@@ -418,7 +433,7 @@ public function getpointByAnggota ($id) {
     
     $anggota = Anggota::where("id", $id)->with('status')->first();
     $pn = Penilaian::where("id_anggota", $anggota->id)->first();
-    $apr = Aprove::where("id_anggota", 9)->with('status', 'users')->get();
+    $apr = Aprove::where("id_anggota", $id)->with('status', 'users')->get();
      $data['field'] = $anggota;
      $data['logAprv'] = $apr;
 

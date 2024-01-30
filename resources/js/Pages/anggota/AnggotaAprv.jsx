@@ -178,6 +178,14 @@ export default function AnggotaAprv(props) {
             const tbl = document.getElementById('logAprv');
             const rowCount = tbl.rows.length;
 
+            var inputElement = document.getElementById(`id_anggota`);
+            // var ket = document.getElementById(`keterangan`);
+            if (inputElement) {
+                inputElement.value = data.field.id;
+                inputElement.readOnly = true;
+                // ket.value = item2.penilaian;
+                // ket.readOnly = true;
+            }
             // Hapus semua baris kecuali header
             for (let i = rowCount - 1; i > 0; i--) {
                 tbl.deleteRow(i);
@@ -247,6 +255,19 @@ export default function AnggotaAprv(props) {
                     // for (let j = 0; j < gAhirElements.length; j++) {
                     //     gAhirElements[j].textContent = clasGrade[i];
                     // }
+                    let ketAhirElements = document.getElementsByClassName('ketAhir');
+                    for (let j = 0; j < ketAhirElements.length; j++) {
+                        ketAhirElements[j].textContent = clasketerangan[i];
+                    }
+
+                    let resPointElements = document.getElementsByClassName('resPoint');
+                    for (let j = 0; j < resPointElements.length; j++) {
+                        resPointElements[j].textContent = persentase + '%';
+                    }
+                    let gAhirElements = document.getElementsByClassName('gAhir');
+                    for (let j = 0; j < gAhirElements.length; j++) {
+                        gAhirElements[j].textContent = clasGrade[i];
+                    }
                 } else {
                     let stsPinjamanElements = document.getElementsByClassName('stsPinjaman');
                     for (let j = 0; j < stsPinjamanElements.length; j++) {
@@ -468,6 +489,15 @@ export default function AnggotaAprv(props) {
                             </div>
                             <div className="modal-body">
                                 <center>
+                                    <small className="text-muted">hasil survey menunjukan:</small><br />
+                                    <b className="mb-0" id="garde">&nbsp;
+                                        <div className="badge badge-primary">
+                                            <i className="ketAhir"></i>&nbsp;
+                                            <span className="badge badge-light resPoint"></span>
+                                        </div>
+                                    </b>
+                                    <br />
+                                    <i><span className="badge badge-secondary stsPinjaman"></span></i>
                                     <div class="table-responsive">
                                         <h5 className="text-left">log Aproval</h5>
                                         <table class="table table-primary" id="logAprv">
@@ -493,6 +523,10 @@ export default function AnggotaAprv(props) {
                                     </div>
                                     <label htmlFor="keterangan">Keterangan</label><br />
                                     <textarea name="keterangan" id="keterangan" cols="40" rows="2" required></textarea>
+                                    <br />
+                                    <label htmlFor="ajuan">Saran Ajuan</label><br />
+                                    <input type="number" name="ajuan" id="ajuan" />
+                                    <input type="hidden" name="id_anggota" id="id_anggota" />
                                 </center>
                             </div>
                             <div className="modal-footer">
