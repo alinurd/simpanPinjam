@@ -106,6 +106,7 @@ export default function Anggota(props) {
                                     <tr>
                                         <th className="text-center">#</th>
                                         <th className="text-left">Name</th>
+                                        <th className="text-left">Ajuan Rp.</th>
                                         <th className="text-left">Email</th>
                                         <th className="text-left">Phone</th>
                                         <th className="text-left">Alamat</th>
@@ -119,42 +120,58 @@ export default function Anggota(props) {
                                         <tr>
                                             <td className="text-center" key={index}>{index + 1}</td>
                                             <td className="text-left">{item.nama}</td>
+                                            <td className="text-right">{item.ajuan.toLocaleString()}.-</td>
                                             <td className="text-left">{item.email}</td>
                                             <td className="text-left">{item.phone}</td>
                                             <td className="text-left">
                                                 <button
                                                     type="button"
-                                                    className="btn btn-primary"
+                                                    className="btn btn-light"
                                                     onClick={() => initializeModal(item ? item.id : '-')}
                                                 >
                                                     Lihat Alamat detail
                                                 </button>
                                             </td>
                                             <td className="text-center">
-                                            <h6 class="mb-0"><span class={`badge badge-${item.status.bg}`}>{item.status.nama}</span></h6>
+                                                <h6 class="mb-0"><span class={`badge badge-${item.status.bg}`}>{item.status.nama}</span></h6>
                                             </td>
                                             <td className="text-center">
                                                 <button type="button" className={`btn mb-1 dark-icon btn-${item.progress.bg}`}>
-                                                    {item.progress.id>7?"Need Review Pengurus":item.progress.nama}
+                                                    {item.progress.id > 7 ? "Need Review Pengurus" : item.progress.nama}
                                                 </button>
                                             </td>
                                             <td>
-                                                <div className=" text-center flex align-items-center list-user-action">
-                                                    <a className="iq-bg-primary" data-toggle="tooltip" data-placement="top" title data-original-title="Edit" href={`/${toLowerCase(title)}Edit/${item.code}`}>
-                                                        <i className="ri-pencil-line" />
-                                                    </a>
-                                                    <a
-                                                        className="iq-bg-primary"
-                                                        data-toggle="tooltip"
-                                                        data-placement="top"
-                                                        title="Delete"
-                                                        href="#"
-                                                        onClick={(e) => handleDelete(e, item.id)} // Call the handleDelete function with the record id
-                                                    >
-                                                        <i className="ri-delete-bin-line" />
-                                                    </a>
+                                                <div className="text-center flex align-items-center list-user-action">
+                                                    {item.status.kelompok === "1" ? ( // Check if item.status.kelompok is equal to "1"
+                                                        <>
+                                                            <a
+                                                                className={`iq-bg-primary ${item.status.kelompok !== "1" ? 'btn.disabled' : ''}`} // Add 'disabled' class if item.status.kelompok is not equal to "1"
+                                                                data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Edit"
+                                                                href={`/${toLowerCase(title)}Edit/${item.code}`}
+                                                            >
+                                                                <i className="ri-pencil-line" />
+                                                            </a>
+
+                                                            <a
+                                                                className={`iq-bg-primary ${item.status.kelompok !== "1" ? 'btn.disabled' : ''}`} // Add 'disabled' class if item.status.kelompok is not equal to "1"
+                                                                data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Delete"
+                                                                href="#"
+                                                                onClick={(e) => handleDelete(e, item.id)} // Call the handleDelete function with the record id
+                                                            >
+                                                                <i className="ri-delete-bin-line" />
+                                                            </a>
+                                                        </>
+                                                    ) : (
+                                                        <p>#</p>
+                                                    )}
                                                 </div>
+
                                             </td>
+
                                         </tr>
                                     ))}
 
