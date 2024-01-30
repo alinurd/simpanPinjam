@@ -176,12 +176,12 @@ export default function AnggotaAprv(props) {
             modalElement.querySelector('#exampleModalCenterApproveAjuan').textContent = "Rp. " + data.field.ajuan.toLocaleString() + ".-";
             document.getElementById('code').value = data.point[0].code;
             const tbl = document.getElementById('logAprv');
-     const rowCount = tbl.rows.length;
+            const rowCount = tbl.rows.length;
 
-    // Hapus semua baris kecuali header
-    for (let i = rowCount - 1; i > 0; i--) {
-        tbl.deleteRow(i);
-    }
+            // Hapus semua baris kecuali header
+            for (let i = rowCount - 1; i > 0; i--) {
+                tbl.deleteRow(i);
+            }
 
             data.logAprv.forEach((apr, index) => {
                 const row = tbl.insertRow(-1); // Insert new row at the end of the table
@@ -198,7 +198,7 @@ export default function AnggotaAprv(props) {
                 cellKeterangan.textContent = apr.keterangan;
             });
 
-         }
+        }
 
     };
 
