@@ -331,7 +331,7 @@ console.log(mode)
                 <div className="iq-card">
                     <div className="iq-card-header d-flex justify-content-between">
                         <div className="iq-header-title">
-                            <h4 className="card-title">{capitalizeFirstLetter(title)} Review</h4>
+                            <h4 className="card-title">{capitalizeFirstLetter(title)} Aproval</h4>
                         </div>
                     </div>
                     <div className="iq-card-body">
