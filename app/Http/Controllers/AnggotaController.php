@@ -93,7 +93,6 @@ class AnggotaController extends Controller
                 ->where("type", 2)
                 ->get();
         }
-
         
          
             $data['bobotTotal'] = Kriteria::selectRaw('SUM(bobot) as tBobot')
@@ -405,11 +404,12 @@ public function destroy($id)
 public function getAnggotaById ($id) {
  
             $field = Anggota::where("id", $id)->with('desa')->first();
+
             return response()->json([
                 'action' => 'getById', 
             'message' => 'Get Data Kriteria successfully', 
             'success' =>true, 
-            'data' =>$field, ], 201); 
+             'data' =>$field, ], 201); 
 }
 
 public function getpointByAnggota ($id) {
@@ -418,11 +418,10 @@ public function getpointByAnggota ($id) {
     
     $anggota = Anggota::where("id", $id)->with('status')->first();
     $pn = Penilaian::where("id_anggota", $anggota->id)->first();
+    $apr = Aprove::where("id_anggota", 9)->with('status', 'users')->get();
      $data['field'] = $anggota;
-            // if($anggota['progress']==8){
-            //     $p="xx";
-            // }
-            // dd($anggota);
+     $data['logAprv'] = $apr;
+
             $data['pointTotal'] = Penilaian::selectRaw('SUM(penilaian) as tPoint')
             ->where('code', $pn->code)
             ->where('type', 1)
@@ -433,7 +432,7 @@ public function getpointByAnggota ($id) {
             ->get();
             // dd($data['bobotTotal'][0]['ttl']);
             // dd($data['pointTotal'][0]['ttl']);
-            // dd($data['']);
+            // dd($data['logAprv']);
 
             $data['point'] = Penilaian::where("code", $pn->code)->where("type", 1)->get();
             $data['tinjau'] = Penilaian::where("code", $pn->code)->where("type", 2)->get();

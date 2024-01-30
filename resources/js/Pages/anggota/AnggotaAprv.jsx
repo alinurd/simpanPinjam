@@ -3,7 +3,7 @@ import { Link } from "@inertiajs/react";
 import { Inertia } from '@inertiajs/inertia';
 
 import axios from 'axios';  // Import the axios library
- const capitalizeFirstLetter = (string) => {
+const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
@@ -27,7 +27,7 @@ export default function AnggotaAprv(props) {
 
             // Serialize form data or customize the data as needed
             const formData = new FormData(e.target);
-console.log(mode)
+            // console.log(mode)
             // Make a POST request using axios
             const response = await axios.post(`/${toLowerCase(title)}${capitalizeFirstLetter(mode)}`, formData);
 
@@ -57,7 +57,6 @@ console.log(mode)
     const initializeModal = async (id) => {
         try {
             const response = await axios.get(`/anggotaById/${id}`);
-            console.log(response.data.data)
 
 
             // If data is successfully fetched, update the modal content
@@ -73,7 +72,7 @@ console.log(mode)
     const initializeModalAprv = async (id) => {
         try {
             const response = await axios.get(`/pointByAnggota/${id}`);
-            console.log(response.data.data)
+            // console.log(response.data.data.)
 
             if (response) {
                 updateModalContentApr(response.data.data);
@@ -154,7 +153,7 @@ console.log(mode)
         const modalElement = document.getElementById('exampleModalCenter');
 
         if (modalElement) {
-            console.log(data.code)
+            // console.log(data.code)
             // Update modal content here, for example:
             modalElement.querySelector('#exampleModalCenterTitle').textContent = data.code;
             modalElement.querySelector('#exampleModalCenterTitle').textContent = data.code;
@@ -173,20 +172,41 @@ console.log(mode)
             // Update modal content here, for example:
             var Ha = hasilAhir(data.pointTotal, data.bobotTotal, 1)
             modalElement.querySelector('#exampleModalCenterApproveTitle').textContent = data.field.code;
-            modalElement.querySelector('#exampleModalCenterApproveNama').textContent = data.field.nama;
-            modalElement.querySelector('#ajuan').textContent = "Rp. " + data.field.ajuan;
+            modalElement.querySelector('#exampleModalCenterApproveName').textContent = data.field.nama;
+            modalElement.querySelector('#exampleModalCenterApproveAjuan').textContent = "Rp. " + data.field.ajuan.toLocaleString() + ".-";
             document.getElementById('code').value = data.point[0].code;
+            const tbl = document.getElementById('logAprv');
+     const rowCount = tbl.rows.length;
 
-            // Assuming you have elements in the modal to display the fetched data
-        }
-        
+    // Hapus semua baris kecuali header
+    for (let i = rowCount - 1; i > 0; i--) {
+        tbl.deleteRow(i);
+    }
+
+            data.logAprv.forEach((apr, index) => {
+                const row = tbl.insertRow(-1); // Insert new row at the end of the table
+                const cellIndex = row.insertCell(0);
+                const cellPengurus = row.insertCell(1);
+                const cellSaranApprovalRp = row.insertCell(2);
+                const cellStatus = row.insertCell(3);
+                const cellKeterangan = row.insertCell(4);
+
+                cellIndex.textContent = index + 1;
+                cellPengurus.textContent = apr.users.name;
+                cellSaranApprovalRp.textContent = apr.ajuan.toLocaleString() + ".-";
+                cellStatus.innerHTML = `<i><span class="badge badge-${apr.status.bg}">${apr.status.nama}</span></i>`;
+                cellKeterangan.textContent = apr.keterangan;
+            });
+
+         }
+
     };
 
 
     const hasilAhir = (pointTotal, bobotTotal, type) => {
         let point = 0;
         let bobot = 0;
-        console.log(pointTotal)
+        // console.log(pointTotal)
 
         if (pointTotal.length > 0) {
             point = pointTotal[0].tPoint;
@@ -315,7 +335,7 @@ console.log(mode)
         // You can add any additional logic here if needed
         // For example, you can trigger form submission here
     };
-    
+
     const handleReject = () => {
         // Set the value of the hidden input field to 0
         document.getElementById('submitId').value = '6';
@@ -323,7 +343,7 @@ console.log(mode)
         // For example, you can trigger form submission here
     };
 
-    
+
     // console.log(field)
     return (
         <div className="row">
@@ -347,7 +367,7 @@ console.log(mode)
                                     </div>
                                 </div>
                                 <div className="col-sm-12 col-md-6">
-                                    
+
                                 </div>
                             </div>
                             <table id="user-list-table" className="table table-striped table-borderless mt-4" role="grid" aria-describedby="user-list-page-info">
@@ -436,37 +456,58 @@ console.log(mode)
             <div className="modal fade" id="exampleModalCenterApprove" role="dialog" aria-labelledby="exampleModalCenterApprove" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div className="modal-content">
-                    <form className="was-validated" onSubmit={submit}>
-    <div className="modal-header">
-        <h5 className="modal-title text-bold" id="">
-            <b> <span id="exampleModalCenterApproveTitle"></span></b> - <span id="exampleModalCenterApproveNama"></span>
-        </h5>
-        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
-    <div className="modal-body">
-        <center><i><span className="badge badge-secondary stsPinjaman"></span></i></center>
-        <br />Total Ajuan: <i> <span className="badge badge-dark ajuan" id="ajuan"></span></i>
-        <br /><br />
-        <center>
-            <label htmlFor="keterangan">Keterangan</label><br />
-            <textarea name="keterangan" id="keterangan" cols="40" rows="2" required></textarea>
-        </center>
-    </div>
-    <div className="modal-footer">
-        <div className="row">
-            <div className="col">
-                <button type="submit" className="btn btn-danger" onClick={() => handleReject()}>Reject</button>
-            </div>
-            <div className="col">
-                <button type="submit" className="btn btn-success" onClick={() => handleApprove()}>Approve</button>
-            </div>
-        </div>
-    </div>
-    <input type="hidden" id="submitId" name="submitId" value="0" />
-    <input type="hidden" id="code" name="code" value="0" />
-</form>
+                        <form className="was-validated" onSubmit={submit}>
+                            <div className="modal-header">
+                                <h5 className="modal-title text-bold" id="">
+                                    <b> [<span id="exampleModalCenterApproveTitle"></span>]</b> -  <span id="exampleModalCenterApproveName"></span> |
+                                    <i> Rp. <span className="badge badge-dark ajuan" id="exampleModalCenterApproveAjuan"></span></i>
+                                </h5>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div className="modal-body">
+                                <center>
+                                    <div class="table-responsive">
+                                        <h5 className="text-left">log Aproval</h5>
+                                        <table class="table table-primary" id="logAprv">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">No</th>
+                                                    <th scope="col">Pengurus</th>
+                                                    <th scope="col">Saran aprv Rp.</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Keterangan</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="">
+                                                    <td id="logIndex"><span id="logInsdex"></span></td>
+                                                    <td id="logUser"><span id="loguser"></span></td>
+                                                    <td id="logAjuan"><span id="logAjuan"></span></td>
+                                                    <td id="logStatus"><span className="badge badge-secondary" id="logStatus"></span></td>
+                                                    <td id="logKet"><span id="logKet"></span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <label htmlFor="keterangan">Keterangan</label><br />
+                                    <textarea name="keterangan" id="keterangan" cols="40" rows="2" required></textarea>
+                                </center>
+                            </div>
+                            <div className="modal-footer">
+                                <div className="row">
+                                    <div className="col">
+                                        <button type="submit" className="btn btn-danger" onClick={() => handleReject()}>Reject</button>
+                                    </div>
+                                    <div className="col">
+                                        <button type="submit" className="btn btn-success" onClick={() => handleApprove()}>Approve</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="submitId" name="submitId" value="0" />
+                            <input type="hidden" id="code" name="code" value="0" />
+                        </form>
 
                     </div>
                 </div>
