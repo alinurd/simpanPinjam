@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Aprove extends Model
 {
     use HasFactory;
-    protected $fillable = ['code', 'code_penilaian',  'keterangan','status'];
+    protected $fillable = ['code', 'code_penilaian',  'keterangan','status', 'id_anggota'];
     protected $table ="aproves";
 
     public function users()

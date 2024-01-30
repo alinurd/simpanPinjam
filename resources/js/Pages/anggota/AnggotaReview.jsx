@@ -172,9 +172,19 @@ export default function AnggotaReview(props) {
             // console.log(data.point[0].code)
             // Update modal content here, for example:
             var Ha = hasilAhir(data.pointTotal, data.bobotTotal, 1)
+            var inputElement = document.getElementById(`id_anggota`);
+                // var ket = document.getElementById(`keterangan`);
+                if (inputElement) {
+                    inputElement.value = data.id;
+                    inputElement.readOnly = true;
+                    // ket.value = item2.penilaian;
+                    // ket.readOnly = true;
+                }
+
+                
             modalElement.querySelector('#exampleModalCenterApproveTitle').textContent = data.field.code;
-            modalElement.querySelector('#exampleModalCenterApproveNama').textContent = data.field.nama;
-            modalElement.querySelector('#ajuan').textContent = "Rp. " + data.field.ajuan;
+            modalElement.querySelector('#exampleModalCenterApproveName').textContent = data.field.nama;
+            modalElement.querySelector('#exampleModalCenterApproveAjuan').textContent = "Rp. " + data.field.ajuan;
             document.getElementById('code').value = data.point[0].code;
 
             // Assuming you have elements in the modal to display the fetched data
@@ -311,17 +321,12 @@ export default function AnggotaReview(props) {
 
     const handleApprove = () => {
         // Set the value of the hidden input field to 1
-        document.getElementById('submitId').value = '5';
+        document.getElementById('submitId').value = '3';
         // You can add any additional logic here if needed
         // For example, you can trigger form submission here
     };
 
-    const handleReject = () => {
-        // Set the value of the hidden input field to 0
-        document.getElementById('submitId').value = '6';
-        // You can add any additional logic here if needed
-        // For example, you can trigger form submission here
-    };
+    
     // Semua elemen trDetail disembunyikan secara default
     document.querySelectorAll('[id="Detail"]').forEach(trDetailElement => {
         trDetailElement.classList.add('d-none');
@@ -636,28 +641,61 @@ export default function AnggotaReview(props) {
                         <form className="was-validated" onSubmit={submit}>
                             <div className="modal-header">
                                 <h5 className="modal-title text-bold" id="">
-                                    <b> <span id="exampleModalCenterApproveTitle"></span></b> - <span id="exampleModalCenterApproveNama"></span>
+                                    <b> [<span id="exampleModalCenterApproveTitle"></span>]</b> -  <span id="exampleModalCenterApproveName"></span> | 
+                                    <i> Rp. <span className="badge badge-dark ajuan" id="exampleModalCenterApproveAjuan"></span></i>
                                 </h5>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">×</span>
                                 </button>
                             </div>
                             <div className="modal-body">
-                                <center><i><span className="badge badge-secondary stsPinjaman"></span></i></center>
-                                <br />Total Ajuan: <i> <span className="badge badge-dark ajuan" id="ajuan"></span></i>
-                                <br /><br />
+                                <center>
+                                    
+                                <div
+                                    class="table-responsive"
+                                >
+                                    <h5 className="text-left">log Aproval</h5>
+                                    <table
+                                        class="table table-primary"
+                                    >
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">No</th>
+                                                <th scope="col">Pengurus</th>
+                                                <th scope="col">Saran aprv Rp.</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Keterangan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="">
+                                                <td>1</td>
+                                                <td scope="row">Pengurus 1</td>
+                                                <td>10920920290</td>
+                                                <td><i><span className="badge badge-secondary"> status aprv</span></i></td>
+                                                <td>keterngananaan</td>
+                                            </tr> 
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                
+                                </center>
+                                 
                                 <center>
                                     <label htmlFor="keterangan">Keterangan</label><br />
                                     <textarea name="keterangan" id="keterangan" cols="40" rows="2" required></textarea>
-                                </center>
+                                    <br />
+                                    <label htmlFor="ajuan">Saran Ajuan</label><br />
+                                    <input type="number" name="ajuan" id="ajuan" />
+                                    <input type="hidden" name="id_anggota" id="id_anggota" />
+                                 </center>
+                                
                             </div>
                             <div className="modal-footer">
                                 <div className="row">
                                     <div className="col">
-                                        <button type="submit" className="btn btn-danger" onClick={() => handleReject()}>Reject</button>
-                                    </div>
-                                    <div className="col">
-                                        <button type="submit" className="btn btn-success" onClick={() => handleApprove()}>Approve</button>
+                                        <button type="submit" className="btn btn-success" onClick={() => handleApprove()}>Saran</button>
                                     </div>
                                 </div>
                             </div>

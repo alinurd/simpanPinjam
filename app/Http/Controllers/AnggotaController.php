@@ -213,6 +213,8 @@ class AnggotaController extends Controller
          $codeId = $this->getCodeRand("RvW-","anggota");
          $code = $request->input('code');
          $sts = $request->input('submitId');
+         $ajuan = $request->input('ajuan');
+         $id_anggota = $request->input('id_anggota');
          $ket = $request->input('keterangan'); 
          $user = Auth::id();
          $p = Penilaian::where("code", $code)->first();
@@ -223,12 +225,14 @@ class AnggotaController extends Controller
             'code' => $codeId,
             'code_penilaian' => $code,
             'status' => $sts,
+            'id_anggota' => $sts,
+            'ajuan' => $ajuan,
             'keterangan' => $ket
          ]);
          if ($usr) {
              $usr->update([
-                 'status' => $sts,
-                 'progress' => 4,
+                //  'status' => $sts,
+                 'progress' => $usr->status,
              ]);
          
              // Update successful
