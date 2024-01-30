@@ -238,7 +238,7 @@ class AnggotaController extends Controller
          if ($usr) {
              $usr->update([
                 //  'status' => $sts,
-                 'progress' => $usr->status,
+                 'progress' => $sts,
              ]);
          
              // Update successful
