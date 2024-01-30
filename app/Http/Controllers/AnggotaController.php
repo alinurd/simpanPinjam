@@ -49,9 +49,11 @@ class AnggotaController extends Controller
             $data['tinjau'] = Penilaian::where("id_anggota", $anggotaId)
                 ->where("type", 2)
                 ->get();
-        }
-
-        
+            }
+            $data['aprv'] = Aprove::with("users")->get();
+             
+        // dd($anggotaId);
+        // dd($data['aprv']);
          
             $data['bobotTotal'] = Kriteria::selectRaw('SUM(bobot) as tBobot')
             ->where('status', 1)

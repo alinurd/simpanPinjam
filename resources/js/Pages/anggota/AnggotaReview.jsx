@@ -15,9 +15,9 @@ const toLowerCase = (string) => {
 
 export default function AnggotaReview(props) {
 
-    const { field, kriteria, subKriteria, codeId, mode, title, anggota, kriteriax, subKriteriax, point, tinjau, pointTotal, bobotTotal } = props;
+    const { field, kriteria, subKriteria, codeId, mode, title, anggota, kriteriax, subKriteriax, point, tinjau, pointTotal, bobotTotal, aprv } = props;
     // const [isSubmitting, setIsSubmitting] = useState(false);
-
+    // console.log(aprv)
     const submit = async (e) => {
         e.preventDefault();
 
@@ -381,7 +381,7 @@ export default function AnggotaReview(props) {
                     </div>
                     <div className="iq-card-body">
                         <div className="row">
-                            
+
                             <div className="col-sm-12">
                                 <hr className="mt-3" />
                                 <h5 className="mb-0">Hello, Nik Jones</h5>
@@ -397,168 +397,186 @@ export default function AnggotaReview(props) {
                         </div>
                         <div className="row">
                             <div className="col-lg-12">
-                            <h5 className="badge badge-danger">Calon Crediter Yang Belum disetujui</h5>
+                                <h5 className="badge badge-danger">Calon Crediter Yang Belum disetujui</h5>
                                 <div className="table-responsive-sm">
-                                <table className="table table-striped" id="rejct">
-    <thead>
-        <tr>
-            <th className="text-center">#</th>
-            <th className="text-left">Name</th>
-            <th className="text-left">Email</th>
-            <th className="text-left">Phone</th>
-            <th className="text-center">Alamat</th>
-            <th className="text-center">Penilaian</th>
-            <th className="text-center">Status</th>
-            <th className="text-center">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        {field.map((item, index) => {
-            // Cek apakah status.id sama dengan 5
-            if (item.status.id === 6) {
-                return (
-                    <>
-                        <tr id={`trHeadx${index}`}>
-                            <td className="text-center" key={index}>{index + 1}</td>
-                            <td className="text-left">{item.nama}</td>
-                            <td className="text-left">{item.email}</td>
-                            <td className="text-left">{item.phone}</td>
-                            <td className="text-center">
-                                <button
-                                    type="button"
-                                    className="btn btn-primary"
-                                    onClick={() => initializeModal(item ? item.id : '-')}
-                                >
-                                    Lihat Alamat detail
-                                </button>
-                            </td>
-                            <td className="text-center">
-                                <button
-                                    type="button"
-                                    className="btn btn-info"
-                                    onClick={() => initializelPoint(item ? item.id : '-')}
-                                >
-                                    Lihat Penilaian detail
-                                </button>
-                            </td>
-                            <td className="text-center">
-                                <h6 class="mb-0"><span class={`badge badge-${item.status.bg}`}>{item.status.nama}</span></h6>
-                            </td>
-                            <td>
-                                <div className=" text-center flex align-items-center list-user-action">
-                                    <button
-                                        type="button"
-                                        onClick={() => initializeModalAprv(item ? item.id : '-')}
-                                        className={`btn mb-1 dark-icon btn-secondary`}
-                                    >
-                                        Catatan
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr className="d-none" id={`trDteailx${index}`}>
-                            <td colSpan={2} className="text-left">
-                                <span className="badge badge-info">{item.code}</span>
-                                <br />by:User APrv
-                            </td>
-                            <td className="text-left">diajukan <br />{item.phone}</td>
-                            <td className="text-left">diAprv <br />{item.phone}</td>
-                            <td colSpan={3} className="text-left">
-                                <p>keterangan:</p>
-                            </td>
-                        </tr>
-                    </>
-                );
-            } else {
-                return null; // Jika status tidak sama dengan 5, lewati item ini
-            }
-        })}
-    </tbody>
-</table>
+                                    <table className="table table-striped" id="rejct">
+                                        <thead>
+                                            <tr>
+                                                <th className="text-center">#</th>
+                                                <th className="text-left">Name</th>
+                                                <th className="text-left">Email</th>
+                                                <th className="text-left">Phone</th>
+                                                <th className="text-center">Alamat</th>
+                                                <th className="text-center">Penilaian</th>
+                                                <th className="text-center">Status</th>
+                                                <th className="text-center">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {field.map((item, index) => {
+                                                // Cek apakah status.id sama dengan 5
+                                                if (item.status.id === 6) {
+                                                    return (
+                                                        <>
+                                                            <tr id={`trHeadx${index}`}>
+                                                                <td className="text-center" key={index}>{index + 1}</td>
+                                                                <td className="text-left">{item.nama}</td>
+                                                                <td className="text-left">{item.email}</td>
+                                                                <td className="text-left">{item.phone}</td>
+                                                                <td className="text-center">
+                                                                    <button
+                                                                        type="button"
+                                                                        className="btn btn-primary"
+                                                                        onClick={() => initializeModal(item ? item.id : '-')}
+                                                                    >
+                                                                        Lihat Alamat detail
+                                                                    </button>
+                                                                </td>
+                                                                <td className="text-center">
+                                                                    <button
+                                                                        type="button"
+                                                                        className="btn btn-info"
+                                                                        onClick={() => initializelPoint(item ? item.id : '-')}
+                                                                    >
+                                                                        Lihat Penilaian detail
+                                                                    </button>
+                                                                </td>
+                                                                <td className="text-center">
+                                                                    <h6 class="mb-0"><span class={`badge badge-${item.status.bg}`}>{item.status.nama}</span></h6>
+                                                                </td>
+                                                                <td>
+                                                                    <div className=" text-center flex align-items-center list-user-action">
+                                                                        <button
+                                                                            type="button"
+                                                                            onClick={() => initializeModalAprv(item ? item.id : '-')}
+                                                                            className={`btn mb-1 dark-icon btn-secondary`}
+                                                                        >
+                                                                            Catatan
+                                                                        </button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            {aprv.map((itemAprv, k) => {
+                                                                if (item.id === itemAprv.id_anggota) {
+                                                                    return (
+                                                                        <tr className="d-none" id={`trDteailx${index}`}>
+                                                                            <td colSpan={2} className="text-left">
+                                                                                <span className="badge badge-info">{itemAprv.code}</span>
+                                                                                <br />by: {itemAprv.users.name} {/* Ganti dengan field yang sesuai */}
+                                                                            </td>
+                                                                            <td className="text-left">diajukan <br />{item.ajuan.toLocaleString()}.-</td> {/* Ganti dengan field yang sesuai */}
+                                                                            <td className="text-left">diAprv <br />{itemAprv.ajuan.toLocaleString()}.- </td> {/* Ganti dengan field yang sesuai */}
+                                                                            <td colSpan={3} className="text-left">
+                                                                                <p>keterangan: {itemAprv.keterangan}</p> {/* Ganti dengan field yang sesuai */}
+                                                                            </td>
+                                                                        </tr>
+                                                                    );
+                                                                } else {
+                                                                    return null;
+                                                                }
+                                                            })}
+                                                        </>
+                                                    );
+                                                } else {
+                                                    return null; // Jika status tidak sama dengan 5, lewati item ini
+                                                }
+                                            })}
+                                        </tbody>
+                                    </table>
 
                                 </div>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-sm-12">
-                            <h5 className="badge badge-success">Crediter Yang disetujui</h5>
+                                <h5 className="badge badge-success">Crediter Yang disetujui</h5>
                                 <div className="table-responsive-sm">
-                                <table className="table table-striped" id="apr">
-    <thead>
-        <tr>
-            <th className="text-center">#</th>
-            <th className="text-left">Name</th>
-            <th className="text-left">Email</th>
-            <th className="text-left">Phone</th>
-            <th className="text-center">Alamat</th>
-            <th className="text-center">Penilaian</th>
-            <th className="text-center">Status</th>
-            <th className="text-center">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        {field.map((item, index) => {
-            // Cek apakah status.id sama dengan 5
-            if (item.status.id === 5) {
-                return (
-                    <>
-                        <tr id={`trHead${index}`}>
-                            <td className="text-center" key={index}>{index + 1}</td>
-                            <td className="text-left">{item.nama}</td>
-                            <td className="text-left">{item.email}</td>
-                            <td className="text-left">{item.phone}</td>
-                            <td className="text-center">
-                                <button
-                                    type="button"
-                                    className="btn btn-primary"
-                                    onClick={() => initializeModal(item ? item.id : '-')}
-                                >
-                                    Lihat Alamat detail
-                                </button>
-                            </td>
-                            <td className="text-center">
-                                <button
-                                    type="button"
-                                    className="btn btn-info"
-                                    onClick={() => initializelPoint(item ? item.id : '-')}
-                                >
-                                    Lihat Penilaian detail
-                                </button>
-                            </td>
-                            <td className="text-center">
-                                <h6 class="mb-0"><span class={`badge badge-${item.status.bg}`}>{item.status.nama}</span></h6>
-                            </td>
-                            <td>
-                                <div className=" text-center flex align-items-center list-user-action">
-                                    <button
-                                        type="button"
-                                        onClick={() => initializeModalAprv(item ? item.id : '-')}
-                                        className={`btn mb-1 dark-icon btn-secondary`}
-                                    >
-                                        Catatan
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr className="d-none" id={`trDteail${index}`}>
-                            <td colSpan={2} className="text-left">
-                                <span className="badge badge-info">{item.code}</span>
-                                <br />by:User APrv
-                            </td>
-                            <td className="text-left">diajukan <br />{item.phone}</td>
-                            <td className="text-left">diAprv <br />{item.phone}</td>
-                            <td colSpan={3} className="text-left">
-                                <p>keterangan:</p>
-                            </td>
-                        </tr>
-                    </>
-                );
-            } else {
-                return null; // Jika status tidak sama dengan 5, lewati item ini
-            }
-        })}
-    </tbody>
-</table>
+                                    <table className="table table-striped" id="apr">
+                                        <thead>
+                                            <tr>
+                                                <th className="text-center">#</th>
+                                                <th className="text-left">Name</th>
+                                                <th className="text-left">Email</th>
+                                                <th className="text-left">Phone</th>
+                                                <th className="text-center">Alamat</th>
+                                                <th className="text-center">Penilaian</th>
+                                                <th className="text-center">Status</th>
+                                                <th className="text-center">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            {field.map((item, indexx) => {
+                                                // Cek apakah status.id sama dengan 5
+                                                if (item.status.id === 5) {
+                                                    return (
+                                                        <>
+                                                            <tr id={`trHead${item.id}`}>
+                                                                <td className="text-center" key={indexx}>{indexx + 1}</td>
+                                                                <td className="text-left">{item.nama}</td>
+                                                                <td className="text-left">{item.email}</td>
+                                                                <td className="text-left">{item.phone}</td>
+                                                                <td className="text-center">
+                                                                    <button
+                                                                        type="button"
+                                                                        className="btn btn-primary"
+                                                                        onClick={() => initializeModal(item ? item.id : '-')}
+                                                                    >
+                                                                        Lihat Alamat detail
+                                                                    </button>
+                                                                </td>
+                                                                <td className="text-center">
+                                                                    <button
+                                                                        type="button"
+                                                                        className="btn btn-info"
+                                                                        onClick={() => initializelPoint(item ? item.id : '-')}
+                                                                    >
+                                                                        Lihat Penilaian detail
+                                                                    </button>
+                                                                </td>
+                                                                <td className="text-center">
+                                                                    <h6 class="mb-0"><span class={`badge badge-${item.status.bg}`}>{item.status.nama}</span></h6>
+                                                                </td>
+                                                                <td>
+                                                                    <div className=" text-center flex align-items-center list-user-action">
+                                                                        <button
+                                                                            type="button"
+                                                                            onClick={() => initializeModalAprv(item ? item.id : '-')}
+                                                                            className={`btn mb-1 dark-icon btn-secondary`}
+                                                                        >
+                                                                            Catatan
+                                                                        </button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            {aprv.map((itemAprv, k) => {
+                                                                if (item.id === itemAprv.id_anggota) {
+                                                                    return (
+                                                                        <tr className="d-none" id={`trDteail${indexx}`}>
+                                                                            <td colSpan={2} className="text-left">
+                                                                                <span className="badge badge-info">{itemAprv.code}</span>
+                                                                                <br />by: {itemAprv.users.name} {/* Ganti dengan field yang sesuai */}
+                                                                            </td>
+                                                                            <td className="text-left">diajukan <br />{item.ajuan.toLocaleString()}.-</td> {/* Ganti dengan field yang sesuai */}
+                                                                            <td className="text-left">diAprv <br />{itemAprv.ajuan.toLocaleString()}.- </td> {/* Ganti dengan field yang sesuai */}
+                                                                            <td colSpan={3} className="text-left">
+                                                                                <p>keterangan: {itemAprv.keterangan}</p> {/* Ganti dengan field yang sesuai */}
+                                                                            </td>
+                                                                        </tr>
+                                                                    );
+                                                                } else {
+                                                                    return null;
+                                                                }
+                                                            })}
+                                                        </>
+                                                    );
+                                                } else {
+                                                    return null; // Jika status tidak sama dengan 5, lewati item ini
+                                                }
+                                            })}
+                                        </tbody>
+                                    </table>
+
 
                                 </div>
                                 <h5 className="mt-5">Order Details</h5>
