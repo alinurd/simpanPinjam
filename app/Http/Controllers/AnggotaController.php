@@ -69,6 +69,47 @@ class AnggotaController extends Controller
 
         return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name. "Review"))->with($data);
     }
+    public function aprv()
+    {
+        $data['title'] = $this->name;
+        $anggotaCollection = Anggota::whereIn("status", [2, 3])->orWhere("progress", 3)->with('status')->get();
+
+        foreach ($anggotaCollection as $anggota) {
+            $anggotaId = $anggota->id;
+        
+            // Now you can use $anggotaId to fetch related data
+            $data['pointTotal'] = Penilaian::selectRaw('SUM(penilaian) as tPoint')
+                ->where('id_anggota', $anggotaId)
+                ->where('type', 1)
+                ->get();
+        
+            $data['point'] = Penilaian::where("id_anggota", $anggotaId)
+                ->where("type", 1)
+                ->get();
+        
+            $data['tinjau'] = Penilaian::where("id_anggota", $anggotaId)
+                ->where("type", 2)
+                ->get();
+        }
+
+        
+         
+            $data['bobotTotal'] = Kriteria::selectRaw('SUM(bobot) as tBobot')
+            ->where('status', 1)
+            ->where('type', 1)
+            ->get(); 
+
+             // $data['field'] = Anggota::where("status",">", 1)->get();
+            $data['kriteria'] = Kriteria::where("status", 1)->where("type", 1)->get();
+            $data['subKriteria'] = SubKriteria::where("status", 1)->get();
+            $data['kriteriax'] = Kriteria::where("status", 1)->where("type", 2)->get();
+            $data['subKriteriax'] = SubKriteria::where("status", 1)->get();
+             $data['field'] = $anggotaCollection;
+             $data['mode'] = 'aprv';
+
+
+        return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name. "Aprv"))->with($data);
+    }
     public function create()
     {
         $codeId = $this->getCodeRand("AGT-","anggota");
@@ -195,6 +236,40 @@ class AnggotaController extends Controller
         'message' => 'Data stored successfully', 
         'success' =>true, 
         'redirect' => $this->name."Review"], 201); 
+}
+    public function storeaprv(Request $request)
+    {
+        
+         // Validate the request data if needed
+        //  dd($request);
+         $codeId = $this->getCodeRand("RvW-","anggota");
+         $code = $request->input('code');
+         $sts = $request->input('submitId');
+         $ket = $request->input('keterangan'); 
+         $user = Auth::id();
+         $p = Penilaian::where("code", $code)->first();
+        $usr = Anggota::find($p->id_anggota);
+
+         Aprove::insert([
+             'user' => $user,
+            'code' => $codeId,
+            'code_penilaian' => $code,
+            'status' => $sts,
+            'keterangan' => $ket
+         ]);
+         if ($usr) {
+             $usr->update([
+                 'status' => $sts,
+                 'progress' => 4,
+             ]);
+         
+             // Update successful
+         }
+        return response()->json([
+        'action' => 'Create', 
+        'message' => 'Data stored successfully', 
+        'success' =>true, 
+        'redirect' => $this->name."Aprv"], 201); 
 }
 
 public function edit($code) {

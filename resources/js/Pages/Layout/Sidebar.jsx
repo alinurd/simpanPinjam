@@ -53,6 +53,14 @@ export default function Sidebar() {
                   Review
                 </Link> 
               </li> 
+                <li>
+                  <Link
+                  href="/anggotaAprv"
+                  className={`iq-waves-effect  ${
+                  window.location.pathname === "/anggotaAprv"? "active": "" }`}aria-current="page" > 
+                  Aprv
+                </Link> 
+              </li> 
               </ul>
             </li>
 

@@ -60,6 +60,7 @@ Route::middleware('auth','web')->group(function () {
 
         // anggota Route
     Route::get('/anggotaReview', [AnggotaController::class, 'review'])->name('anggotaReview');
+    Route::get('/anggotaAprv', [AnggotaController::class, 'aprv'])->name('AnggotaAprv');
     Route::get('/anggota', [AnggotaController::class, 'index'])->name('anggota');
     Route::get('/anggotaCreate', [AnggotaController::class, 'create'])->name('anggotaCreate');
     Route::get('/anggotaEdit/{code}', [AnggotaController::class, 'edit'])->name('anggotaEdit');
@@ -67,6 +68,7 @@ Route::middleware('auth','web')->group(function () {
     Route::get('/pointByAnggota/{id}', [AnggotaController::class, 'getpointByAnggota'])->name('pointByAnggota');
         Route::post('/anggotaCreate', [AnggotaController::class, 'store'])->name('anggotaCreate.post');
         Route::post('/anggotaReview', [AnggotaController::class, 'storeReview'])->name('anggotaReview.post');
+        Route::post('/anggotaAprv', [AnggotaController::class, 'storeAprv'])->name('anggotaAprv.post');
         Route::post('/anggotaUpdate', [AnggotaController::class, 'update'])->name('anggotaUpdate.post');
         Route::delete('anggotaDelete/{id}', [AnggotaController::class, 'destroy'])->name('anggotaDelete');
 
