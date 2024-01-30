@@ -252,25 +252,30 @@ class AnggotaController extends Controller
          $code = $request->input('code');
          $sts = $request->input('submitId');
          $ket = $request->input('keterangan'); 
-         $user = Auth::id();
+         $ajuan = $request->input('ajuan');
+         $user = Auth::user();
          $p = Penilaian::where("code", $code)->first();
-        $usr = Anggota::find($p->id_anggota);
+         $usr = Anggota::find($p->id_anggota);
+        //  dd($user->jabatan);
 
          Aprove::insert([
-             'user' => $user,
+             'user' => $user->id,
             'code' => $codeId,
             'code_penilaian' => $code,
             'status' => $sts,
+            'id_anggota' => $usr->id,
+            'ajuan' => $ajuan,
             'keterangan' => $ket
          ]);
          if ($usr) {
-             $usr->update([
-                 'status' => $sts,
-                 'progress' => 4,
-             ]);
-         
-             // Update successful
-         }
+            $status = $usr->jabatan == "ketua" ? $sts : $usr->status;
+            $usr->update([
+                'status' => $status,
+                'progress' => 4,
+            ]);
+            // Update successful
+        }
+        
         return response()->json([
         'action' => 'Create', 
         'message' => 'Data stored successfully', 
