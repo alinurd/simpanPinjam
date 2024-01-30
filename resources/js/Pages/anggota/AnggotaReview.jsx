@@ -506,6 +506,8 @@ export default function AnggotaReview(props) {
                                                                 </td>
                                                             </tr>
                                                             {aprv.map((itemAprv, k) => {
+                                                                return null;
+                                                                
                                                                 if (item.id === itemAprv.id_anggota) {
                                                                     return (
                                                                         <tr className="d-none" id={`trDteailx${index}`}>
@@ -599,20 +601,21 @@ export default function AnggotaReview(props) {
                                                                 </td>
                                                             </tr>
                                                             {aprv.map((itemAprv, k) => {
+                                                                return null;
                                                                 if (item.id === itemAprv.id_anggota) {
-                                                                    return (
-                                                                        <tr className="d-none" id={`trDteail${indexx}`}>
-                                                                            <td colSpan={2} className="text-left">
-                                                                                <span className="badge badge-info">{itemAprv.code}</span>
-                                                                                <br />by: {itemAprv.users.name} {/* Ganti dengan field yang sesuai */}
-                                                                            </td>
-                                                                            <td className="text-left">diajukan <br />{item.ajuan.toLocaleString()}.-</td> {/* Ganti dengan field yang sesuai */}
-                                                                            <td className="text-left">diAprv <br />{itemAprv.ajuan.toLocaleString()}.- </td> {/* Ganti dengan field yang sesuai */}
-                                                                            <td colSpan={3} className="text-left">
-                                                                                <p>keterangan: {itemAprv.keterangan}</p> {/* Ganti dengan field yang sesuai */}
-                                                                            </td>
-                                                                        </tr>
-                                                                    );
+                                                                    // return (
+                                                                    //     <tr className="d-none" id={`trDteail${item.id}`}>
+                                                                    //         <td colSpan={2} className="text-left">
+                                                                    //             <span className="badge badge-info">{itemAprv.code}</span>
+                                                                    //             <br/>by: {itemAprv.users.name} {/* Ganti dengan field yang sesuai */}
+                                                                    //         </td>
+                                                                    //         <td className="text-left">diajukan <br />{item.ajuan.toLocaleString()}.-</td> {/* Ganti dengan field yang sesuai */}
+                                                                    //         <td className="text-left">diAprv <br />{itemAprv.ajuan.toLocaleString()}.- </td> {/* Ganti dengan field yang sesuai */}
+                                                                    //         <td colSpan={3} className="text-left">
+                                                                    //             <p>keterangan: {itemAprv.keterangan}</p> {/* Ganti dengan field yang sesuai */}
+                                                                    //         </td>
+                                                                    //     </tr>
+                                                                    // );
                                                                 } else {
                                                                     return null;
                                                                 }
