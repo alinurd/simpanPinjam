@@ -187,6 +187,37 @@ export default function AnggotaReview(props) {
             modalElement.querySelector('#exampleModalCenterApproveAjuan').textContent = "Rp. " + data.field.ajuan;
             document.getElementById('code').value = data.point[0].code;
 
+            const tbl = document.getElementById('logAprv');
+            const rowCount = tbl.rows.length;
+
+            var inputElement = document.getElementById(`id_anggota`);
+            // var ket = document.getElementById(`keterangan`);
+            if (inputElement) {
+                inputElement.value = data.field.id;
+                inputElement.readOnly = true;
+                // ket.value = item2.penilaian;
+                // ket.readOnly = true;
+            }
+            // Hapus semua baris kecuali header
+            for (let i = rowCount - 1; i > 0; i--) {
+                tbl.deleteRow(i);
+            }
+
+            data.logAprv.forEach((apr, index) => {
+                const row = tbl.insertRow(-1); // Insert new row at the end of the table
+                const cellIndex = row.insertCell(0);
+                const cellPengurus = row.insertCell(1);
+                const cellSaranApprovalRp = row.insertCell(2);
+                const cellStatus = row.insertCell(3);
+                const cellKeterangan = row.insertCell(4);
+
+                cellIndex.textContent = index + 1;
+                cellPengurus.textContent = apr.users.name;
+                cellSaranApprovalRp.textContent = apr.ajuan.toLocaleString() + ".-";
+                cellStatus.innerHTML = `<i><span class="badge badge-${apr.status.bg}">${apr.status.nama}</span></i>`;
+                cellKeterangan.textContent = apr.keterangan;
+            });
+
             // Assuming you have elements in the modal to display the fetched data
         }
 
@@ -237,6 +268,19 @@ export default function AnggotaReview(props) {
                     // for (let j = 0; j < gAhirElements.length; j++) {
                     //     gAhirElements[j].textContent = clasGrade[i];
                     // }
+                    let ketAhirElements = document.getElementsByClassName('ketAhir');
+                    for (let j = 0; j < ketAhirElements.length; j++) {
+                        ketAhirElements[j].textContent = clasketerangan[i];
+                    }
+
+                    let resPointElements = document.getElementsByClassName('resPoint');
+                    for (let j = 0; j < resPointElements.length; j++) {
+                        resPointElements[j].textContent = persentase + '%';
+                    }
+                    let gAhirElements = document.getElementsByClassName('gAhir');
+                    for (let j = 0; j < gAhirElements.length; j++) {
+                        gAhirElements[j].textContent = clasGrade[i];
+                    }
                 } else {
                     let stsPinjamanElements = document.getElementsByClassName('stsPinjaman');
                     for (let j = 0; j < stsPinjamanElements.length; j++) {
@@ -655,28 +699,26 @@ export default function AnggotaReview(props) {
                                     class="table-responsive"
                                 >
                                     <h5 className="text-left">log Aproval</h5>
-                                    <table
-                                        class="table table-primary"
-                                    >
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">No</th>
-                                                <th scope="col">Pengurus</th>
-                                                <th scope="col">Saran aprv Rp.</th>
-                                                <th scope="col">Status</th>
-                                                <th scope="col">Keterangan</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="">
-                                                <td>1</td>
-                                                <td scope="row">Pengurus 1</td>
-                                                <td>10920920290</td>
-                                                <td><i><span className="badge badge-secondary"> status aprv</span></i></td>
-                                                <td>keterngananaan</td>
-                                            </tr> 
-                                        </tbody>
-                                    </table>
+                                    <table class="table table-primary" id="logAprv">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">No</th>
+                                                    <th scope="col">Pengurus</th>
+                                                    <th scope="col">Saran aprv Rp.</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Keterangan</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="">
+                                                    <td id="logIndex"><span id="logInsdex"></span></td>
+                                                    <td id="logUser"><span id="loguser"></span></td>
+                                                    <td id="logAjuan"><span id="logAjuan"></span></td>
+                                                    <td id="logStatus"><span className="badge badge-secondary" id="logStatus"></span></td>
+                                                    <td id="logKet"><span id="logKet"></span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                 </div>
                                 
                                 
