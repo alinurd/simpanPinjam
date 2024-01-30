@@ -347,24 +347,7 @@ console.log(mode)
                                     </div>
                                 </div>
                                 <div className="col-sm-12 col-md-6">
-                                    <div className="user-list-files d-flex float-right">
-                                        <Link
-                                            href={`/${toLowerCase(title)}Create`}
-                                            className={`iq-bg-primary ${window.location.pathname === `/${toLowerCase(title)}Create` ? "active" : ""}`}
-                                            aria-current="page"
-                                        >
-                                            Tambah {capitalizeFirstLetter(title)}
-                                        </Link>
-
-
-                                        <a className="iq-bg-info" href="javascript:void();">
-                                            Export  Excel
-                                        </a>
-                                        <a className="iq-bg-info" href="javascript:void();">
-                                            Export Pdf
-                                        </a>
-
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <table id="user-list-table" className="table table-striped table-borderless mt-4" role="grid" aria-describedby="user-list-page-info">
