@@ -3,7 +3,7 @@ import { Link } from "@inertiajs/react";
 import { Inertia } from '@inertiajs/inertia';
 
 import axios from 'axios';  // Import the axios library
- const capitalizeFirstLetter = (string) => {
+const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
@@ -27,7 +27,7 @@ export default function AnggotaReview(props) {
 
             // Serialize form data or customize the data as needed
             const formData = new FormData(e.target);
-console.log(mode)
+            console.log(mode)
             // Make a POST request using axios
             const response = await axios.post(`/${toLowerCase(title)}${capitalizeFirstLetter(mode)}`, formData);
 
@@ -179,7 +179,7 @@ console.log(mode)
 
             // Assuming you have elements in the modal to display the fetched data
         }
-        
+
     };
 
 
@@ -315,7 +315,7 @@ console.log(mode)
         // You can add any additional logic here if needed
         // For example, you can trigger form submission here
     };
-    
+
     const handleReject = () => {
         // Set the value of the hidden input field to 0
         document.getElementById('submitId').value = '6';
@@ -323,7 +323,7 @@ console.log(mode)
         // For example, you can trigger form submission here
     };
 
-    
+
     // console.log(field)
     return (
         <div className="row">
@@ -335,115 +335,185 @@ console.log(mode)
                         </div>
                     </div>
                     <div className="iq-card-body">
-                        <div className="table-responsive">
-                            <div className="row justify-content-between">
-                                <div className="col-sm-12 col-md-6">
-                                    <div id="user_list_datatable_info" className="dataTables_filter">
-                                        <form className="mr-3 position-relative">
-                                            <div className="form-group mb-0">
-                                                <input type="search" className="form-control" id="exampleInputSearch" placeholder="Search" aria-controls="user-list-table" />
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div className="col-sm-12 col-md-6">
-                                    <div className="user-list-files d-flex float-right">
-                                        <Link
-                                            href={`/${toLowerCase(title)}Create`}
-                                            className={`iq-bg-primary ${window.location.pathname === `/${toLowerCase(title)}Create` ? "active" : ""}`}
-                                            aria-current="page"
-                                        >
-                                            Tambah {capitalizeFirstLetter(title)}
-                                        </Link>
-
-
-                                        <a className="iq-bg-info" href="javascript:void();">
-                                            Export  Excel
-                                        </a>
-                                        <a className="iq-bg-info" href="javascript:void();">
-                                            Export Pdf
-                                        </a>
-
-                                    </div>
-                                </div>
+                        <div className="row">
+                            <div className="col-lg-6">
+                                <img src="images/logo.gif" className="img-fluid w-25" alt />
                             </div>
-                            <table id="user-list-table" className="table table-striped table-borderless mt-4" role="grid" aria-describedby="user-list-page-info">
-                                <thead>
-                                    <tr>
-                                        <th className="text-center">#</th>
-                                        <th className="text-left">Name</th>
-                                        <th className="text-left">Email</th>
-                                        <th className="text-left">Phone</th>
-                                        <th className="text-center">Alamat</th>
-                                        <th className="text-center">Penilaian</th>
-                                        <th className="text-center">Status</th>
-                                        <th className="text-center">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {field.map((item, index) => (
-                                        <tr>
-                                            <td className="text-center" key={index}>{index + 1}</td>
-                                            <td className="text-left">{item.nama}</td>
-                                            <td className="text-left">{item.email}</td>
-                                            <td className="text-left">{item.phone}</td>
-                                            <td className="text-center">
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-primary"
-                                                    onClick={() => initializeModal(item ? item.id : '-')}
-                                                >
-                                                    Lihat Alamat detail
-                                                </button>
-                                            </td> <td className="text-center">
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-info"
-                                                    onClick={() => initializelPoint(item ? item.id : '-')}
-                                                >
-                                                    Lihat Penilaian detail
-                                                </button>
-                                            </td>
-                                            <td className="text-center">
-                                                <h6 class="mb-0"><span class={`badge badge-${item.status.bg}`}>{item.status.nama}</span></h6>
-
-                                            </td>
-                                            <td>
-                                                <div className=" text-center flex align-items-center list-user-action">
-                                                    <button
-                                                        type="button"
-                                                        onClick={() => initializeModalAprv(item ? item.id : '-')}
-                                                        className={`btn mb-1 dark-icon btn-secondary`}>
-
-                                                        Approve
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    ))}
-
-
-                                </tbody>
-                            </table>
+                            <div className="col-lg-6 align-self-center">
+                                <h4 className="mb-0 float-right">Invoice</h4>
+                            </div>
+                            <div className="col-sm-12">
+                                <hr className="mt-3" />
+                                <h5 className="mb-0">Hello, Nik Jones</h5>
+                                <p>
+                                    It is a long established fact that a reader will be
+                                    distracted by the readable content of a page when
+                                    looking at its layout. The point of using Lorem Ipsum is
+                                    that it has a more-or-less normal distribution of
+                                    letters, as opposed to using 'Content here, content
+                                    here', making it look like readable English.
+                                </p>
+                            </div>
                         </div>
-                        <div className="row justify-content-between mt-3">
-                            <div id="user-list-page-info" className="col-md-6">
-                                <span>Showing 1 to 5 of 5 entries</span>
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <div className="table-responsive-sm">
+                                    <table className="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Order Date</th>
+                                                <th scope="col">Order Status</th>
+                                                <th scope="col">Order ID</th>
+                                                <th scope="col">Billing Address</th>
+                                                <th scope="col">Shipping Address</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Jan 17, 2016</td>
+                                                <td>
+                                                    <span className="badge badge-danger">Unpaid</span>
+                                                </td>
+                                                <td>250028</td>
+                                                <td>
+                                                    <p className="mb-0">
+                                                        PO Box 16122 Collins Street West<br />Victoria
+                                                        8007 Australia<br />
+                                                        Phone: +123 456 7890<br />
+                                                        Email: demo@vito.com<br />
+                                                        Web: www.vito.com
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p className="mb-0">
+                                                        PO Box 16122 Collins Street West<br />Victoria
+                                                        8007 Australia<br />
+                                                        Phone: +123 456 7890<br />
+                                                        Email: demo@vito.com<br />
+                                                        Web: www.vito.com
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                            <div className="col-md-6">
-                                <nav aria-label="Page navigation example">
-                                    <ul className="pagination justify-content-end mb-0">
-                                        <li className="page-item disabled">
-                                            <a className="page-link" href="#" tabIndex={-1} aria-disabled="true">Previous</a>
-                                        </li>
-                                        <li className="page-item active"><a className="page-link" href="#">1</a></li>
-                                        <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                        <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                        <li className="page-item">
-                                            <a className="page-link" href="#">Next</a>
-                                        </li>
-                                    </ul>
-                                </nav>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-12">
+                                <h5>Order Summary</h5>
+                                <div className="table-responsive-sm">
+                                    <table className="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th className="text-center" scope="col">#</th>
+                                                <th scope="col">Item</th>
+                                                <th className="text-center" scope="col">Quantity</th>
+                                                <th className="text-center" scope="col">Price</th>
+                                                <th className="text-center" scope="col">Totals</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th className="text-center" scope="row">1</th>
+                                                <td>
+                                                    <h6 className="mb-0">Web Design</h6>
+                                                    <p className="mb-0">
+                                                        Lorem Ipsum is simply dummy text of the
+                                                        printing and typesetting industry.
+                                                    </p>
+                                                </td>
+                                                <td className="text-center">5</td>
+                                                <td className="text-center">$120.00</td>
+                                                <td className="text-center"><b>$2,880.00</b></td>
+                                            </tr>
+                                            <tr>
+                                                <th className="text-center" scope="row">2</th>
+                                                <td>
+                                                    <h6 className="mb-0">Web Design</h6>
+                                                    <p className="mb-0">
+                                                        Lorem Ipsum is simply dummy text of the
+                                                        printing and typesetting industry.
+                                                    </p>
+                                                </td>
+                                                <td className="text-center">5</td>
+                                                <td className="text-center">$120.00</td>
+                                                <td className="text-center"><b>$2,880.00</b></td>
+                                            </tr>
+                                            <tr>
+                                                <th className="text-center" scope="row">3</th>
+                                                <td>
+                                                    <h6 className="mb-0">Web Design</h6>
+                                                    <p className="mb-0">
+                                                        Lorem Ipsum is simply dummy text of the
+                                                        printing and typesetting industry.
+                                                    </p>
+                                                </td>
+                                                <td className="text-center">5</td>
+                                                <td className="text-center">$120.00</td>
+                                                <td className="text-center"><b>$2,880.00</b></td>
+                                            </tr>
+                                            <tr>
+                                                <th className="text-center" scope="row">4</th>
+                                                <td>
+                                                    <h6 className="mb-0">Web Design</h6>
+                                                    <p className="mb-0">
+                                                        Lorem Ipsum is simply dummy text of the
+                                                        printing and typesetting industry.
+                                                    </p>
+                                                </td>
+                                                <td className="text-center">5</td>
+                                                <td className="text-center">$120.00</td>
+                                                <td className="text-center"><b>$2,880.00</b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <h5 className="mt-5">Order Details</h5>
+                                <div className="table-responsive-sm">
+                                    <table className="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Bank</th>
+                                                <th scope="col">.Acc.No</th>
+                                                <th scope="col">Due Date</th>
+                                                <th scope="col">Sub-total</th>
+                                                <th scope="col">Discount</th>
+                                                <th scope="col">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Threadneedle St</th>
+                                                <td>12333456789</td>
+                                                <td>12 November 2019</td>
+                                                <td>$4597.50</td>
+                                                <td>10%</td>
+                                                <td><b>$4137.75 USD</b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div className="col-sm-6" />
+                            <div className="col-sm-6 text-right">
+                                <button type="button" className="btn btn-link mr-3">
+                                    <i className="ri-printer-line" /> Download Print
+                                </button>
+                                <button type="button" className="btn btn-primary">
+                                    Submit
+                                </button>
+                            </div>
+                            <div className="col-sm-12 mt-5">
+                                <b className="text-danger">Notes:</b>
+                                <p>
+                                    It is a long established fact that a reader will be
+                                    distracted by the readable content of a page when
+                                    looking at its layout. The point of using Lorem Ipsum is
+                                    that it has a more-or-less normal distribution of
+                                    letters, as opposed to using 'Content here, content
+                                    here', making it look like readable English.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -453,37 +523,37 @@ console.log(mode)
             <div className="modal fade" id="exampleModalCenterApprove" role="dialog" aria-labelledby="exampleModalCenterApprove" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div className="modal-content">
-                    <form className="was-validated" onSubmit={submit}>
-    <div className="modal-header">
-        <h5 className="modal-title text-bold" id="">
-            <b> <span id="exampleModalCenterApproveTitle"></span></b> - <span id="exampleModalCenterApproveNama"></span>
-        </h5>
-        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
-    <div className="modal-body">
-        <center><i><span className="badge badge-secondary stsPinjaman"></span></i></center>
-        <br />Total Ajuan: <i> <span className="badge badge-dark ajuan" id="ajuan"></span></i>
-        <br /><br />
-        <center>
-            <label htmlFor="keterangan">Keterangan</label><br />
-            <textarea name="keterangan" id="keterangan" cols="40" rows="2" required></textarea>
-        </center>
-    </div>
-    <div className="modal-footer">
-        <div className="row">
-            <div className="col">
-                <button type="submit" className="btn btn-danger" onClick={() => handleReject()}>Reject</button>
-            </div>
-            <div className="col">
-                <button type="submit" className="btn btn-success" onClick={() => handleApprove()}>Approve</button>
-            </div>
-        </div>
-    </div>
-    <input type="hidden" id="submitId" name="submitId" value="0" />
-    <input type="hidden" id="code" name="code" value="0" />
-</form>
+                        <form className="was-validated" onSubmit={submit}>
+                            <div className="modal-header">
+                                <h5 className="modal-title text-bold" id="">
+                                    <b> <span id="exampleModalCenterApproveTitle"></span></b> - <span id="exampleModalCenterApproveNama"></span>
+                                </h5>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div className="modal-body">
+                                <center><i><span className="badge badge-secondary stsPinjaman"></span></i></center>
+                                <br />Total Ajuan: <i> <span className="badge badge-dark ajuan" id="ajuan"></span></i>
+                                <br /><br />
+                                <center>
+                                    <label htmlFor="keterangan">Keterangan</label><br />
+                                    <textarea name="keterangan" id="keterangan" cols="40" rows="2" required></textarea>
+                                </center>
+                            </div>
+                            <div className="modal-footer">
+                                <div className="row">
+                                    <div className="col">
+                                        <button type="submit" className="btn btn-danger" onClick={() => handleReject()}>Reject</button>
+                                    </div>
+                                    <div className="col">
+                                        <button type="submit" className="btn btn-success" onClick={() => handleApprove()}>Approve</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="submitId" name="submitId" value="0" />
+                            <input type="hidden" id="code" name="code" value="0" />
+                        </form>
 
                     </div>
                 </div>
