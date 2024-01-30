@@ -110,6 +110,7 @@ export default function Anggota(props) {
                                         <th className="text-left">Phone</th>
                                         <th className="text-left">Alamat</th>
                                         <th className="text-center">Status</th>
+                                        <th className="text-center">Progress</th>
                                         <th className="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -130,16 +131,16 @@ export default function Anggota(props) {
                                                 </button>
                                             </td>
                                             <td className="text-center">
-                                                <button type="button" className={`btn mb-1 dark-icon btn-${item.status.bg}`}>
-                                                    {item.status.nama}
+                                            <h6 class="mb-0"><span class={`badge badge-${item.status.bg}`}>{item.status.nama}</span></h6>
+                                            </td>
+                                            <td className="text-center">
+                                                <button type="button" className={`btn mb-1 dark-icon btn-${item.progress.bg}`}>
+                                                    {item.progress.id>7?"Need Review":item.progress.nama}
                                                 </button>
-
-
                                             </td>
                                             <td>
                                                 <div className=" text-center flex align-items-center list-user-action">
                                                     <a className="iq-bg-primary" data-toggle="tooltip" data-placement="top" title data-original-title="Edit" href={`/${toLowerCase(title)}Edit/${item.code}`}>
-
                                                         <i className="ri-pencil-line" />
                                                     </a>
                                                     <a

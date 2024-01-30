@@ -25,7 +25,7 @@ class AnggotaController extends Controller
     public function index()
     {
         $data['title'] = $this->name;
-        $data['field'] = Anggota::with('status')->get();
+        $data['field'] = Anggota::with('status', 'progress')->get();
         return Inertia::render(lcfirst($this->name).'/'.ucfirst($this->name))->with($data);
     }
     public function review()

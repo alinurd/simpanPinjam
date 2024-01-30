@@ -14,9 +14,11 @@ class Anggota extends Model
     {
         return $this->belongsTo(Status::class, 'status');
     }
-    public function desa()
+    public function progress()
     {
-        return $this->belongsTo(Desa::class, 'desa');
+        return $this->belongsTo(Status::class, 'progress');
     }
+
+    
 }
  
