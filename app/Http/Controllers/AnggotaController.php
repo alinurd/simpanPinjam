@@ -218,13 +218,20 @@ class AnggotaController extends Controller
          $user = Auth::id();
          $p = Penilaian::where("code", $code)->first();
         $usr = Anggota::find($p->id_anggota);
+        $ajx = $request->input('ajuan');
+
+        if($ajx){
+            $ajuan=$ajx;
+        }else{
+             $ajuan=$usr->ajuan;
+         }
 
          Aprove::insert([
              'user' => $user,
             'code' => $codeId,
             'code_penilaian' => $code,
             'status' => $sts,
-            'id_anggota' => $sts,
+            'id_anggota' => $usr->id,
             'ajuan' => $ajuan,
             'keterangan' => $ket
          ]);
@@ -258,7 +265,7 @@ class AnggotaController extends Controller
          if($ajx){
             $ajuan=$ajx;
         }else{
-             $ajuan=$usr->status;
+             $ajuan=$usr->ajuan;
          }
          if($user->jabatan == "ketua"){
             $aj=$ajuan;
