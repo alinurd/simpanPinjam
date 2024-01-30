@@ -104,7 +104,7 @@ export default function Penilaian(props) {
             const x = document.getElementById('pilih-anggota');
             x.querySelector('#code').textContent = data.code;
             x.querySelector('#nama').textContent = data.nama;
-            x.querySelector('#ajuan').textContent = data.ajuan;
+            x.querySelector('#ajuan').textContent = data.ajuan.toLocaleString()+".-";
             setIsSubmitting(false);
             setIsUser(true);
             setSts1Show(true);
@@ -202,7 +202,7 @@ export default function Penilaian(props) {
                                                 ''
                                             )}
                                             <h4 className="card-title text-center"><span id="nama"></span>[ <b id="code"></b> ]</h4>
-                                            <p className="text-center"><small className="text-muted">Rp. <b id="ajuan">10220</b></small></p>
+                                            <p className="text-center"><small className="text-muted">Rp. <b id="ajuan"></b></small></p>
                                             <button
                                                 type="button"
                                                 id="userId"
