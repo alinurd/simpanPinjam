@@ -135,7 +135,7 @@ export default function Anggota(props) {
                                             </td>
                                             <td className="text-center">
                                                 <button type="button" className={`btn mb-1 dark-icon btn-${item.progress.bg}`}>
-                                                    {item.progress.id>7?"Need Review":item.progress.nama}
+                                                    {item.progress.id>7?"Need Review Pengurus":item.progress.nama}
                                                 </button>
                                             </td>
                                             <td>
