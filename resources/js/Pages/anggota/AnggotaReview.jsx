@@ -495,7 +495,7 @@ export default function AnggotaReview(props) {
                                                                 </td>
                                                                 <td>
                                                                     <div className=" text-center flex align-items-center list-user-action">
-                                                                        {(auth.id == 4?
+                                                                        {(auth.role_id == 4?
                                                                         <button
                                                                             type="button"
                                                                             onClick={() => initializeModalAprv(item ? item.id : '-')}
@@ -593,7 +593,7 @@ export default function AnggotaReview(props) {
                                                                 </td>
                                                                 <td>
                                                                     <div className=" text-center flex align-items-center list-user-action">
-                                                                    {(auth.id == 4?
+                                                                    {(auth.role_id == 4?
                                                                         <button
                                                                             type="button"
                                                                             onClick={() => initializeModalAprv(item ? item.id : '-')}
