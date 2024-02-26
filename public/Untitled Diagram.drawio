@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-26T18:07:00.782Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="SOEduGQqUmfeRB7B8DTE" version="23.1.6" type="github" pages="18">
+<mxfile host="app.diagrams.net" modified="2024-02-26T18:08:11.313Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="K6XYCF8BE0nrQp-Fb_hI" version="23.1.6" type="github" pages="18">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="2100" dy="1132" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -2802,7 +2802,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="PnTnpAPzfxXGD2oHV18H-94" value="&lt;h2&gt;desa&lt;br&gt;&lt;/h2&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="20" y="240" width="170" height="143" as="geometry" />
+          <mxGeometry x="20" y="232" width="170" height="143" as="geometry" />
         </mxCell>
         <mxCell id="PnTnpAPzfxXGD2oHV18H-95" value="+id: int (11) pk" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="PnTnpAPzfxXGD2oHV18H-94">
           <mxGeometry y="55" width="170" height="20" as="geometry" />
@@ -2843,9 +2843,8 @@
         <mxCell id="PnTnpAPzfxXGD2oHV18H-114" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.004;entryY=0.633;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="PnTnpAPzfxXGD2oHV18H-95" target="5_z6TKU183rCdRemtSkR-44">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="440" y="305" />
-              <mxPoint x="440" y="198" />
-              <mxPoint x="499" y="198" />
+              <mxPoint x="440" y="297" />
+              <mxPoint x="440" y="199" />
             </Array>
           </mxGeometry>
         </mxCell>
