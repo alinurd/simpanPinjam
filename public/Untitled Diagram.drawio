@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-26T12:18:08.377Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="K1z9cmni0zfX0DH-liTS" version="23.1.6" type="github" pages="15">
+<mxfile host="app.diagrams.net" modified="2024-02-26T12:19:48.367Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="D9UkLv3hBxGx5UKiaaNp" version="23.1.6" type="github" pages="15">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -1401,7 +1401,7 @@
         <mxCell id="Vpau7n9-ajyGH-V-Fduq-3" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="Vpau7n9-ajyGH-V-Fduq-2">
           <mxGeometry x="45" y="173" width="10" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="Vpau7n9-ajyGH-V-Fduq-5" value="Login" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=230;height=30;" vertex="1" parent="Vpau7n9-ajyGH-V-Fduq-1">
+        <mxCell id="Vpau7n9-ajyGH-V-Fduq-5" value="anggota" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=230;height=30;" vertex="1" parent="Vpau7n9-ajyGH-V-Fduq-1">
           <mxGeometry x="10" y="10" width="1080" height="830" as="geometry" />
         </mxCell>
         <mxCell id="Vpau7n9-ajyGH-V-Fduq-6" value="halaman dashboard" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="Vpau7n9-ajyGH-V-Fduq-1">
@@ -1575,7 +1575,7 @@
         <mxCell id="mq9MaJ1O-Bf1del8siO1-3" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="mq9MaJ1O-Bf1del8siO1-2">
           <mxGeometry x="45" y="173" width="10" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="mq9MaJ1O-Bf1del8siO1-4" value="Login" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=230;height=30;" vertex="1" parent="mq9MaJ1O-Bf1del8siO1-1">
+        <mxCell id="mq9MaJ1O-Bf1del8siO1-4" value="kriteria" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=230;height=30;" vertex="1" parent="mq9MaJ1O-Bf1del8siO1-1">
           <mxGeometry x="10" y="10" width="1080" height="830" as="geometry" />
         </mxCell>
         <mxCell id="mq9MaJ1O-Bf1del8siO1-5" value="halaman dashboard" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="mq9MaJ1O-Bf1del8siO1-1">
@@ -1749,7 +1749,7 @@
         <mxCell id="jWg4Df0BFH-OlfcXGjW9-3" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="jWg4Df0BFH-OlfcXGjW9-2">
           <mxGeometry x="45" y="173" width="10" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="jWg4Df0BFH-OlfcXGjW9-4" value="Login" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=230;height=30;" vertex="1" parent="jWg4Df0BFH-OlfcXGjW9-1">
+        <mxCell id="jWg4Df0BFH-OlfcXGjW9-4" value="subkriteria" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=230;height=30;" vertex="1" parent="jWg4Df0BFH-OlfcXGjW9-1">
           <mxGeometry x="10" y="10" width="1080" height="830" as="geometry" />
         </mxCell>
         <mxCell id="jWg4Df0BFH-OlfcXGjW9-5" value="halaman dashboard" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="jWg4Df0BFH-OlfcXGjW9-1">
@@ -1913,7 +1913,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Sequence penilaian" id="C7TwbCgRtHh6CfwIe53F">
-    <mxGraphModel dx="1400" dy="755" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="247" dy="133" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="Wj9DHR2xS5O-FYJ_uL40-0" />
         <mxCell id="Wj9DHR2xS5O-FYJ_uL40-1" parent="Wj9DHR2xS5O-FYJ_uL40-0" />
@@ -1923,7 +1923,7 @@
         <mxCell id="Wj9DHR2xS5O-FYJ_uL40-3" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="Wj9DHR2xS5O-FYJ_uL40-2">
           <mxGeometry x="45" y="173" width="10" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="Wj9DHR2xS5O-FYJ_uL40-4" value="Login" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=230;height=30;" vertex="1" parent="Wj9DHR2xS5O-FYJ_uL40-1">
+        <mxCell id="Wj9DHR2xS5O-FYJ_uL40-4" value="penilaian" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=230;height=30;" vertex="1" parent="Wj9DHR2xS5O-FYJ_uL40-1">
           <mxGeometry x="10" y="10" width="1080" height="830" as="geometry" />
         </mxCell>
         <mxCell id="Wj9DHR2xS5O-FYJ_uL40-5" value="halaman dashboard" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="Wj9DHR2xS5O-FYJ_uL40-1">
