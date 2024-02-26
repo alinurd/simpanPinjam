@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-26T13:31:26.141Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="isSePU4Grocg0Oy3d0Vn" version="23.1.6" type="github" pages="17">
+<mxfile host="app.diagrams.net" modified="2024-02-26T13:56:35.196Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="AM4jU2pczlmntR6XXv30" version="23.1.6" type="github" pages="18">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="2100" dy="1132" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -192,7 +192,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Sytem Usulan" id="Orbv_njN62y2XLEKtr8I">
-    <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="2100" dy="1132" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="eoRhj3O0z1ePfbJQVQLT-0" />
         <mxCell id="eoRhj3O0z1ePfbJQVQLT-1" parent="eoRhj3O0z1ePfbJQVQLT-0" />
@@ -1913,7 +1913,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Sequence approval" id="1vgTA0pCoFHKJsSqCvHo">
-    <mxGraphModel dx="512" dy="276" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1235" dy="666" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="pNeLc2Nxsc7QjCNiTQJ2-0" />
         <mxCell id="pNeLc2Nxsc7QjCNiTQJ2-1" parent="pNeLc2Nxsc7QjCNiTQJ2-0" />
@@ -2147,7 +2147,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Sequence review" id="Oa-AiX2KKLlvZfVFCV4q">
-    <mxGraphModel dx="1050" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1750" dy="943" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="VcCLbzJVIEX2Yd4oS0gE-0" />
         <mxCell id="VcCLbzJVIEX2Yd4oS0gE-1" parent="VcCLbzJVIEX2Yd4oS0gE-0" />
@@ -2583,6 +2583,14 @@
         <mxCell id="m2pUWHrG2s1qmfsJkzeY-27" value="6" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="Wj9DHR2xS5O-FYJ_uL40-1">
           <mxGeometry x="495" y="628" width="30" height="30" as="geometry" />
         </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="oVmR_CbbqWQOXBhDb9U2" name="class diagram">
+    <mxGraphModel dx="1050" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
       </root>
     </mxGraphModel>
   </diagram>
