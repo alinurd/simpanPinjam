@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-26T13:30:01.464Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="TJYcCsUqjZveIVvau79j" version="23.1.6" type="github" pages="17">
+<mxfile host="app.diagrams.net" modified="2024-02-26T13:31:26.141Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="isSePU4Grocg0Oy3d0Vn" version="23.1.6" type="github" pages="17">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="2100" dy="1132" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -711,7 +711,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="Copy of Activity kriteria" id="bVMY0YlOxJ9fCmgUk-fJ">
+  <diagram name=" Activity kriteria" id="bVMY0YlOxJ9fCmgUk-fJ">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="Tc2YW26xcBnX3Ci0HuCb-0" />
@@ -824,7 +824,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="Copy of Copy subkriteria" id="EVXr0veSRJ4kEcgCAoiL">
+  <diagram name="Activity subkriteria" id="EVXr0veSRJ4kEcgCAoiL">
     <mxGraphModel dx="1615" dy="871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="b9QDar99sJv3FlxRWWiD-0" />
@@ -937,7 +937,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="Copy of Copy penilaian" id="GIeE42SPx-qypb7vOUnf">
+  <diagram name="Activity penilaian" id="GIeE42SPx-qypb7vOUnf">
     <mxGraphModel dx="1615" dy="871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="P-RCab1SzUvXn4np-p5n-0" />
@@ -1056,7 +1056,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="Copy of aproval" id="w5dQ6OiqcHSZRSRJb4dv">
+  <diagram name="Activity approval" id="w5dQ6OiqcHSZRSRJb4dv">
     <mxGraphModel dx="1909" dy="1029" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="1PfwQbtcQbm4Yf0UEVUJ-0" />
@@ -1171,7 +1171,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="Copy of review" id="TZ96zgz3apdafegvUhL2">
+  <diagram name="Activity review" id="TZ96zgz3apdafegvUhL2">
     <mxGraphModel dx="1750" dy="943" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="AwqiLpK5UULuvGa4HRcs-0" />
