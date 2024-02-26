@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-26T15:57:42.158Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="DkA5uVP6DEdkf8_eNcBV" version="23.1.6" type="github" pages="18">
+<mxfile host="app.diagrams.net" modified="2024-02-26T16:27:44.660Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="YYzsLzhUdfpEExM_e3ia" version="23.1.6" type="github" pages="18">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="2100" dy="1132" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -2625,7 +2625,7 @@
           <mxGeometry y="223" width="170" height="20" as="geometry" />
         </mxCell>
         <mxCell id="5_z6TKU183rCdRemtSkR-32" value="&lt;h2&gt;anggota&lt;br&gt;&lt;/h2&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="570" y="150" width="170" height="483" as="geometry" />
+          <mxGeometry x="570" y="150" width="170" height="423" as="geometry" />
         </mxCell>
         <mxCell id="5_z6TKU183rCdRemtSkR-33" value="+id: int (11)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="5_z6TKU183rCdRemtSkR-32">
           <mxGeometry y="55" width="170" height="20" as="geometry" />
@@ -2683,15 +2683,6 @@
         </mxCell>
         <mxCell id="5_z6TKU183rCdRemtSkR-54" value="+hapus()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="5_z6TKU183rCdRemtSkR-32">
           <mxGeometry y="403" width="170" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="5_z6TKU183rCdRemtSkR-55" value="+penilaian()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="5_z6TKU183rCdRemtSkR-32">
-          <mxGeometry y="423" width="170" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="5_z6TKU183rCdRemtSkR-56" value="+approval()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="5_z6TKU183rCdRemtSkR-32">
-          <mxGeometry y="443" width="170" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="5_z6TKU183rCdRemtSkR-57" value="+review()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="5_z6TKU183rCdRemtSkR-32">
-          <mxGeometry y="463" width="170" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
