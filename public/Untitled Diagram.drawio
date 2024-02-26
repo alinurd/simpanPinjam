@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-26T09:27:31.019Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="-lvYmIaP9oBodd0iN6S4" version="23.1.6" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2024-02-26T09:29:17.797Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="AsPfGQLQBOJxWQ9qgNdz" version="23.1.6" type="github" pages="5">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -599,7 +599,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Activity anggota" id="3GqjW_e5MtijbWf2pV7S">
-    <mxGraphModel dx="2333" dy="1258" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1615" dy="871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="HrlFXwZKOyDkixiyfeVV-0" />
         <mxCell id="HrlFXwZKOyDkixiyfeVV-1" parent="HrlFXwZKOyDkixiyfeVV-0" />
@@ -677,7 +677,7 @@
         <mxCell id="sySW-OlQUDSgQLbOr8Hx-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="HrlFXwZKOyDkixiyfeVV-2" source="sySW-OlQUDSgQLbOr8Hx-6" target="sySW-OlQUDSgQLbOr8Hx-8">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="431" y="372" />
+              <mxPoint x="396" y="363" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -697,7 +697,7 @@
         <mxCell id="sySW-OlQUDSgQLbOr8Hx-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="HrlFXwZKOyDkixiyfeVV-2" source="sySW-OlQUDSgQLbOr8Hx-2" target="sySW-OlQUDSgQLbOr8Hx-4">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="431" y="244" />
+              <mxPoint x="401" y="244" />
             </Array>
           </mxGeometry>
         </mxCell>
