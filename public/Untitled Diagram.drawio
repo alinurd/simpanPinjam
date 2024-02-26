@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-26T13:23:59.796Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="Ri-q3cLjVRrqwNaux5pb" version="23.1.6" type="github" pages="17">
+<mxfile host="app.diagrams.net" modified="2024-02-26T13:24:13.436Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="7-iQ5e934XeTuOtkS6uK" version="23.1.6" type="github" pages="17">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="2100" dy="1132" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -1391,7 +1391,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Sequence anggota" id="up5J5U3bQz4PWnH50UTk">
-    <mxGraphModel dx="1050" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1909" dy="1029" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="Vpau7n9-ajyGH-V-Fduq-0" />
         <mxCell id="Vpau7n9-ajyGH-V-Fduq-1" parent="Vpau7n9-ajyGH-V-Fduq-0" />
@@ -1402,7 +1402,7 @@
           <mxGeometry x="45" y="173" width="10" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Vpau7n9-ajyGH-V-Fduq-5" value="anggota" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=230;height=30;" vertex="1" parent="Vpau7n9-ajyGH-V-Fduq-1">
-          <mxGeometry x="10" y="10" width="1080" height="830" as="geometry" />
+          <mxGeometry x="10" y="10" width="1030" height="830" as="geometry" />
         </mxCell>
         <mxCell id="Vpau7n9-ajyGH-V-Fduq-6" value="halaman dashboard" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="Vpau7n9-ajyGH-V-Fduq-1">
           <mxGeometry x="265" y="120" width="100" height="600" as="geometry" />
