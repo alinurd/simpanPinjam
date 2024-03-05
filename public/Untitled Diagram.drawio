@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-05T19:36:58.093Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="pmwXfVLH0oeV_kxan66b" version="24.0.1" type="github" pages="25">
+<mxfile host="app.diagrams.net" modified="2024-03-05T19:37:34.924Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="SnlZV24YPb421ZESJ0TZ" version="24.0.1" type="github" pages="25">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -3801,8 +3801,8 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="Copy of class diagram" id="MbzRJ_OSYR_kPInGBR7b">
-    <mxGraphModel dx="1313" dy="708" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+  <diagram name="lrs" id="MbzRJ_OSYR_kPInGBR7b">
+    <mxGraphModel dx="1909" dy="1029" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="nEn43k_j79pEq_FqmORr-0" />
         <mxCell id="nEn43k_j79pEq_FqmORr-1" parent="nEn43k_j79pEq_FqmORr-0" />
