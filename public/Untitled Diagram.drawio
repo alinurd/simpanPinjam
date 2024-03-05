@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-05T10:59:16.041Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="eLIK-ynLqNkny4u6u1oE" version="24.0.1" type="github" pages="21">
+<mxfile host="app.diagrams.net" modified="2024-03-05T10:59:29.687Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="ST6so8-9r1cgBh5VcCRU" version="24.0.1" type="github" pages="21">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -709,7 +709,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Copy of Activity anggota" id="OA8GyL4eiyx84KraG_Nf">
-    <mxGraphModel dx="623" dy="327" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2206" dy="1155" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="GnocVOLnxanKl4QU8fSn-0" />
         <mxCell id="GnocVOLnxanKl4QU8fSn-1" parent="GnocVOLnxanKl4QU8fSn-0" />
