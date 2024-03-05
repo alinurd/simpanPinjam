@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-05T12:21:34.526Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="QReS4M1bFgdHCeZXDw_X" version="24.0.1" type="github" pages="22">
+<mxfile host="app.diagrams.net" modified="2024-03-05T12:23:25.740Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="x6UycvrXVmZosPmMzgdt" version="24.0.1" type="github" pages="22">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -2096,13 +2096,13 @@
       <root>
         <mxCell id="8yiJ1QKKgpU2bZLrON0o-0" />
         <mxCell id="8yiJ1QKKgpU2bZLrON0o-1" parent="8yiJ1QKKgpU2bZLrON0o-0" />
-        <mxCell id="8yiJ1QKKgpU2bZLrON0o-2" value="list data kriteria" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="8yiJ1QKKgpU2bZLrON0o-1">
+        <mxCell id="8yiJ1QKKgpU2bZLrON0o-2" value="list data subkriteria" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="8yiJ1QKKgpU2bZLrON0o-1">
           <mxGeometry x="440" y="120" width="100" height="670" as="geometry" />
         </mxCell>
         <mxCell id="8yiJ1QKKgpU2bZLrON0o-3" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="8yiJ1QKKgpU2bZLrON0o-2">
           <mxGeometry x="45" y="173" width="10" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="8yiJ1QKKgpU2bZLrON0o-4" value="anggota" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=230;height=30;" vertex="1" parent="8yiJ1QKKgpU2bZLrON0o-1">
+        <mxCell id="8yiJ1QKKgpU2bZLrON0o-4" value="subkriteria" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=230;height=30;" vertex="1" parent="8yiJ1QKKgpU2bZLrON0o-1">
           <mxGeometry x="10" y="10" width="1030" height="830" as="geometry" />
         </mxCell>
         <mxCell id="8yiJ1QKKgpU2bZLrON0o-5" value="halaman dashboard" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="8yiJ1QKKgpU2bZLrON0o-1">
@@ -2143,7 +2143,7 @@
             <mxPoint x="445" y="303" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="8yiJ1QKKgpU2bZLrON0o-16" value="klik menu kriteria" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="8yiJ1QKKgpU2bZLrON0o-15">
+        <mxCell id="8yiJ1QKKgpU2bZLrON0o-16" value="klik menu subkriteria" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="8yiJ1QKKgpU2bZLrON0o-15">
           <mxGeometry x="-0.4329" y="1" relative="1" as="geometry">
             <mxPoint x="22" y="-19" as="offset" />
           </mxGeometry>
@@ -2193,7 +2193,7 @@
         <mxCell id="8yiJ1QKKgpU2bZLrON0o-29" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="8yiJ1QKKgpU2bZLrON0o-1">
           <mxGeometry x="491" y="309" width="10" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="8yiJ1QKKgpU2bZLrON0o-30" value="menampilkan data kriteria" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" edge="1" parent="8yiJ1QKKgpU2bZLrON0o-1" source="8yiJ1QKKgpU2bZLrON0o-24">
+        <mxCell id="8yiJ1QKKgpU2bZLrON0o-30" value="menampilkan data subkriteria" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" edge="1" parent="8yiJ1QKKgpU2bZLrON0o-1" source="8yiJ1QKKgpU2bZLrON0o-24">
           <mxGeometry x="-0.5058" y="-9" width="160" relative="1" as="geometry">
             <mxPoint x="776" y="309" as="sourcePoint" />
             <mxPoint x="501" y="309" as="targetPoint" />
@@ -2247,7 +2247,7 @@
         <mxCell id="8yiJ1QKKgpU2bZLrON0o-40" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="8yiJ1QKKgpU2bZLrON0o-1">
           <mxGeometry x="486" y="560" width="10" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="8yiJ1QKKgpU2bZLrON0o-41" value="menampilkan pesan berhasil dan menampilkan data kriteria" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" edge="1" parent="8yiJ1QKKgpU2bZLrON0o-1">
+        <mxCell id="8yiJ1QKKgpU2bZLrON0o-41" value="menampilkan pesan berhasil dan menampilkan data subkriteria" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" edge="1" parent="8yiJ1QKKgpU2bZLrON0o-1">
           <mxGeometry x="-0.0407" y="-20" width="160" relative="1" as="geometry">
             <mxPoint x="845" y="570" as="sourcePoint" />
             <mxPoint x="501" y="570" as="targetPoint" />
@@ -2295,7 +2295,7 @@
         <mxCell id="_StS_MBeTkw4N5T-fetN-24" value="klik hapus" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="8yiJ1QKKgpU2bZLrON0o-1">
           <mxGeometry x="574.7777777777778" y="631.8" as="geometry" />
         </mxCell>
-        <mxCell id="_StS_MBeTkw4N5T-fetN-25" value="menampilkan pesan berhasil dan menampilkan data kriteria" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" edge="1" parent="8yiJ1QKKgpU2bZLrON0o-1">
+        <mxCell id="_StS_MBeTkw4N5T-fetN-25" value="menampilkan pesan berhasil dan menampilkan data subkriteria" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" edge="1" parent="8yiJ1QKKgpU2bZLrON0o-1">
           <mxGeometry x="-0.0407" y="-20" width="160" relative="1" as="geometry">
             <mxPoint x="841" y="716" as="sourcePoint" />
             <mxPoint x="497" y="716" as="targetPoint" />
