@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-05T18:37:49.488Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="KZ1NBgltUq3rcPUJJUh9" version="24.0.1" type="github" pages="24">
+<mxfile host="app.diagrams.net" modified="2024-03-05T18:38:37.576Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="C3YXXzwYlQd4lXLb0FcW" version="24.0.1" type="github" pages="24">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -4368,10 +4368,13 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Copy of ERD" id="cHj8B1WtBu3l9bw9FxgJ">
-    <mxGraphModel dx="1366" dy="715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2868" dy="1502" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="UKwe087sQhK-TbOyTnbO-0" />
         <mxCell id="UKwe087sQhK-TbOyTnbO-1" parent="UKwe087sQhK-TbOyTnbO-0" />
+        <mxCell id="wTMKQbfaefXJ4AbI41r3-127" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6c8ebf;dashed=1;dashPattern=8 8;" vertex="1" parent="UKwe087sQhK-TbOyTnbO-1">
+          <mxGeometry x="160" y="192.5" width="480" height="240" as="geometry" />
+        </mxCell>
         <mxCell id="wTMKQbfaefXJ4AbI41r3-125" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6c8ebf;dashed=1;dashPattern=8 8;" vertex="1" parent="UKwe087sQhK-TbOyTnbO-1">
           <mxGeometry x="150" y="235" width="260" height="455" as="geometry" />
         </mxCell>
@@ -4705,7 +4708,7 @@
           <mxGeometry x="15" y="425" width="90" height="50" as="geometry" />
         </mxCell>
         <mxCell id="wTMKQbfaefXJ4AbI41r3-121" value="&lt;ul&gt;&lt;li&gt;id&lt;/li&gt;&lt;li&gt;name&lt;/li&gt;&lt;li&gt;email&lt;/li&gt;&lt;li&gt;jabatan&lt;/li&gt;&lt;li&gt;role_id&lt;/li&gt;&lt;li&gt;password&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=none;" vertex="1" parent="UKwe087sQhK-TbOyTnbO-1">
-          <mxGeometry x="150" y="326" width="90" height="115" as="geometry" />
+          <mxGeometry x="140" y="326" width="110" height="115" as="geometry" />
         </mxCell>
         <mxCell id="wTMKQbfaefXJ4AbI41r3-124" value="&lt;ul&gt;&lt;li&gt;id&lt;/li&gt;&lt;li&gt;code&lt;/li&gt;&lt;li&gt;code_penilaian&lt;/li&gt;&lt;li&gt;user&lt;/li&gt;&lt;li&gt;ajuan&lt;/li&gt;&lt;li&gt;id_anggota&lt;/li&gt;&lt;li&gt;keterangan&lt;/li&gt;&lt;li&gt;status&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=none;" vertex="1" parent="UKwe087sQhK-TbOyTnbO-1">
           <mxGeometry x="183.5" y="544" width="140" height="150" as="geometry" />
