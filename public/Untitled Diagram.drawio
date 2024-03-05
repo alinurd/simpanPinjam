@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-05T18:59:52.985Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="y7LrYH6zVi3Ur7CIoF_O" version="24.0.1" type="github" pages="24">
+<mxfile host="app.diagrams.net" modified="2024-03-05T19:00:16.207Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="7-1mW-nr1E9WBI6Tj79j" version="24.0.1" type="github" pages="24">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -3802,7 +3802,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="cYSDy6-EXsgebZOYq-Td" name="ERD">
-    <mxGraphModel dx="1909" dy="1029" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="600" dy="323" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4390,7 +4390,7 @@
         <mxCell id="YMiYnGcNtZmjCHv2cfGp-7" value="rt" style="ellipse;whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="990" y="600" width="100" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="YMiYnGcNtZmjCHv2cfGp-8" value="rw" style="ellipse;whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
+        <mxCell id="YMiYnGcNtZmjCHv2cfGp-8" value="desa" style="ellipse;whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="1140" y="645" width="100" height="35" as="geometry" />
         </mxCell>
         <mxCell id="YMiYnGcNtZmjCHv2cfGp-10" value="rw" style="ellipse;whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
@@ -4501,7 +4501,7 @@
         <mxCell id="YMiYnGcNtZmjCHv2cfGp-2" value="code" style="ellipse;whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="950" y="729" width="100" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="YMiYnGcNtZmjCHv2cfGp-9" value="desa" style="ellipse;whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
+        <mxCell id="YMiYnGcNtZmjCHv2cfGp-9" value="email" style="ellipse;whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="890" y="715" width="100" height="35" as="geometry" />
         </mxCell>
       </root>
