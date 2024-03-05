@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-05T12:15:50.828Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="aE6cceY8BcCzTZv1FBDz" version="24.0.1" type="github" pages="22">
+<mxfile host="app.diagrams.net" modified="2024-03-05T12:17:06.066Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="LZ2O5AOdo0R1VKIIyq2d" version="24.0.1" type="github" pages="22">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -2092,7 +2092,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Copy of Sequence anggota" id="PSlWT4fWSqhX9rKMy5pq">
-    <mxGraphModel dx="1024" dy="561" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1229" dy="673" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="8yiJ1QKKgpU2bZLrON0o-0" />
         <mxCell id="8yiJ1QKKgpU2bZLrON0o-1" parent="8yiJ1QKKgpU2bZLrON0o-0" />
@@ -2115,16 +2115,16 @@
           <mxGeometry x="45" y="173" width="10" height="40" as="geometry" />
         </mxCell>
         <mxCell id="8yiJ1QKKgpU2bZLrON0o-8" value="" style="group" vertex="1" connectable="0" parent="8yiJ1QKKgpU2bZLrON0o-1">
-          <mxGeometry x="115" y="78" width="100" height="642" as="geometry" />
+          <mxGeometry x="115" y="78" width="100" height="702" as="geometry" />
         </mxCell>
         <mxCell id="8yiJ1QKKgpU2bZLrON0o-9" value="" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=0;" vertex="1" parent="8yiJ1QKKgpU2bZLrON0o-8">
-          <mxGeometry y="75.52941176470586" width="100" height="566.470588235294" as="geometry" />
+          <mxGeometry y="82.58823529411762" width="100" height="619.4117647058823" as="geometry" />
         </mxCell>
         <mxCell id="8yiJ1QKKgpU2bZLrON0o-10" value="admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="8yiJ1QKKgpU2bZLrON0o-8">
-          <mxGeometry x="35" width="30" height="113.2941176470588" as="geometry" />
+          <mxGeometry x="35" width="30" height="123.88235294117645" as="geometry" />
         </mxCell>
         <mxCell id="8yiJ1QKKgpU2bZLrON0o-11" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="8yiJ1QKKgpU2bZLrON0o-8">
-          <mxGeometry x="45" y="158.18975718996853" width="10" height="75.52941176470586" as="geometry" />
+          <mxGeometry x="45" y="172.97384664697495" width="10" height="82.58823529411762" as="geometry" />
         </mxCell>
         <mxCell id="8yiJ1QKKgpU2bZLrON0o-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=0;" edge="1" parent="8yiJ1QKKgpU2bZLrON0o-1">
           <mxGeometry relative="1" as="geometry">
