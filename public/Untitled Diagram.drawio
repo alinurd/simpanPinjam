@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-05T19:10:53.913Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="Wlv3yV8eSWsGo6CPl_gb" version="24.0.1" type="github" pages="24">
+<mxfile host="app.diagrams.net" modified="2024-03-05T19:14:46.581Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="lI6sx12QsRg9xjbdyOhu" version="24.0.1" type="github" pages="24">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -4508,7 +4508,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Copy of ERD" id="cHj8B1WtBu3l9bw9FxgJ">
-    <mxGraphModel dx="1313" dy="708" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1909" dy="1029" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="UKwe087sQhK-TbOyTnbO-0" />
         <mxCell id="UKwe087sQhK-TbOyTnbO-1" parent="UKwe087sQhK-TbOyTnbO-0" />
@@ -4723,6 +4723,30 @@
         </mxCell>
         <mxCell id="rI3O4DlmXcSzXVR213aN-4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6D1F00;dashed=1;dashPattern=8 8;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;fontColor=#ffffff;" vertex="1" parent="UKwe087sQhK-TbOyTnbO-1">
           <mxGeometry x="190" y="540" width="956" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="6gN-3_aqj4iSjDgjbwJL-1" value="Text" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="UKwe087sQhK-TbOyTnbO-1">
+          <mxGeometry x="550" y="530" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6gN-3_aqj4iSjDgjbwJL-2" value="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="UKwe087sQhK-TbOyTnbO-1">
+          <mxGeometry x="20" y="250" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6gN-3_aqj4iSjDgjbwJL-3" value="2" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="UKwe087sQhK-TbOyTnbO-1">
+          <mxGeometry x="183.5" y="710" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6gN-3_aqj4iSjDgjbwJL-4" value="3" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="UKwe087sQhK-TbOyTnbO-1">
+          <mxGeometry x="422.5" y="670" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6gN-3_aqj4iSjDgjbwJL-6" value="4" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="UKwe087sQhK-TbOyTnbO-1">
+          <mxGeometry x="362.5" y="660" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6gN-3_aqj4iSjDgjbwJL-7" value="6" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="UKwe087sQhK-TbOyTnbO-1">
+          <mxGeometry x="550" y="405" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6gN-3_aqj4iSjDgjbwJL-8" value="5" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="UKwe087sQhK-TbOyTnbO-1">
+          <mxGeometry x="812.5" y="810" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6gN-3_aqj4iSjDgjbwJL-9" value="7" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="UKwe087sQhK-TbOyTnbO-1">
+          <mxGeometry x="1050" y="210" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
