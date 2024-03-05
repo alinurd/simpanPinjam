@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-05T11:49:28.922Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="sdKJ3TGDXcgsXSMQOFsg" version="24.0.1" type="github" pages="22">
+<mxfile host="app.diagrams.net" modified="2024-03-05T11:50:07.401Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="uhITqvf3Oq1335gcK9Pu" version="24.0.1" type="github" pages="22">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -2092,7 +2092,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Copy of Sequence anggota" id="PSlWT4fWSqhX9rKMy5pq">
-    <mxGraphModel dx="521" dy="273" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1509" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="8yiJ1QKKgpU2bZLrON0o-0" />
         <mxCell id="8yiJ1QKKgpU2bZLrON0o-1" parent="8yiJ1QKKgpU2bZLrON0o-0" />
@@ -2274,7 +2274,7 @@
             <mxPoint x="630" y="645" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_StS_MBeTkw4N5T-fetN-13" value="klik edit" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_StS_MBeTkw4N5T-fetN-12">
+        <mxCell id="_StS_MBeTkw4N5T-fetN-13" value="&lt;div&gt;klik hapus&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_StS_MBeTkw4N5T-fetN-12">
           <mxGeometry x="-0.4329" y="1" relative="1" as="geometry">
             <mxPoint x="22" y="-19" as="offset" />
           </mxGeometry>
