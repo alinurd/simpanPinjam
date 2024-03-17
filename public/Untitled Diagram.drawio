@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-17T14:10:32.475Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="XfiAfLTUbeR5PI3DURnj" version="24.0.1" type="github" pages="26">
+<mxfile host="app.diagrams.net" modified="2024-03-17T14:12:10.581Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="vVyh-Z-ayd47MyLYV-hN" version="24.0.1" type="github" pages="26">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -2921,7 +2921,7 @@
             <mxPoint x="305" y="240" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Mn_ANxJcaHYV3mEC3VUJ-14" value="masukan &lt;br&gt;data approval" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Mn_ANxJcaHYV3mEC3VUJ-13">
+        <mxCell id="Mn_ANxJcaHYV3mEC3VUJ-14" value="data review" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Mn_ANxJcaHYV3mEC3VUJ-13">
           <mxGeometry x="-0.4329" y="1" relative="1" as="geometry">
             <mxPoint x="22" y="-19" as="offset" />
           </mxGeometry>
