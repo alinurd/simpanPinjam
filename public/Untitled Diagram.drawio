@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-23T14:26:16.914Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="BFkq9wHg7fjWRZQIjw4Q" version="24.0.7" type="github" pages="28">
+<mxfile host="app.diagrams.net" modified="2024-03-23T14:27:08.814Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="hbUiT2ZL9vEMjUTYYlXN" version="24.0.7" type="github" pages="28">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -357,10 +357,10 @@
         <mxCell id="hgp0DZNvPH2PfxoT8wEF-10" value="Review" style="ellipse;whiteSpace=wrap;html=1;" parent="hgp0DZNvPH2PfxoT8wEF-43" vertex="1">
           <mxGeometry x="143" y="636" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="6aOZg5NvMmGkVnXK_3N3-2" value="Subkriteria" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="hgp0DZNvPH2PfxoT8wEF-43">
+        <mxCell id="6aOZg5NvMmGkVnXK_3N3-2" value="Manage Point" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="hgp0DZNvPH2PfxoT8wEF-43">
           <mxGeometry x="143" y="541" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="6aOZg5NvMmGkVnXK_3N3-1" value="Subkriteria" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="hgp0DZNvPH2PfxoT8wEF-43">
+        <mxCell id="6aOZg5NvMmGkVnXK_3N3-1" value="Manage Approval" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="hgp0DZNvPH2PfxoT8wEF-43">
           <mxGeometry x="143" y="460" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="hgp0DZNvPH2PfxoT8wEF-4" value="Pengawas" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
