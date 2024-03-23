@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-23T20:12:53.882Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="3S-Cd7rJyJ_ih5a9DmfT" version="24.0.7" type="github" pages="34">
+<mxfile host="app.diagrams.net" modified="2024-03-23T21:35:32.926Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="I4JND6y0VXjsxn83F90g" version="24.0.7" type="github" pages="34">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -4659,7 +4659,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="pengujian kirim email" id="Mc2AIPwTu4Sx4BYxKYth">
-    <mxGraphModel dx="2100" dy="1132" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1500" dy="809" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="YoyAMy4htKmmzOhYpnu4-0" />
         <mxCell id="YoyAMy4htKmmzOhYpnu4-1" parent="YoyAMy4htKmmzOhYpnu4-0" />
@@ -4765,10 +4765,10 @@
         <mxCell id="ZYbdDI83LOhEcOcOyOwR-49" value="2" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="YoyAMy4htKmmzOhYpnu4-1">
           <mxGeometry x="780" y="251" width="40" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="ZYbdDI83LOhEcOcOyOwR-53" value="6" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="YoyAMy4htKmmzOhYpnu4-1">
+        <mxCell id="ZYbdDI83LOhEcOcOyOwR-53" value="5" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="YoyAMy4htKmmzOhYpnu4-1">
           <mxGeometry x="780" y="414" width="40" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="ZYbdDI83LOhEcOcOyOwR-54" value="7" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="YoyAMy4htKmmzOhYpnu4-1">
+        <mxCell id="ZYbdDI83LOhEcOcOyOwR-54" value="6" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="YoyAMy4htKmmzOhYpnu4-1">
           <mxGeometry x="780" y="494" width="40" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ZYbdDI83LOhEcOcOyOwR-55" value="3" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="YoyAMy4htKmmzOhYpnu4-1">
@@ -4777,7 +4777,7 @@
         <mxCell id="ZYbdDI83LOhEcOcOyOwR-56" value="4" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="YoyAMy4htKmmzOhYpnu4-1">
           <mxGeometry x="880" y="344" width="40" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="ZYbdDI83LOhEcOcOyOwR-57" value="8" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="YoyAMy4htKmmzOhYpnu4-1">
+        <mxCell id="ZYbdDI83LOhEcOcOyOwR-57" value="7" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="YoyAMy4htKmmzOhYpnu4-1">
           <mxGeometry x="880" y="494" width="40" height="40" as="geometry" />
         </mxCell>
         <mxCell id="vqfm3BYNMeuLqAh9XoO7-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="YoyAMy4htKmmzOhYpnu4-1" source="ZYbdDI83LOhEcOcOyOwR-59" target="vqfm3BYNMeuLqAh9XoO7-5">
@@ -4944,7 +4944,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="pengujian report akun" id="ha_jRFxqTnZu1U7WalJq">
-    <mxGraphModel dx="3000" dy="1617" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1235" dy="666" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="lV8obrwx8FtprlPrr1g0-0" />
         <mxCell id="lV8obrwx8FtprlPrr1g0-1" parent="lV8obrwx8FtprlPrr1g0-0" />
@@ -5011,9 +5011,6 @@
         <mxCell id="lV8obrwx8FtprlPrr1g0-34" value="4" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="lV8obrwx8FtprlPrr1g0-1">
           <mxGeometry x="770" y="280" width="40" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="lV8obrwx8FtprlPrr1g0-36" value="8" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="lV8obrwx8FtprlPrr1g0-1">
-          <mxGeometry x="860" y="280" width="40" height="40" as="geometry" />
-        </mxCell>
         <mxCell id="lV8obrwx8FtprlPrr1g0-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="lV8obrwx8FtprlPrr1g0-1" source="lV8obrwx8FtprlPrr1g0-28" target="lV8obrwx8FtprlPrr1g0-33">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="700" y="160" as="sourcePoint" />
@@ -5046,12 +5043,6 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="800" y="237" as="sourcePoint" />
             <mxPoint x="800" y="290" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="lV8obrwx8FtprlPrr1g0-49" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="lV8obrwx8FtprlPrr1g0-1" source="lV8obrwx8FtprlPrr1g0-34" target="lV8obrwx8FtprlPrr1g0-36">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="810" y="450" as="sourcePoint" />
-            <mxPoint x="810" y="340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="DeYZwBc06h9H3HC0qI0O-0" value="Flowchart report akun" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="lV8obrwx8FtprlPrr1g0-1">
