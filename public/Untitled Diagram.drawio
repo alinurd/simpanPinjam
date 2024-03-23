@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-23T20:04:16.901Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="WRExvDpeBPFpY2UBIMtE" version="24.0.7" type="github" pages="34">
+<mxfile host="app.diagrams.net" modified="2024-03-23T20:04:58.151Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="Gl-FffDyEfmUQ1cxg9Rh" version="24.0.7" type="github" pages="34">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -4659,7 +4659,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="pengujian kirim email" id="Mc2AIPwTu4Sx4BYxKYth">
-    <mxGraphModel dx="1105" dy="596" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="2100" dy="1132" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="YoyAMy4htKmmzOhYpnu4-0" />
         <mxCell id="YoyAMy4htKmmzOhYpnu4-1" parent="YoyAMy4htKmmzOhYpnu4-0" />
@@ -4672,7 +4672,7 @@
         <mxCell id="ZYbdDI83LOhEcOcOyOwR-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="YoyAMy4htKmmzOhYpnu4-1" source="ZYbdDI83LOhEcOcOyOwR-5" target="ZYbdDI83LOhEcOcOyOwR-7">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ZYbdDI83LOhEcOcOyOwR-5" value="mengisi form appoval" style="html=1;strokeWidth=2;shape=manualInput;whiteSpace=wrap;rounded=1;size=27;arcSize=11;" vertex="1" parent="YoyAMy4htKmmzOhYpnu4-1">
+        <mxCell id="ZYbdDI83LOhEcOcOyOwR-5" value="mengisi form appoval" style="html=1;strokeWidth=2;shape=manualInput;whiteSpace=wrap;rounded=1;size=17;arcSize=14;" vertex="1" parent="YoyAMy4htKmmzOhYpnu4-1">
           <mxGeometry x="90" y="167" width="150" height="70" as="geometry" />
         </mxCell>
         <mxCell id="ZYbdDI83LOhEcOcOyOwR-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="YoyAMy4htKmmzOhYpnu4-1" source="ZYbdDI83LOhEcOcOyOwR-7" target="ZYbdDI83LOhEcOcOyOwR-9">
