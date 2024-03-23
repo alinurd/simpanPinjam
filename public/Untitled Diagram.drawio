@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-23T22:15:15.968Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="jaySrSfahwIFMIaSHvUp" version="24.0.7" type="github" pages="34">
+<mxfile host="app.diagrams.net" modified="2024-03-23T22:38:50.317Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="IRAvlTHxBVrV2VLgdIQB" version="24.0.7" type="github" pages="35">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -4885,6 +4885,56 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="875" y="284" as="sourcePoint" />
             <mxPoint x="875" y="321" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copy of pengujian kirim email" id="26anTLTLAra7sQs2nfA8">
+    <mxGraphModel dx="1400" dy="1605" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="KTrOeojxEDGOkYkqdl4R-0" />
+        <mxCell id="KTrOeojxEDGOkYkqdl4R-1" parent="KTrOeojxEDGOkYkqdl4R-0" />
+        <mxCell id="KTrOeojxEDGOkYkqdl4R-3" value="halaman list data" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="KTrOeojxEDGOkYkqdl4R-1">
+          <mxGeometry x="170" y="190" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KTrOeojxEDGOkYkqdl4R-5" value="mengisi form appoval" style="html=1;strokeWidth=2;shape=manualInput;whiteSpace=wrap;rounded=1;size=17;arcSize=14;" vertex="1" parent="KTrOeojxEDGOkYkqdl4R-1">
+          <mxGeometry x="780" y="160" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KTrOeojxEDGOkYkqdl4R-10" value="data suervey" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;rounded=1;arcSize=11;" vertex="1" parent="KTrOeojxEDGOkYkqdl4R-1">
+          <mxGeometry x="400" y="107.5" width="115" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="KTrOeojxEDGOkYkqdl4R-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="KTrOeojxEDGOkYkqdl4R-1" source="KTrOeojxEDGOkYkqdl4R-13" target="KTrOeojxEDGOkYkqdl4R-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KTrOeojxEDGOkYkqdl4R-13" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" vertex="1" parent="KTrOeojxEDGOkYkqdl4R-1">
+          <mxGeometry x="845" y="290" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KTrOeojxEDGOkYkqdl4R-23" value="kirim email kepada calon creditur yang di setujui" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="KTrOeojxEDGOkYkqdl4R-1">
+          <mxGeometry x="810" y="395" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KTrOeojxEDGOkYkqdl4R-46" value="flowchart kirim email" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KTrOeojxEDGOkYkqdl4R-1">
+          <mxGeometry x="315" y="758" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KTrOeojxEDGOkYkqdl4R-50" value="&lt;div&gt;kirim email user&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="KTrOeojxEDGOkYkqdl4R-1">
+          <mxGeometry x="820" y="500" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pb9IWRX6scVyywCmZ45D-1" value="data anggota" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;rounded=1;arcSize=11;" vertex="1" parent="KTrOeojxEDGOkYkqdl4R-1">
+          <mxGeometry x="400" y="-20" width="115" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="pb9IWRX6scVyywCmZ45D-2" value="data approval" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;rounded=1;arcSize=11;" vertex="1" parent="KTrOeojxEDGOkYkqdl4R-1">
+          <mxGeometry x="400" y="230" width="115" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="pb9IWRX6scVyywCmZ45D-3" value="data review" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;rounded=1;arcSize=11;" vertex="1" parent="KTrOeojxEDGOkYkqdl4R-1">
+          <mxGeometry x="400" y="345" width="115" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="pb9IWRX6scVyywCmZ45D-5" value="halaman form" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="KTrOeojxEDGOkYkqdl4R-1">
+          <mxGeometry x="599" y="170" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pb9IWRX6scVyywCmZ45D-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="KTrOeojxEDGOkYkqdl4R-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="505" as="sourcePoint" />
+            <mxPoint x="560" y="440" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
