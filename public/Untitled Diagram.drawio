@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-26T01:51:14.343Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="jqjDp0ryAEOGB9RIaW-v" version="24.1.0" type="github" pages="35">
+<mxfile host="app.diagrams.net" modified="2024-03-26T01:52:52.151Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="uSfDMGvCoqkMGwMJdN3X" version="24.1.0" type="github" pages="35">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="System Berjalan">
     <mxGraphModel dx="1500" dy="809" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -4161,7 +4161,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="oVmR_CbbqWQOXBhDb9U2" name="class diagram">
-    <mxGraphModel dx="2100" dy="1132" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="875" dy="472" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4406,12 +4406,14 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="0zGRK1bFJHO92RuO6bzN-153" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.423;entryY=1.188;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="PnTnpAPzfxXGD2oHV18H-1" target="0zGRK1bFJHO92RuO6bzN-134">
+        <mxCell id="0zGRK1bFJHO92RuO6bzN-153" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.593;entryY=1.308;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="PnTnpAPzfxXGD2oHV18H-1" target="0zGRK1bFJHO92RuO6bzN-134">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="960" y="780" as="targetPoint" />
+            <mxPoint x="1060" y="780" as="targetPoint" />
             <Array as="points">
               <mxPoint x="135" y="840" />
-              <mxPoint x="962" y="840" />
+              <mxPoint x="1020" y="840" />
+              <mxPoint x="1020" y="780" />
+              <mxPoint x="1021" y="780" />
             </Array>
           </mxGeometry>
         </mxCell>
