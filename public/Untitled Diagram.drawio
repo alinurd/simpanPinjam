@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-03-29T20:53:25.267Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="d1HjySDom8L5IdyZgs7X" version="24.1.0" type="github" pages="36">
+<mxfile host="app.diagrams.net" modified="2024-03-29T20:58:10.752Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="b_SJzmS9zHjNl11gPqPE" version="24.1.0" type="github" pages="36">
   <diagram name="ALUR AUP" id="hw-jrnno1dC3b1uoMLS0">
-    <mxGraphModel dx="2333" dy="1258" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="724" dy="390" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="T8hnroI-4BqXjUmGABsX-0" />
         <mxCell id="T8hnroI-4BqXjUmGABsX-1" parent="T8hnroI-4BqXjUmGABsX-0" />
@@ -28,8 +28,8 @@
         <mxCell id="Q8q-7TTuD0ERGtn43Gbx-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="Q8q-7TTuD0ERGtn43Gbx-6" source="Q8q-7TTuD0ERGtn43Gbx-12" target="Q8q-7TTuD0ERGtn43Gbx-13">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Q8q-7TTuD0ERGtn43Gbx-12" value="identifikasi funtionan sistem" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="Q8q-7TTuD0ERGtn43Gbx-6">
-          <mxGeometry x="60" y="125" width="135" height="60" as="geometry" />
+        <mxCell id="Q8q-7TTuD0ERGtn43Gbx-12" value="identifikasi fungsional dan nonfungsional" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="Q8q-7TTuD0ERGtn43Gbx-6">
+          <mxGeometry x="53" y="125" width="150" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Q8q-7TTuD0ERGtn43Gbx-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="Q8q-7TTuD0ERGtn43Gbx-6" source="Q8q-7TTuD0ERGtn43Gbx-13" target="Q8q-7TTuD0ERGtn43Gbx-16">
           <mxGeometry relative="1" as="geometry" />
