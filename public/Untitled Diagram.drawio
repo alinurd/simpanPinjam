@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-03-29T20:58:45.586Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="1wV0SN3JL4-yRk1zmMCe" version="24.1.0" type="github" pages="36">
+<mxfile host="app.diagrams.net" modified="2024-03-29T21:00:59.414Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="VwvTv7tuty6COR5OcHn5" version="24.1.0" type="github" pages="36">
   <diagram name="ALUR AUP" id="hw-jrnno1dC3b1uoMLS0">
-    <mxGraphModel dx="724" dy="390" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="677" dy="365" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="T8hnroI-4BqXjUmGABsX-0" />
         <mxCell id="T8hnroI-4BqXjUmGABsX-1" parent="T8hnroI-4BqXjUmGABsX-0" />
@@ -19,7 +19,7 @@
         <mxCell id="Q8q-7TTuD0ERGtn43Gbx-9" value="analisis proses bisnis" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="Q8q-7TTuD0ERGtn43Gbx-0">
           <mxGeometry x="65" y="130" width="135" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Q8q-7TTuD0ERGtn43Gbx-10" value="startup meeting" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="Q8q-7TTuD0ERGtn43Gbx-0">
+        <mxCell id="Q8q-7TTuD0ERGtn43Gbx-10" value="wawancara dengan stakeholder" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="Q8q-7TTuD0ERGtn43Gbx-0">
           <mxGeometry x="65" y="270" width="135" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Q8q-7TTuD0ERGtn43Gbx-6" value="Elaboration" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="T8hnroI-4BqXjUmGABsX-43">
