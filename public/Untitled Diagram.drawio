@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-29T20:58:10.752Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="b_SJzmS9zHjNl11gPqPE" version="24.1.0" type="github" pages="36">
+<mxfile host="app.diagrams.net" modified="2024-03-29T20:58:45.586Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="1wV0SN3JL4-yRk1zmMCe" version="24.1.0" type="github" pages="36">
   <diagram name="ALUR AUP" id="hw-jrnno1dC3b1uoMLS0">
     <mxGraphModel dx="724" dy="390" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -47,7 +47,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Q8q-7TTuD0ERGtn43Gbx-18" value="pemodelan sistem sesuai aturan pengadaan" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="Q8q-7TTuD0ERGtn43Gbx-7">
-          <mxGeometry x="75" y="117" width="135" height="60" as="geometry" />
+          <mxGeometry x="70" y="117" width="145" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Q8q-7TTuD0ERGtn43Gbx-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="Q8q-7TTuD0ERGtn43Gbx-7" source="Q8q-7TTuD0ERGtn43Gbx-19" target="Q8q-7TTuD0ERGtn43Gbx-21">
           <mxGeometry relative="1" as="geometry" />
@@ -56,7 +56,7 @@
           <mxGeometry x="75" y="257" width="135" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Q8q-7TTuD0ERGtn43Gbx-21" value="test dan evaluasi sistem" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="Q8q-7TTuD0ERGtn43Gbx-7">
-          <mxGeometry x="75" y="397" width="135" height="60" as="geometry" />
+          <mxGeometry x="70" y="397" width="145" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Q8q-7TTuD0ERGtn43Gbx-8" value="Transition" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="T8hnroI-4BqXjUmGABsX-43">
           <mxGeometry x="787.5" y="20" width="270" height="800" as="geometry" />
