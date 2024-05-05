@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-05-05T13:20:02.589Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="BRVcyakmjw9iARd3yUg4" version="24.3.1" type="github" pages="37">
+<mxfile host="app.diagrams.net" modified="2024-05-05T13:24:34.336Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="8t996zanMBBlj2AbQrpt" version="24.3.1" type="github" pages="37">
   <diagram name="flowchart system" id="IVVZCsLo85ee25WD64bm">
-    <mxGraphModel dx="2625" dy="1415" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1400" dy="755" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="ouOAM-EZTne1HK7uDjXK-0" />
         <mxCell id="ouOAM-EZTne1HK7uDjXK-1" parent="ouOAM-EZTne1HK7uDjXK-0" />
@@ -124,6 +124,9 @@
         <mxCell id="-x4sRfqWjykMM7guXFl3-35" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=14;" vertex="1" parent="ouOAM-EZTne1HK7uDjXK-1">
           <mxGeometry x="835" y="320" width="60" height="80" as="geometry" />
         </mxCell>
+        <mxCell id="-x4sRfqWjykMM7guXFl3-54" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ouOAM-EZTne1HK7uDjXK-1" source="-x4sRfqWjykMM7guXFl3-36" target="-x4sRfqWjykMM7guXFl3-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="-x4sRfqWjykMM7guXFl3-36" value="informasi hasil pengajuan" style="whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="ouOAM-EZTne1HK7uDjXK-1">
           <mxGeometry x="925" y="415" width="120" height="60" as="geometry" />
         </mxCell>
@@ -137,6 +140,9 @@
         </mxCell>
         <mxCell id="-x4sRfqWjykMM7guXFl3-45" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=14;" vertex="1" parent="ouOAM-EZTne1HK7uDjXK-1">
           <mxGeometry x="150" y="345" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-x4sRfqWjykMM7guXFl3-53" value="end" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=80;strokeWidth=2;fontSize=14;" vertex="1" parent="ouOAM-EZTne1HK7uDjXK-1">
+          <mxGeometry x="945" y="550" width="80" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
