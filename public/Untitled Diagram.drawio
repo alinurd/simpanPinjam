@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-05T13:18:22.080Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="Up3dRHh0RvUdbNx9IC_w" version="24.3.1" type="github" pages="37">
+<mxfile host="app.diagrams.net" modified="2024-05-05T13:18:46.367Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="baDLyF-jVfJHlQP8B37m" version="24.3.1" type="github" pages="37">
   <diagram name="flowchart system" id="IVVZCsLo85ee25WD64bm">
     <mxGraphModel dx="1167" dy="629" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -50,7 +50,7 @@
         <mxCell id="-x4sRfqWjykMM7guXFl3-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="ouOAM-EZTne1HK7uDjXK-1" source="-x4sRfqWjykMM7guXFl3-15" target="-x4sRfqWjykMM7guXFl3-45">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="-x4sRfqWjykMM7guXFl3-15" value="&lt;div&gt;data hasil survey&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;" vertex="1" parent="ouOAM-EZTne1HK7uDjXK-1">
+        <mxCell id="-x4sRfqWjykMM7guXFl3-15" value="&lt;div&gt;data survey&lt;br&gt;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;" vertex="1" parent="ouOAM-EZTne1HK7uDjXK-1">
           <mxGeometry x="235" y="278" width="142.5" height="60" as="geometry" />
         </mxCell>
         <mxCell id="-x4sRfqWjykMM7guXFl3-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ouOAM-EZTne1HK7uDjXK-1" source="-x4sRfqWjykMM7guXFl3-17" target="-x4sRfqWjykMM7guXFl3-20">
