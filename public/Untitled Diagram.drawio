@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-21T07:42:31.995Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="KPryOry_d4bJmK0uSYS3" version="24.4.4" type="github" pages="40">
+<mxfile host="app.diagrams.net" modified="2024-05-21T07:45:18.263Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="l9wUOn-m4fPoghP1_JSM" version="24.4.4" type="github" pages="40">
   <diagram name="flowchart system" id="IVVZCsLo85ee25WD64bm">
     <mxGraphModel dx="1750" dy="943" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -7492,10 +7492,10 @@
           <mxGeometry x="700" y="630.5" width="280" height="180" as="geometry" />
         </mxCell>
         <mxCell id="gIJIMj3SKN8EYXeNL0XV-21" value="" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=20;dashed=1;whiteSpace=wrap;fillColor=none;strokeColor=#00CC00;fontColor=#ffffff;" vertex="1" parent="h-67_brg2lHmHl2k28tV-1">
-          <mxGeometry x="1160" y="560" width="210" height="200" as="geometry" />
+          <mxGeometry x="1150" y="371.25" width="220" height="248.75" as="geometry" />
         </mxCell>
         <mxCell id="gIJIMj3SKN8EYXeNL0XV-17" value="" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=20;dashed=1;whiteSpace=wrap;fillColor=none;strokeColor=#660033;fontColor=#ffffff;" vertex="1" parent="h-67_brg2lHmHl2k28tV-1">
-          <mxGeometry x="853" y="377" width="482" height="220" as="geometry" />
+          <mxGeometry x="853" y="370" width="407" height="227" as="geometry" />
         </mxCell>
         <mxCell id="gIJIMj3SKN8EYXeNL0XV-4" value="" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=20;dashed=1;whiteSpace=wrap;fillColor=none;strokeColor=#00FF44;" vertex="1" parent="h-67_brg2lHmHl2k28tV-1">
           <mxGeometry x="40" y="210" width="410" height="150" as="geometry" />
@@ -7765,7 +7765,7 @@
           <mxGeometry x="430" y="560" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="h-67_brg2lHmHl2k28tV-64" value="mempunyai" style="rhombus;whiteSpace=wrap;html=1;dashed=0;fontSize=13;fontFamily=Times New Roman;" vertex="1" parent="h-67_brg2lHmHl2k28tV-1">
-          <mxGeometry x="1205" y="565" width="130" height="90" as="geometry" />
+          <mxGeometry x="1205" y="475" width="130" height="90" as="geometry" />
         </mxCell>
         <mxCell id="h-67_brg2lHmHl2k28tV-65" value="kriteria_penilaian" style="html=1;align=center;verticalAlign=middle;dashed=0;whiteSpace=wrap;fontSize=13;fontFamily=Times New Roman;" vertex="1" parent="h-67_brg2lHmHl2k28tV-1">
           <mxGeometry x="1200" y="710" width="140" height="40" as="geometry" />
@@ -8005,7 +8005,7 @@
           <mxGeometry x="824" y="684.75" width="176" height="52.25" as="geometry" />
         </mxCell>
         <mxCell id="gIJIMj3SKN8EYXeNL0XV-19" value="&lt;ul&gt;&lt;li&gt;id_penilaian&lt;/li&gt;&lt;li&gt;id_kriteria&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="h-67_brg2lHmHl2k28tV-1">
-          <mxGeometry x="1140" y="633.88" width="145" height="52.25" as="geometry" />
+          <mxGeometry x="1245" y="556.5" width="145" height="52.25" as="geometry" />
         </mxCell>
         <mxCell id="gIJIMj3SKN8EYXeNL0XV-20" value="&lt;ul&gt;&lt;li&gt;id_penilaian&lt;/li&gt;&lt;li&gt;id_kredit&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="h-67_brg2lHmHl2k28tV-1">
           <mxGeometry x="955" y="528.75" width="145" height="52.25" as="geometry" />
