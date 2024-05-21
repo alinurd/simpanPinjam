@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-21T19:04:18.698Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="BB1k_-7M7GWXEwt2BnQD" version="24.4.4" type="github" pages="41">
+<mxfile host="app.diagrams.net" modified="2024-05-21T19:04:51.791Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="gmJplDlsFw733E9spBUU" version="24.4.4" type="github" pages="41">
   <diagram name="flowchart system" id="IVVZCsLo85ee25WD64bm">
     <mxGraphModel dx="1750" dy="943" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -7604,7 +7604,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="LRS-V1" id="UzrTNk-uDjZ8AZNB89OL">
-    <mxGraphModel dx="2776" dy="916" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1902" dy="438" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="S9IbqYk8BnsbS2CyIpbc-0" />
         <mxCell id="S9IbqYk8BnsbS2CyIpbc-1" parent="S9IbqYk8BnsbS2CyIpbc-0" />
@@ -7642,7 +7642,7 @@
           <mxGeometry y="223" width="190" height="20" as="geometry" />
         </mxCell>
         <mxCell id="OLIkcB6ANJrr_maJzvV0-149" value="&lt;br&gt;&lt;h2&gt;USER ADMIN&lt;br&gt;&lt;/h2&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" vertex="1" parent="S9IbqYk8BnsbS2CyIpbc-1">
-          <mxGeometry x="-1050" y="211" width="170" height="188" as="geometry" />
+          <mxGeometry x="-980" y="210" width="170" height="188" as="geometry" />
         </mxCell>
         <mxCell id="OLIkcB6ANJrr_maJzvV0-150" value="+id: int (11) pk" style="text;html=1;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="OLIkcB6ANJrr_maJzvV0-149">
           <mxGeometry y="40" width="170" height="20" as="geometry" />
@@ -7783,7 +7783,7 @@
           <mxGeometry y="148" width="170" height="20" as="geometry" />
         </mxCell>
         <mxCell id="El39rR1s39n3Q91kCwOg-38" value="&lt;h2&gt;REVIEW PENGAWAS&lt;br&gt;&lt;/h2&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=60;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" vertex="1" parent="S9IbqYk8BnsbS2CyIpbc-1">
-          <mxGeometry x="-1020" y="468" width="170" height="168" as="geometry" />
+          <mxGeometry x="-980" y="465" width="170" height="168" as="geometry" />
         </mxCell>
         <mxCell id="El39rR1s39n3Q91kCwOg-39" value="+id: int (11) pk" style="text;html=1;strokeColor=default;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="El39rR1s39n3Q91kCwOg-38">
           <mxGeometry y="60" width="170" height="20" as="geometry" />
