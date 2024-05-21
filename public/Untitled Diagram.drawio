@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-21T06:23:08.820Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="G2j2kSLJfVqHzzHVLR89" version="24.4.4" type="github" pages="40">
+<mxfile host="app.diagrams.net" modified="2024-05-21T06:23:21.604Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="XkElGbIhwZ1-Ql7Ga4ZE" version="24.4.4" type="github" pages="40">
   <diagram name="flowchart system" id="IVVZCsLo85ee25WD64bm">
     <mxGraphModel dx="1750" dy="943" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -7999,7 +7999,7 @@
           <mxGeometry x="570" y="702" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="gIJIMj3SKN8EYXeNL0XV-0" value="" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=20;dashed=1;whiteSpace=wrap;fillColor=none;strokeColor=#b85450;" vertex="1" parent="h-67_brg2lHmHl2k28tV-1">
-          <mxGeometry x="660.5" y="70" width="353" height="170" as="geometry" />
+          <mxGeometry x="658" y="167.75" width="353" height="170" as="geometry" />
         </mxCell>
         <mxCell id="gIJIMj3SKN8EYXeNL0XV-3" value="&lt;ul&gt;&lt;li&gt;id_admin&lt;/li&gt;&lt;li&gt;id_calon_creditur&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="h-67_brg2lHmHl2k28tV-1">
           <mxGeometry x="297" y="305.5" width="145" height="52.25" as="geometry" />
