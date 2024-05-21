@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-21T06:23:21.604Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="XkElGbIhwZ1-Ql7Ga4ZE" version="24.4.4" type="github" pages="40">
+<mxfile host="app.diagrams.net" modified="2024-05-21T06:23:41.378Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="1Mj58C17lZZwOfDs0ZNh" version="24.4.4" type="github" pages="40">
   <diagram name="flowchart system" id="IVVZCsLo85ee25WD64bm">
     <mxGraphModel dx="1750" dy="943" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -7469,7 +7469,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="V1-TRNS-ERDT-TO-LRS " id="4ZJkCTPmueWqNk01tiYA">
-    <mxGraphModel dx="1050" dy="565" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2100" dy="1130" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="h-67_brg2lHmHl2k28tV-0" />
         <mxCell id="h-67_brg2lHmHl2k28tV-1" parent="h-67_brg2lHmHl2k28tV-0" />
@@ -7714,10 +7714,10 @@
           <mxGeometry x="1150" y="480" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="h-67_brg2lHmHl2k28tV-56" value="nama" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;fontFamily=Times New Roman;" vertex="1" parent="h-67_brg2lHmHl2k28tV-1">
-          <mxGeometry x="837" y="95" width="90" height="45" as="geometry" />
+          <mxGeometry x="858" y="175" width="90" height="45" as="geometry" />
         </mxCell>
         <mxCell id="h-67_brg2lHmHl2k28tV-57" value="id_surveyor" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;fontFamily=Times New Roman;" vertex="1" parent="h-67_brg2lHmHl2k28tV-1">
-          <mxGeometry x="953" y="102.5" width="80" height="37.5" as="geometry" />
+          <mxGeometry x="934" y="175.13" width="80" height="37.5" as="geometry" />
         </mxCell>
         <mxCell id="h-67_brg2lHmHl2k28tV-58" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=13;fontFamily=Times New Roman;" edge="1" parent="h-67_brg2lHmHl2k28tV-1" source="h-67_brg2lHmHl2k28tV-57" target="h-67_brg2lHmHl2k28tV-13">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
