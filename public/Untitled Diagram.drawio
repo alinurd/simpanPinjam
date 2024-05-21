@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-21T06:04:29.635Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="LAa_a5O8JPOIXHtb8NOs" version="24.4.4" type="github" pages="39">
+<mxfile host="app.diagrams.net" modified="2024-05-21T06:04:52.527Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="-ZXbbo-8zEiLebpV3TQE" version="24.4.4" type="github" pages="39">
   <diagram name="flowchart system" id="IVVZCsLo85ee25WD64bm">
     <mxGraphModel dx="1750" dy="943" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -6936,7 +6936,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="V1-ERD" id="T2s_k9Qh35pVoW_XGemd">
-    <mxGraphModel dx="500" dy="269" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1500" dy="807" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="m6Y13A6J2JYWp4kDgaK0-0" />
         <mxCell id="m6Y13A6J2JYWp4kDgaK0-1" parent="m6Y13A6J2JYWp4kDgaK0-0" />
@@ -7315,7 +7315,7 @@
             <mxPoint x="1252" y="459" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="fvgaTPF2srrjpMqw4rJ7-88" value="id" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;fontFamily=Times New Roman;" parent="m6Y13A6J2JYWp4kDgaK0-1" vertex="1">
+        <mxCell id="fvgaTPF2srrjpMqw4rJ7-88" value="id_kriteria" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;fontFamily=Times New Roman;" parent="m6Y13A6J2JYWp4kDgaK0-1" vertex="1">
           <mxGeometry x="1130" y="770" width="120" height="53" as="geometry" />
         </mxCell>
         <mxCell id="fvgaTPF2srrjpMqw4rJ7-89" value="bobot" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;fontFamily=Times New Roman;" parent="m6Y13A6J2JYWp4kDgaK0-1" vertex="1">
