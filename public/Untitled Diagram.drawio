@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-06-01T11:47:59.128Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="yYr0YrgHXDZRW63SC0I7" version="24.4.13" type="github" pages="52">
+<mxfile host="app.diagrams.net" modified="2024-06-01T11:57:15.266Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="j-u7nXCtol7sbQAL8WYx" version="24.4.13" type="github" pages="53">
   <diagram name="flowchart system" id="IVVZCsLo85ee25WD64bm">
     <mxGraphModel dx="1729" dy="917" grid="1" gridSize="23" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -10696,6 +10696,125 @@
         </mxCell>
         <mxCell id="3dkfKyLsTN40eR3dZwQ--62" value="Report Akun" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="3dkfKyLsTN40eR3dZwQ--1">
           <mxGeometry x="1232" y="294" width="182" height="45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copy of PENILAIAN LIST" id="BuaNNT_JI8EJLp1rPrjN">
+    <mxGraphModel dx="2026" dy="976" grid="1" gridSize="14" guides="0" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-0" />
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-1" parent="fGQ2mciQg3S8euoxM1YH-0" />
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-2" value="" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="530" y="200" width="910" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-3" value="&lt;font&gt;Dadshborad&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="150" y="160" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-4" value="" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="520" y="160" width="930" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-5" value="NAMA KOPERASI" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;fontStyle=1" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="776" y="305" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-6" value="&lt;b&gt;Inisial Koperasi&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="190" y="80" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-7" value="selamat datang di sistem kelayan pinjaman dana" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="591" y="265" width="630" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-8" value="&lt;b&gt;Hallo Admin&lt;br&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="540" y="230" width="190" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-9" value="Calon Kreditur" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;strokeColor=#000000;fillColor=#FFFFFF;fontColor=#000000;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="150" y="230" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-10" value="Penilaian" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;fillColor=#000000;strokeColor=#FFFFFF;fontColor=#FFFFFF;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="150" y="613" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-11" value="Kriteria" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="150" y="305" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-12" value="Subkriteria" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="150" y="377" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-13" value="Manage Aprove" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="150" y="455" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-14" value="Manage Point" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="150" y="534" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-15" value="Logout" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="150" y="910" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-16" value="poto user" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="1350" y="160" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-17" value="identitas koperasi" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="725" y="170" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-18" value="Approval" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="150" y="690" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-19" value="Review" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="150" y="770" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-20" value="Rekap Data" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="150" y="840" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-21" value="" style="group" vertex="1" connectable="0" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="532" y="462" width="980" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-60" value="Form Penilaian" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=24;fontColor=default;fontStyle=1;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-21">
+          <mxGeometry x="14" y="70.33333333333334" width="196" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-61" value="SAP" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;fillColor=#000000;strokeColor=#FFFFFF;fontColor=#FFFFFF;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-21">
+          <mxGeometry x="14" y="111.33333333333334" width="142" height="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Ut_wO-_GW0vv5IZekpYc-0" value="SAP" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-21">
+          <mxGeometry x="154" y="111.33333333333334" width="142" height="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Ut_wO-_GW0vv5IZekpYc-1" value="Image" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-21">
+          <mxGeometry x="294" y="111.33333333333334" width="142" height="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Ut_wO-_GW0vv5IZekpYc-2" value="Standar Alokasi Point" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-21">
+          <mxGeometry y="155.5" width="294" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="Ut_wO-_GW0vv5IZekpYc-8" value="Kritea 1 [ bobot kriteria ]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=25;fontStyle=1" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-21">
+          <mxGeometry x="7" y="224" width="294" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="Ut_wO-_GW0vv5IZekpYc-9" value="Subkriteria 1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=25;fontStyle=1" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-21">
+          <mxGeometry x="28" y="280" width="168" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="Ut_wO-_GW0vv5IZekpYc-10" value="" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-21">
+          <mxGeometry x="28" y="322" width="182" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ut_wO-_GW0vv5IZekpYc-11" value="" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-21">
+          <mxGeometry x="266" y="322" width="182" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ut_wO-_GW0vv5IZekpYc-12" value="Subkriteria 2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=25;fontStyle=1" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-21">
+          <mxGeometry x="266" y="280" width="168" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="Ut_wO-_GW0vv5IZekpYc-13" value="" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-21">
+          <mxGeometry x="490" y="308" width="182" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ut_wO-_GW0vv5IZekpYc-14" value="Subkriteria 3" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=25;fontStyle=1" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-21">
+          <mxGeometry x="490" y="266" width="168" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="Ut_wO-_GW0vv5IZekpYc-15" value="" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-21">
+          <mxGeometry x="700" y="308" width="182" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ut_wO-_GW0vv5IZekpYc-16" value="Subkriteria 4" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=25;fontStyle=1" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-21">
+          <mxGeometry x="700" y="266" width="168" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="fGQ2mciQg3S8euoxM1YH-62" value="Report Akun" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="1232" y="294" width="182" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="Ut_wO-_GW0vv5IZekpYc-4" value="" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;strokeColor=#000000;fillColor=#FFFFFF;fontColor=#000000;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="532" y="406" width="910" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="Ut_wO-_GW0vv5IZekpYc-5" value="identitas calon kreditur" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=25;" vertex="1" parent="fGQ2mciQg3S8euoxM1YH-1">
+          <mxGeometry x="812" y="434" width="280" height="42" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
