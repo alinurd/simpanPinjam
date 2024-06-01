@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-06-01T07:23:26.545Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="v88xumFgYuH5ClB6RnYM" version="24.4.13" type="github" pages="45">
+<mxfile host="app.diagrams.net" modified="2024-06-01T07:23:53.982Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="u1Rp9DULUPNpX4sKk_TC" version="24.4.13" type="github" pages="45">
   <diagram name="flowchart system" id="IVVZCsLo85ee25WD64bm">
     <mxGraphModel dx="1729" dy="917" grid="1" gridSize="23" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -8941,9 +8941,6 @@
         <mxCell id="CSq2MbuyfG7e90BL-NEY-7" value="Logout" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" parent="PWESsPV-ylinRMvYGvV2-1" vertex="1">
           <mxGeometry x="150" y="910" width="310" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="CSq2MbuyfG7e90BL-NEY-8" value="poto user" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" parent="PWESsPV-ylinRMvYGvV2-1" vertex="1">
-          <mxGeometry x="1350" y="160" width="100" height="60" as="geometry" />
-        </mxCell>
         <mxCell id="WmatC1puCDp4pJQVjJVQ-0" value="identitas koperasi" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" parent="PWESsPV-ylinRMvYGvV2-1" vertex="1">
           <mxGeometry x="725" y="170" width="240" height="50" as="geometry" />
         </mxCell>
@@ -9165,9 +9162,6 @@
         </mxCell>
         <mxCell id="rUSUqqseBontMkZzFlYx-15" value="Logout" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="rUSUqqseBontMkZzFlYx-1">
           <mxGeometry x="150" y="910" width="310" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="rUSUqqseBontMkZzFlYx-16" value="poto user" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="rUSUqqseBontMkZzFlYx-1">
-          <mxGeometry x="1350" y="160" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="rUSUqqseBontMkZzFlYx-17" value="identitas koperasi" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="rUSUqqseBontMkZzFlYx-1">
           <mxGeometry x="725" y="170" width="240" height="50" as="geometry" />
