@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-06-02T15:26:35.621Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="2jGIdshGAw5riCFXvvN4" version="24.4.13" type="github" pages="60">
+<mxfile host="app.diagrams.net" modified="2024-06-02T15:42:19.137Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="Kez98miqxEtPZGFs5E4O" version="24.4.13" type="github" pages="60">
   <diagram name="flowchart system" id="IVVZCsLo85ee25WD64bm">
     <mxGraphModel dx="1729" dy="917" grid="1" gridSize="23" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -139,7 +139,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="ALUR AUP" id="hw-jrnno1dC3b1uoMLS0">
-    <mxGraphModel dx="2305" dy="1250" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="750" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="T8hnroI-4BqXjUmGABsX-0" />
         <mxCell id="T8hnroI-4BqXjUmGABsX-1" parent="T8hnroI-4BqXjUmGABsX-0" />
@@ -152,7 +152,7 @@
         <mxCell id="Q8q-7TTuD0ERGtn43Gbx-0" value="&lt;div&gt;Inisiasi&lt;/div&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;fontSize=28;verticalAlign=middle;fontStyle=1" parent="T8hnroI-4BqXjUmGABsX-43" vertex="1">
           <mxGeometry y="50" width="270" height="525.27" as="geometry" />
         </mxCell>
-        <mxCell id="-u2tm1Id7dR9H9Px_SeY-0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="Q8q-7TTuD0ERGtn43Gbx-0" source="Q8q-7TTuD0ERGtn43Gbx-9" target="Q8q-7TTuD0ERGtn43Gbx-10">
+        <mxCell id="-u2tm1Id7dR9H9Px_SeY-0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="Q8q-7TTuD0ERGtn43Gbx-0" source="Q8q-7TTuD0ERGtn43Gbx-9" target="Q8q-7TTuD0ERGtn43Gbx-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Q8q-7TTuD0ERGtn43Gbx-9" value="&lt;div style=&quot;font-size: 28px;&quot;&gt;wawancara&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=28;verticalAlign=middle;fontStyle=1" parent="Q8q-7TTuD0ERGtn43Gbx-0" vertex="1">
@@ -188,7 +188,7 @@
         <mxCell id="Q8q-7TTuD0ERGtn43Gbx-7" value="Kontruksi" style="swimlane;whiteSpace=wrap;html=1;fontSize=28;verticalAlign=middle;fontStyle=1;startSize=40;" parent="T8hnroI-4BqXjUmGABsX-43" vertex="1">
           <mxGeometry x="565" y="50" width="320" height="525.27" as="geometry" />
         </mxCell>
-        <mxCell id="-u2tm1Id7dR9H9Px_SeY-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="Q8q-7TTuD0ERGtn43Gbx-7" source="Q8q-7TTuD0ERGtn43Gbx-18">
+        <mxCell id="-u2tm1Id7dR9H9Px_SeY-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="Q8q-7TTuD0ERGtn43Gbx-7" source="Q8q-7TTuD0ERGtn43Gbx-18" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="160" y="215" as="targetPoint" />
           </mxGeometry>
@@ -11266,7 +11266,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Copy of Copy of FORM IMAGE" id="lpd74ti4xRE1YFscQrsv">
-    <mxGraphModel dx="2870" dy="1480" grid="1" gridSize="14" guides="0" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel grid="1" page="1" gridSize="14" guides="0" tooltips="1" connect="0" arrows="0" fold="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="FnZlauYtdqjY-vwnukjj-0" />
         <mxCell id="FnZlauYtdqjY-vwnukjj-1" parent="FnZlauYtdqjY-vwnukjj-0" />
