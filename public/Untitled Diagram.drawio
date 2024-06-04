@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-06-04T16:54:42.563Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="yOn6tsc9o8BRrvbmnyGb" version="24.4.13" type="github" pages="64">
+<mxfile host="app.diagrams.net" modified="2024-06-04T16:57:05.371Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="v5OT9gwC6dApCB_RRd7P" version="24.4.13" type="github" pages="64">
   <diagram name="flowchart system" id="IVVZCsLo85ee25WD64bm">
     <mxGraphModel dx="1729" dy="917" grid="1" gridSize="23" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -10458,7 +10458,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Copy of Copy of approval" id="ZdxMJHDxlLtmLu-Sphww">
-    <mxGraphModel dx="2017" dy="1070" grid="1" gridSize="14" guides="0" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1513" dy="803" grid="1" gridSize="14" guides="0" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="DeoXOKNFJ__tvac9IeCw-0" />
         <mxCell id="DeoXOKNFJ__tvac9IeCw-1" parent="DeoXOKNFJ__tvac9IeCw-0" />
@@ -10665,11 +10665,17 @@
             <mxRectangle width="93" height="31" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="DeoXOKNFJ__tvac9IeCw-52" value="Approve" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="DeoXOKNFJ__tvac9IeCw-12">
-          <mxGeometry y="70" width="140" height="45" as="geometry" />
+        <mxCell id="HJuLSZD8k-ePgeD9pt9G-8" value="&#xa;&lt;div style=&quot;font-size: 18px;&quot; class=&quot;card-header d-flex align-items-center justify-content-between pb-4&quot;&gt;&#xa;                     &lt;div style=&quot;font-size: 18px;&quot; class=&quot;header-title&quot;&gt;&#xa;                        &lt;div style=&quot;font-size: 18px;&quot; class=&quot;d-flex flex-wrap&quot;&gt;&#xa;                           &lt;div style=&quot;font-size: 18px;&quot; class=&quot;media-support-info mt-2&quot;&gt;&#xa;                              &lt;h5 style=&quot;font-size: 18px;&quot; class=&quot;mb-0&quot;&gt;Calon Creditur yang Sudah di setujui Pengurus&lt;/h5&gt;&#xa;                           &lt;/div&gt;&#xa;                        &lt;/div&gt;&#xa;                     &lt;/div&gt;&#xa;                  &lt;/div&gt;&#xa;&#xa;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="DeoXOKNFJ__tvac9IeCw-45">
+          <mxGeometry x="382" y="398" width="490" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DeoXOKNFJ__tvac9IeCw-52" value="Approve" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;fillColor=#000000;fontColor=#FFFFFF;" vertex="1" parent="DeoXOKNFJ__tvac9IeCw-12">
+          <mxGeometry y="42" width="140" height="45" as="geometry" />
         </mxCell>
         <mxCell id="DeoXOKNFJ__tvac9IeCw-53" value="Reject" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="DeoXOKNFJ__tvac9IeCw-12">
-          <mxGeometry x="154" y="70" width="140" height="45" as="geometry" />
+          <mxGeometry x="154" y="42" width="140" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="HJuLSZD8k-ePgeD9pt9G-9" value="Export" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="DeoXOKNFJ__tvac9IeCw-12">
+          <mxGeometry x="798" y="56" width="140" height="45" as="geometry" />
         </mxCell>
         <mxCell id="DeoXOKNFJ__tvac9IeCw-54" value="Report Akun" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="DeoXOKNFJ__tvac9IeCw-1">
           <mxGeometry x="1232" y="294" width="182" height="45" as="geometry" />
@@ -10686,7 +10692,7 @@
         <mxCell id="HJuLSZD8k-ePgeD9pt9G-3" value="Subkriteria" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;fontColor=#000000;fillColor=#FFFFFF;" vertex="1" parent="DeoXOKNFJ__tvac9IeCw-1">
           <mxGeometry x="150" y="377" width="310" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="HJuLSZD8k-ePgeD9pt9G-4" value="Manage Aprove" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;fillColor=#000000;fontColor=#FFFFFF;" vertex="1" parent="DeoXOKNFJ__tvac9IeCw-1">
+        <mxCell id="HJuLSZD8k-ePgeD9pt9G-4" value="Manage Aprove" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="DeoXOKNFJ__tvac9IeCw-1">
           <mxGeometry x="150" y="455" width="310" height="60" as="geometry" />
         </mxCell>
         <mxCell id="HJuLSZD8k-ePgeD9pt9G-5" value="Manage Point" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="DeoXOKNFJ__tvac9IeCw-1">
@@ -10695,7 +10701,7 @@
         <mxCell id="HJuLSZD8k-ePgeD9pt9G-6" value="Logout" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="DeoXOKNFJ__tvac9IeCw-1">
           <mxGeometry x="150" y="686" width="310" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="HJuLSZD8k-ePgeD9pt9G-7" value="Rekap Data" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;" vertex="1" parent="DeoXOKNFJ__tvac9IeCw-1">
+        <mxCell id="HJuLSZD8k-ePgeD9pt9G-7" value="Rekap Data" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=28;fillColor=#000000;fontColor=#FFFFFF;" vertex="1" parent="DeoXOKNFJ__tvac9IeCw-1">
           <mxGeometry x="150" y="616" width="310" height="60" as="geometry" />
         </mxCell>
       </root>
