@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-06-17T16:00:26.817Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:127.0) Gecko/20100101 Firefox/127.0" etag="wwlItOf_TRegNLsUl8uI" version="24.4.13" type="github" pages="66">
+<mxfile host="app.diagrams.net" modified="2024-06-17T16:06:56.837Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:127.0) Gecko/20100101 Firefox/127.0" etag="gFiiUKktlS0BPvuJjvYt" version="24.4.13" type="github" pages="66">
   <diagram name="flowchart system" id="IVVZCsLo85ee25WD64bm">
     <mxGraphModel dx="1729" dy="917" grid="1" gridSize="23" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -12289,7 +12289,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="Fa6Ay0X8pzhqlNXZeIFz" name="Page-66">
-    <mxGraphModel dx="2419" dy="429" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2795" dy="625" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -12404,7 +12404,7 @@
         <mxCell id="Z_SK2e-ysI5bi_28nIa0-45" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="Z_SK2e-ysI5bi_28nIa0-40">
           <mxGeometry x="190" y="300" width="220" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Z_SK2e-ysI5bi_28nIa0-46" value="USERNAME" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="Z_SK2e-ysI5bi_28nIa0-40">
+        <mxCell id="Z_SK2e-ysI5bi_28nIa0-46" value="NAMA LENGKAP" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="Z_SK2e-ysI5bi_28nIa0-40">
           <mxGeometry x="160" y="270" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Z_SK2e-ysI5bi_28nIa0-47" value="PASSWORD" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="Z_SK2e-ysI5bi_28nIa0-40">
