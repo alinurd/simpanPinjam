@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-07-22T03:06:47.293Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Firefox/128.0" etag="zuTEYeQVTizXsBCZ_kB-" version="24.5.4" type="github" pages="66">
+<mxfile host="app.diagrams.net" modified="2024-07-22T03:07:24.904Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Firefox/128.0" etag="sCEBDLWHX7Ml5oqnjvoc" version="24.5.4" type="github" pages="66">
   <diagram name="flowchart system" id="IVVZCsLo85ee25WD64bm">
     <mxGraphModel dx="1729" dy="917" grid="1" gridSize="23" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -6484,8 +6484,8 @@
             <mxPoint x="1018" y="338.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="kV8jtSFwwwWfP_D6M87T-28" value="mempunyai" style="rhombus;whiteSpace=wrap;html=1;dashed=0;fontSize=24;fontFamily=Times New Roman;fontStyle=0" parent="m6Y13A6J2JYWp4kDgaK0-1" vertex="1">
-          <mxGeometry x="881.25" y="516" width="110" height="59" as="geometry" />
+        <mxCell id="kV8jtSFwwwWfP_D6M87T-28" value="mempunyai" style="rhombus;whiteSpace=wrap;html=1;dashed=0;fontSize=19;fontFamily=Times New Roman;fontStyle=0" parent="m6Y13A6J2JYWp4kDgaK0-1" vertex="1">
+          <mxGeometry x="860" y="507" width="131.25" height="79" as="geometry" />
         </mxCell>
         <mxCell id="kV8jtSFwwwWfP_D6M87T-56" value="&lt;div style=&quot;font-size: 19px;&quot;&gt;menginput&lt;/div&gt;&lt;div style=&quot;font-size: 19px;&quot;&gt;&amp;nbsp;penilaian&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;dashed=0;fontSize=19;fontFamily=Times New Roman;fontStyle=0" parent="m6Y13A6J2JYWp4kDgaK0-1" vertex="1">
           <mxGeometry x="920" y="371.25" width="150" height="88.75" as="geometry" />
@@ -6499,7 +6499,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="kV8jtSFwwwWfP_D6M87T-66" value="mempunyai" style="rhombus;whiteSpace=wrap;html=1;dashed=0;fontSize=24;fontFamily=Times New Roman;fontStyle=0" parent="m6Y13A6J2JYWp4kDgaK0-1" vertex="1">
+        <mxCell id="kV8jtSFwwwWfP_D6M87T-66" value="mempunyai" style="rhombus;whiteSpace=wrap;html=1;dashed=0;fontSize=20;fontFamily=Times New Roman;fontStyle=0" parent="m6Y13A6J2JYWp4kDgaK0-1" vertex="1">
           <mxGeometry x="1215" y="575" width="130" height="90" as="geometry" />
         </mxCell>
         <mxCell id="kV8jtSFwwwWfP_D6M87T-69" value="" style="endArrow=none;html=1;rounded=0;fontSize=24;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Times New Roman;fontStyle=0" parent="m6Y13A6J2JYWp4kDgaK0-1" source="kV8jtSFwwwWfP_D6M87T-66" target="kV8jtSFwwwWfP_D6M87T-58" edge="1">
@@ -6528,7 +6528,7 @@
             <mxPoint x="1024" y="605" as="sourcePoint" />
             <mxPoint x="1205" y="530" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1170" y="545" />
+              <mxPoint x="1190" y="545" />
             </Array>
           </mxGeometry>
         </mxCell>
