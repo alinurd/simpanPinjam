@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-07-22T03:14:57.451Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Firefox/128.0" etag="a61cLV5lSWA1z2ImxcIe" version="24.5.4" type="github" pages="66">
+<mxfile host="app.diagrams.net" modified="2024-07-22T03:15:28.065Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Firefox/128.0" etag="AFz3LdEOa9VK_Ug1TREz" version="24.5.4" type="github" pages="66">
   <diagram name="flowchart system" id="IVVZCsLo85ee25WD64bm">
     <mxGraphModel dx="1729" dy="917" grid="1" gridSize="23" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -6735,7 +6735,7 @@
         <mxCell id="7rCjhqo2ltrkuRz0ickW-0" value="" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=20;dashed=1;whiteSpace=wrap;fillColor=none;strokeColor=#FF33FF;fontColor=#ffffff;fontSize=24;fontStyle=0" parent="yT9OzmiCkFvv9IusLtQ2-1" vertex="1">
           <mxGeometry x="697" y="161.75" width="353" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="yT9OzmiCkFvv9IusLtQ2-2" value="&lt;div style=&quot;font-size: 18px;&quot;&gt;menginput&lt;/div&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp;data&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;dashed=0;fontSize=18;fontFamily=Times New Roman;fontStyle=0" parent="yT9OzmiCkFvv9IusLtQ2-1" vertex="1">
+        <mxCell id="yT9OzmiCkFvv9IusLtQ2-2" value="&lt;div style=&quot;font-size: 17px;&quot;&gt;menginput&lt;/div&gt;&lt;div style=&quot;font-size: 17px;&quot;&gt;&amp;nbsp;data&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;dashed=0;fontSize=17;fontFamily=Times New Roman;fontStyle=0" parent="yT9OzmiCkFvv9IusLtQ2-1" vertex="1">
           <mxGeometry x="290" y="243.5" width="130" height="73" as="geometry" />
         </mxCell>
         <mxCell id="yT9OzmiCkFvv9IusLtQ2-3" value="memiliki" style="rhombus;whiteSpace=wrap;html=1;dashed=0;fontSize=20;fontFamily=Times New Roman;fontStyle=0" parent="yT9OzmiCkFvv9IusLtQ2-1" vertex="1">
@@ -7003,10 +7003,10 @@
           <mxGeometry x="582.5" y="566" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="JEAv5Qs5e9KHp2eT0zJD-0" value="" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=20;dashed=1;whiteSpace=wrap;fillColor=none;strokeColor=#00FF44;fontSize=24;fontStyle=0" parent="yT9OzmiCkFvv9IusLtQ2-1" vertex="1">
-          <mxGeometry x="283" y="243.5" width="410" height="140" as="geometry" />
+          <mxGeometry x="261" y="246.5" width="410" height="140" as="geometry" />
         </mxCell>
         <mxCell id="JEAv5Qs5e9KHp2eT0zJD-1" value="&lt;ul style=&quot;font-size: 24px;&quot;&gt;&lt;li style=&quot;font-size: 24px;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;id_admin&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;font-size: 24px;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;id_calon_creditur&lt;br style=&quot;font-size: 24px;&quot;&gt;&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=24;fontStyle=0" parent="yT9OzmiCkFvv9IusLtQ2-1" vertex="1">
-          <mxGeometry x="300" y="293.5" width="220" height="84.5" as="geometry" />
+          <mxGeometry x="300" y="293.5" width="240" height="84.5" as="geometry" />
         </mxCell>
         <mxCell id="7rCjhqo2ltrkuRz0ickW-1" value="&lt;ul style=&quot;font-size: 21px;&quot;&gt;&lt;li style=&quot;font-size: 21px;&quot;&gt;id_surveyor&lt;/li&gt;&lt;li style=&quot;font-size: 21px;&quot;&gt;id_calon_creditur&lt;br style=&quot;font-size: 21px;&quot;&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=21;fontStyle=0" parent="yT9OzmiCkFvv9IusLtQ2-1" vertex="1">
           <mxGeometry x="657.25" y="148" width="261.75" height="100" as="geometry" />
