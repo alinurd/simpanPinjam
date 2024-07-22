@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-07-22T03:09:57.047Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Firefox/128.0" etag="byKpUtLxJO_T8YnnCd32" version="24.5.4" type="github" pages="66">
+<mxfile host="app.diagrams.net" modified="2024-07-22T03:10:11.478Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Firefox/128.0" etag="MzpyTVXsyG_m9vKJCx7N" version="24.5.4" type="github" pages="66">
   <diagram name="flowchart system" id="IVVZCsLo85ee25WD64bm">
     <mxGraphModel dx="1729" dy="917" grid="1" gridSize="23" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -6441,7 +6441,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="V1-ERD" id="T2s_k9Qh35pVoW_XGemd">
-    <mxGraphModel dx="2049" dy="1057" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2868" dy="1480" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="m6Y13A6J2JYWp4kDgaK0-0" />
         <mxCell id="m6Y13A6J2JYWp4kDgaK0-1" parent="m6Y13A6J2JYWp4kDgaK0-0" />
@@ -6652,7 +6652,7 @@
         <mxCell id="IbBK5TzgXOrRRoRguA_G-22" value="&lt;br style=&quot;font-size: 24px;&quot;&gt;&lt;ul style=&quot;font-size: 24px;&quot;&gt;&lt;li style=&quot;font-size: 24px;&quot;&gt;id_subkriteria&lt;/li&gt;&lt;li style=&quot;font-size: 24px;&quot;&gt;nama&lt;/li&gt;&lt;li style=&quot;font-size: 24px;&quot;&gt;bobot&lt;br style=&quot;font-size: 24px;&quot;&gt;&lt;/li&gt;&lt;/ul&gt;" style="html=1;align=left;verticalAlign=middle;dashed=0;whiteSpace=wrap;fontSize=24;" parent="m6Y13A6J2JYWp4kDgaK0-1" vertex="1">
           <mxGeometry x="1396.41" y="890" width="193.59" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="kV8jtSFwwwWfP_D6M87T-124" value="memiliki" style="rhombus;whiteSpace=wrap;html=1;dashed=0;fontSize=24;fontFamily=Times New Roman;fontStyle=0" parent="m6Y13A6J2JYWp4kDgaK0-1" vertex="1">
+        <mxCell id="kV8jtSFwwwWfP_D6M87T-124" value="memiliki" style="rhombus;whiteSpace=wrap;html=1;dashed=0;fontSize=19;fontFamily=Times New Roman;fontStyle=0" parent="m6Y13A6J2JYWp4kDgaK0-1" vertex="1">
           <mxGeometry x="1420" y="695" width="130" height="90" as="geometry" />
         </mxCell>
         <mxCell id="kV8jtSFwwwWfP_D6M87T-125" value="subkriteria" style="html=1;align=center;verticalAlign=middle;dashed=0;whiteSpace=wrap;fontSize=24;fontFamily=Times New Roman;fontStyle=0" parent="m6Y13A6J2JYWp4kDgaK0-1" vertex="1">
